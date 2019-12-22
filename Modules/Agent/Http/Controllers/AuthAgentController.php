@@ -29,7 +29,7 @@ class AuthAgentController extends BaseController
     }
 
     /**
-     * Return manager login view
+     * Return agent login view
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
