@@ -12,6 +12,4 @@ class BaseController  extends Controller
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-
-
 }
