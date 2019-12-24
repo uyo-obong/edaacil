@@ -9,24 +9,21 @@
     <link rel="stylesheet" href="{{ URL::to('assets/css/style.min.css') }}">
     <!-- JQuery DataTable Css -->
     <link rel="stylesheet" href="{{ URL::to('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css') }}">
-    @stack('styles')
+    <style>
+        .content {
+            margin: 0px 40px 0px 40px !important;
+        }
+    </style>
+    @stack('css')
 </head>
 
 <body class="theme-blush">
-
-<!-- Page Loader -->
-{{--<div class="page-loader-wrapper">--}}
-{{--    <div class="loader">--}}
-{{--        <div class="m-t-30"><img class="zmdi-hc-spin" src="{{ URL::to('assets/images/loader.svg') }}" width="48" height="48" alt="Aero"></div>--}}
-{{--        <p>Please wait...</p>--}}
-{{--    </div>--}}
-{{--</div>--}}
 
 <!-- Overlay For Sidebars -->
 <div class="overlay"></div>
 <!-- Main Content -->
 <section class="content">
-        @yield('content')
+    @yield('content')
 </section>
 
 </body>
@@ -44,4 +41,9 @@
 
 <script src="{{ URL::to('assets/plugins/jquery-validation/jquery.validate.js') }}"></script> <!-- Jquery Validation Plugin Css -->
 <script src="{{ URL::to('assets/js/pages/forms/form-validation.js') }}"></script>
+
+<script src="{{ URL::to('assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js') }}"></script> <!-- Bootstrap Colorpicker Js -->
+<script src="{{ URL::to('assets/plugins/jquery-inputmask/jquery.inputmask.bundle.js') }}"></script> <!-- Input Mask Plugin Js -->
+<script src="{{ URL::to('assets/js/pages/forms/advanced-form-elements.js') }}"></script>
+@stack('scripts')
 </html>

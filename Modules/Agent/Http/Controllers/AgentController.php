@@ -37,4 +37,13 @@ class AgentController extends BaseController
     {
         return view($this->_config['view']);
     }
+
+    /**
+     * Return form view for obtaining certificate
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function index()
+    {
+        return view($this->_config['view']);
+    }
 }

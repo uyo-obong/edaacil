@@ -32,6 +32,62 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="container-fluid">
+            <!-- Basic Examples -->
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div class="card">
+
+                        <div class="body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                    <thead>
+                                    <tr>
+                                        <th>S/N</th>
+                                        <th>Token</th>
+                                        <th>Owner</th>
+                                        <th>Issued By</th>
+                                        <th>Issued On</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tfoot>
+                                    <tr>
+                                        <th>S/N</th>
+                                        <th>Token</th>
+                                        <th>Owner</th>
+                                        <th>Issued By</th>
+                                        <th>Issued On</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </tfoot>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Garrett Winters</td>
+                                        <td>Testing</td>
+                                        <td>Testing</td>
+                                        <td>John Doe</td>
+                                        <td><a class="btn btn-success" href="">View</a> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Garrett Winters</td>
+                                        <td>Testing</td>
+                                        <td>Testing</td>
+                                        <td>John Doe</td>
+                                        <td><a class="btn btn-success" href="">View</a> </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </section>

@@ -2,12 +2,7 @@
 
 @section('title', 'Agent Dashboard')
 
-@push('styles')
-   <style>
-      .content {
-           margin: 0px 40px 0px 40px !important;
-       }
-   </style>
+@push('css')
 @endpush
 @section('content')
 <div class="body_scroll">
