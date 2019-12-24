@@ -17,4 +17,5 @@ class ManagerRepository extends BaseRepository
     }
 
 
+
 }
