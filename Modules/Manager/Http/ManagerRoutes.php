@@ -14,9 +14,18 @@ Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], functi
         'view' => 'manager::token.list'
     ])->name('manager.token.list');
 
+
     // Auth Controller
     Route::get('/manager/login', 'AuthController@index')->defaults('_config', [
         'view' => 'manager::auth.login'
     ])->name('manager.auth.view');
+        //MANAGER ROUTE
+    Route::get('/manager/login/form', 'AuthController@showManagerLoginForm');
+    Route::post('/login', 'AuthController@managerLogin');
+    Route::post('/logout', 'AuthController@logout');
+        // MANAGER MIDDLEWARE ROUTE
+    Route::middleware(['manager'])->group(function () {
+
+    });
 
 });
