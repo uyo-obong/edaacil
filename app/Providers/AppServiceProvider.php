@@ -2,6 +2,8 @@
 
 namespace Edaacil\Providers;
 
+use Edaacil\Modules\BaseRepository;
+use Edaacil\Modules\Manager\Http\Models\Manager;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind('BaseRepository',(BaseRepository::class));
+        
     }
 
     /**

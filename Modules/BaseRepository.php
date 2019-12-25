@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 use Ramsey\Uuid\Uuid;
 use Dingo\Api\Routing\Helpers;
 
-abstract class BaseRepository
+class BaseRepository
 {
 
     /**
@@ -16,7 +16,7 @@ abstract class BaseRepository
      *
      * @return string
      */
-    abstract public function model();
+//    abstract public function model();
 
     /**
      * Generates UuId
