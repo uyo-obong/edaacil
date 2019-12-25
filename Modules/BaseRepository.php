@@ -6,7 +6,6 @@ namespace Edaacil\Modules;
 
 use Illuminate\Support\Str;
 use Ramsey\Uuid\Uuid;
-use Dingo\Api\Routing\Helpers;
 
 abstract class BaseRepository
 {
