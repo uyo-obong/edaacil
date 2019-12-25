@@ -32,40 +32,48 @@
                                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>S/N</th>
+                                            <th>Full Name</th>
+                                            <th>Email</th>
+                                            <th>Phone No.</th>
+                                            <th>Role</th>
+                                            <th>Status</th>
+                                            <th>Address</th>
+                                            <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>S/N</th>
+                                            <th>Full Name</th>
+                                            <th>Email</th>
+                                            <th>Phone No.</th>
+                                            <th>Role</th>
+                                            <th>Status</th>
+                                            <th>Address</th>
+                                            <th>Action</th>
                                         </tr>
                                         </tfoot>
                                         <tbody>
                                         <tr>
-                                            <td>Tiger Nixon</td>
+                                            <td>1</td>
+                                            <td>Tiger Nixon Accountant</td>
                                             <td>System Architect</td>
                                             <td>Edinburgh</td>
-                                            <td>61</td>
                                             <td>2011/04/25</td>
                                             <td>$320,800</td>
+                                            <td>$320,800</td>
+                                            <td><a href=""><i class="btn btn-primary zmdi zmdi-eye"></i></a>  <a href=""><i class="btn btn-success zmdi zmdi-edit"></i></a> </td>
                                         </tr>
                                         <tr>
-                                            <td>Garrett Winters</td>
+                                            <td>2</td>
+                                            <td>Garrett Winters Accountant</td>
                                             <td>Accountant</td>
                                             <td>Tokyo</td>
-                                            <td>63</td>
                                             <td>2011/07/25</td>
                                             <td>$170,750</td>
+                                            <td>$170,750</td>
+                                            <td><a href=""><i class="btn btn-primary zmdi zmdi-eye"></i></a>  <a href=""><i class="btn btn-success zmdi zmdi-edit"></i></a> </td>
                                         </tr>
 
                                         </tbody>

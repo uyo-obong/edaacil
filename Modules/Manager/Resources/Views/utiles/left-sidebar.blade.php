@@ -3,7 +3,7 @@
 <aside id="leftsidebar" class="sidebar">
     <div class="navbar-brand">
         <button class="btn-menu ls-toggle-btn" type="button"><i class="zmdi zmdi-menu"></i></button>
-        <a href="/manager"><img src="{{ URL::to('assets/images/logo.svg') }}" width="25" alt="Edaacil"><span class="m-l-10">Edaacil</span></a>
+        <a href="/manager"><img src="{{ URL::to('assets/images/edaacil-logo.png') }}" width="100" alt="Edaacil"></a>
     </div>
     <div class="menu">
         <ul class="list">

@@ -13,6 +13,12 @@
 
     <link rel="stylesheet" href="{{ URL::to('assets/plugins/morrisjs/morris.min.css') }}" />
 
+    <!-- Bootstrap Select Css -->
+    <link rel="stylesheet" href="{{ URL::to('assets/plugins/bootstrap-select/css/bootstrap-select.css') }}" />
+
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{ URL::to('assets/plugins/select2/select2.css') }}" />
+
     <!-- JQuery DataTable Css -->
     <link rel="stylesheet" href="{{ URL::to('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css') }}">
 
@@ -60,6 +66,11 @@
 <script src="{{ URL::to('assets/js/pages/tables/jquery-datatable.js') }}"></script>
 
 <script src="{{ URL::to('assets/plugins/jquery-validation/jquery.validate.js') }}"></script> <!-- Jquery Validation Plugin Css -->
+
+<script src="{{ URL::to('assets/plugins/multi-select/js/jquery.multi-select.js') }}"></script> <!-- Multi Select Plugin Js -->
+
+<script src="{{ URL::to('assets/plugins/select2/select2.min.js') }}"></script> <!-- Select2 Js -->
+
 <script src="{{ URL::to('assets/plugins/jquery-steps/jquery.steps.js') }}"></script> <!-- JQuery Steps Plugin Js -->
 <script src="{{ URL::to('assets/js/pages/forms/form-validation.js') }}"></script>
 </body>
