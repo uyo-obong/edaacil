@@ -5,47 +5,32 @@ namespace Edaacil\Modules\Manager\Http\Repositories;
 use Edaacil\Modules\BaseRepository;
 use Edaacil\Modules\Manager\Http\Models\Manager;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Request;
 
 class AuthRepository extends BaseRepository
 {
 
+    /**
+     * @return string
+     */
     function model()
     {
         return Manager::class;
     }
 
+    /**
+     * Login Manager to his dashboard
+     * @param array $loginRequest
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function managerLogin(array $loginRequest)
     {
-        $credentials = collect($loginRequest)->only(['email', 'password']);
+        $credentials = collect($loginRequest)->only('email', 'password');
+        if (Auth::attempt(['email' => $credentials['email'], 'password' => $credentials['password']])) {
+            $auth = auth()->user()->where('role', 'Manager')->first();
 
-        if (Auth::guard()->attempt(([$credentials,'status'=>'Active']), $loginRequest->has('remember'))){
-            return $this->redirectTo();
+            return redirect('/manager');
         }
-    }
-
-    protected function redirectTo(){
-
-        $role = Auth::user()->role;
-        //check user role
-        switch ($role){
-            case 'Manager':
-                return '/manager';//please fix correct dashboard
-                break;
-            case 'Agent':
-                return '/agent';//please fix correct dashboard
-                break;
-            default:
-                return '/login';//please fix correct dashboard
-                break;
-        }
-    }
-
-    public function logout($logoutRequest){
-        Auth::logout();
-        $logoutRequest->session()->invalidate();
-
-        return $this->loggedOut($logoutRequest) ?: redirect(route(''));//kindly fix the redirect view name
+        return redirect()->route('manager.auth.view')->with("invalid", "Invalid email/or password");
     }
 
 }

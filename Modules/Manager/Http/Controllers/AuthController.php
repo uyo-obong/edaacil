@@ -6,10 +6,7 @@ use Edaacil\Modules\BaseController;
 use Edaacil\Modules\Manager\Http\Repositories\AuthRepository;
 use Edaacil\Modules\Manager\Http\Repositories\ManagerRepository;
 use Edaacil\Modules\Manager\Http\Requests\LoginRequest;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Request;
-use Illuminate\Validation\Validator;
-use Symfony\Component\Console\Input\Input;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends BaseController
 {
@@ -42,18 +39,23 @@ class AuthController extends BaseController
         return view($this->_config['view']);
     }
 
-    public function showManagerLoginForm()
-    {
-        return view('');
-    }
-
-
+    /**
+     * Login manager into his dashboard
+     * @param LoginRequest $loginRequest
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function managerLogin(LoginRequest $loginRequest)
     {
         return $this->authRepository->managerLogin($loginRequest->all());
     }
 
-    public function logout(Request $logoutRequest){
-        return $this->authRepository->logout($logoutRequest->all());
+    /**
+     * Logout manager from dashboard
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function managerLogout()
+    {
+        Auth::logout();
+        return view($this->_config['view']);
     }
 }
