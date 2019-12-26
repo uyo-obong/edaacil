@@ -12,4 +12,8 @@ class AccountRepository extends BaseRepository
 
     }
 
+    public function managerCreateAgent(){
+
+    }
+
 }

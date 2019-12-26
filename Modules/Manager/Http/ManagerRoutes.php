@@ -25,7 +25,7 @@ Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], functi
     Route::post('/logout', 'AuthController@logout');
         // MANAGER MIDDLEWARE ROUTE
     Route::middleware(['manager'])->group(function () {
-
+        Route::post('/create/agent', 'AccountController@managerCreateAgent');
     });
 
 });
