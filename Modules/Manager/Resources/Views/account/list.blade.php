@@ -1,5 +1,6 @@
 @extends('manager::layouts.master')
 
+@section('title', 'Manager Account')
 @section('content')
     <section class="content">
         <div class="body_scroll">

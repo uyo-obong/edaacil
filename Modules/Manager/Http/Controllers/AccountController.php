@@ -36,4 +36,9 @@ class AccountController extends BaseController
     {
         return view($this->_config['view']);
     }
+
+    public function profile()
+    {
+        return view($this->_config['view']);
+    }
 }
