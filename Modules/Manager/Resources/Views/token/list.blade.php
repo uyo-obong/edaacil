@@ -36,6 +36,7 @@
                                             <th>Token</th>
                                             <th>Status</th>
                                             <th>User</th>
+                                            <th>Created</th>
                                             <th>Delete</th>
                                         </tr>
                                         </thead>
@@ -45,24 +46,21 @@
                                             <th>Token</th>
                                             <th>Status</th>
                                             <th>User</th>
+                                            <th>Created</th>
                                             <th>Delete</th>
                                         </tr>
                                         </tfoot>
                                         <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Tiger Nixon</td>
-                                            <td><a class="badge-primary" href="">Unused</a></td>
-                                            <td>____</td>
-                                            <td><a class="btn btn-danger" href="">Delete</a> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Garrett Winters</td>
-                                            <td><a class="badge-danger" href="">Used</a></td>
-                                            <td>John Doe</td>
-                                            <td><a class="btn btn-danger" href="">Delete</a> </td>
-                                        </tr>
+                                        @foreach($tokens as $token)
+                                            <tr>
+                                                <td>{{ $loop->index + 1 }}</td>
+                                                <td>{{ $token->token }}</td>
+                                                <td><a class="{{ $token->status == 'Unused' ? 'badge-primary' : 'badge-danger' }}" href="">{{ $token->status }}</a></td>
+                                                <td>____</td>
+                                                <td>{{ $token->created_at->diffForHumans() }}</td>
+                                                <td><a class="btn btn-danger" href="">Delete</a> </td>
+                                            </tr>
+                                        @endforeach
 
                                         </tbody>
                                     </table>

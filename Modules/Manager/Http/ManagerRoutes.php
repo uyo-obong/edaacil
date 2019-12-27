@@ -27,6 +27,8 @@ Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], functi
             'view' => 'manager::token.list'
         ])->name('manager.token.list');
 
+        Route::post('/manager/token/generate', 'TokenController@createToken')->name('manager.token.generate');
+
         // Manage Logout
         Route::get('/manager/logout', 'AuthController@managerLogout')->defaults('_config', [
             'view' => 'manager::auth.login'
