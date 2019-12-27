@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="title" id="largeModalLabel">Edit Account</h4>
+                <h4 class="title" id="mediumModalLabel">Edit Account</h4>
             </div>
             <form id="form_validation" method="POST" action="">
                 <div class="modal-body">

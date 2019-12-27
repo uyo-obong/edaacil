@@ -61,7 +61,7 @@
                                             <td>Edinburgh</td>
                                             <td>2011/04/25</td>
                                             <td>$320,800</td>
-                                            <td><a href=""><i class="float-left btn btn-primary zmdi zmdi-eye"></i></a>  <a data-toggle="modal" data-target="#editAccountModal" type="button" href="#"><i class="float-right btn btn-success zmdi zmdi-edit"></i></a> </td>
+                                            <td><a data-toggle="modal" data-target="#viewAccountModal" type="button" href="#"><i class="float-left btn btn-primary zmdi zmdi-eye"></i></a>  <a data-toggle="modal" data-target="#editAccountModal" type="button" href="#"><i class="float-right btn btn-success zmdi zmdi-edit"></i></a> </td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
@@ -70,7 +70,7 @@
                                             <td>Tokyo</td>
                                             <td>2011/07/25</td>
                                             <td>$170,750</td>
-                                            <td><a href=""><i class="float-left btn btn-primary zmdi zmdi-eye"></i></a>  <a data-toggle="modal" data-target="#editAccountModal" type="button" href="#"><i class="float-right btn btn-success zmdi zmdi-edit"></i></a> </td>
+                                            <td><a data-toggle="modal" data-target="#viewAccountModal" type="button" href="#"><i class="float-left btn btn-primary zmdi zmdi-eye"></i></a>  <a data-toggle="modal" data-target="#editAccountModal" type="button" href="#"><i class="float-right btn btn-success zmdi zmdi-edit"></i></a> </td>
                                         </tr>
 
                                         </tbody>
@@ -88,4 +88,5 @@
 
     @include('manager::account.form')
     @include('manager::account.edit_account')
+    @include('manager::account.view_account')
 @stop
