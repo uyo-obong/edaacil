@@ -15,12 +15,12 @@ class SuperAdminTableSeeder extends Seeder
      */
     public function run()
     {
-       return Manager::create([
+       Manager::create([
             'id'=> Uuid::uuid4()->toString(),
             'first_name'=> 'John',
             'last_name'=> 'Doe',
             'email'=>'johndoe@gmail.com',
-            'phone_number'=>01010101010,
+            'phone_no'=>'07070707070070',
             'role'=>'Manager',
             'status'=>'Active',
             'address'=>'100 units',
