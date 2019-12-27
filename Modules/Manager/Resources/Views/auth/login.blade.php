@@ -20,29 +20,32 @@
                 </div>
             </div>
             <div class="col-lg-4 col-sm-12">
-                <form class="card auth_form">
+                <form class="card auth_form" action="{{ route('manager.auth.login') }}" method="POST">
                     <div class="header">
-                        <img class="logo" src="assets/images/logo.svg" alt="">
+                        <img style="width: 200px;" class="logo" src="{{ URL::to('assets/images/edaacil-logo.png') }}" alt="">
                         <h5>Log in</h5>
                     </div>
                     <div class="body">
+                        @if(session()->has('invalid'))
+                            <div class="alert alert-danger">{{ session()->get('invalid') }}</div>
+                        @endif
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Email Address">
+                            <input type="text" class="form-control" name="email" placeholder="Email Address">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="zmdi zmdi-email"></i></span>
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Password">
+                            <input type="text" class="form-control" name="password" placeholder="Password">
                             <div class="input-group-append">
-                                <span class="input-group-text"><a href="forgot-password.html" class="forgot" title="Forgot Password"><i class="zmdi zmdi-lock"></i></a></span>
+                                <span class="input-group-text"><i class="zmdi zmdi-lock"></i></span>
                             </div>
                         </div>
                         <div class="checkbox">
                             <input id="remember_me" type="checkbox">
                             <label for="remember_me">Remember Me</label>
                         </div>
-                        <a href="index.html" class="btn btn-primary btn-block waves-effect waves-light">SIGN IN</a>
+                        <button type="submit" class="btn btn-primary btn-block waves-effect waves-light">SIGN IN</button>
                     </div>
                 </form>
                 <div class="copyright text-center">

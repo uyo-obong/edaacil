@@ -4,7 +4,7 @@
             <div class="modal-header">
                 <h4 class="title" id="defaultModalLabel">Generate Token</h4>
             </div>
-            <form id="form_validation" method="POST">
+            <form id="form_validation" method="POST" action="{{ route('manager.token.generate') }}">
                 <div class="modal-body">
                     <div class="form-group form-float">
                         <input type="number" class="form-control" placeholder="Enter amount of pin" name="name" required aria-required="true">

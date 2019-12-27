@@ -4,6 +4,7 @@ namespace Edaacil\Modules\Manager\Http\Controllers;
 
 use Edaacil\Modules\BaseController;
 use Edaacil\Modules\Manager\Http\Repositories\TokenRepository;
+use Edaacil\Modules\Manager\Http\Requests\GenerateTokenRequest;
 
 class TokenController extends BaseController
 {
@@ -35,6 +36,20 @@ class TokenController extends BaseController
      */
     public function list()
     {
-        return view($this->_config['view']);
+        $tokens = $this->tokenRepository->model()::all()->sortByDesc('created_at');
+        return view($this->_config['view'], ['tokens' => $tokens]);
+    }
+
+    /**
+     * Return the tokens that has been generated
+     * @param GenerateTokenRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @throws \Exception
+     */
+    public function createToken(GenerateTokenRequest $request)
+    {
+        $token = $this->tokenRepository->createToken($request->all());
+        if ($token)
+            return redirect(route('manager.token.list'));
     }
 }

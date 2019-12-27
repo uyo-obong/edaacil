@@ -4,7 +4,7 @@
             <div class="modal-header">
                 <h4 class="title" id="largeModalLabel">Add Account</h4>
             </div>
-            <form id="form_validation" method="POST" action="{{ route('createAgent') }}">
+            <form id="form_validation" method="POST" action="">
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
@@ -33,7 +33,7 @@
                         <div class="col-md-6">
                             <div class="form-group form-float">
                                 <select  class="form-control show-tick" name="role" required>
-                                    <option value="">-- Please select --</option>
+                                    <option value="">-- Please select role --</option>
                                     <option value="manager">Manager</option>
                                     <option value="agent">Agent</option>
 

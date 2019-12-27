@@ -1,5 +1,7 @@
 <?php
 
+use Edaacil\Modules\Manager\Http\Models\Manager;
+
 return [
 
     /*
@@ -15,7 +17,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'managers',
     ],
 
     /*
@@ -28,7 +30,7 @@ return [
     | here which uses session storage and the Eloquent user provider.
     |
     | All authentication drivers have a user provider. This defines how the
-    | users are actually retrieved out of your database or other storage
+    | managers are actually retrieved out of your database or other storage
     | mechanisms used by this application to persist your user's data.
     |
     | Supported: "session", "token"
@@ -38,12 +40,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'managers',
         ],
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'managers',
             'hash' => false,
         ],
     ],
@@ -54,7 +56,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | All authentication drivers have a user provider. This defines how the
-    | users are actually retrieved out of your database or other storage
+    | managers are actually retrieved out of your database or other storage
     | mechanisms used by this application to persist your user's data.
     |
     | If you have multiple user tables or models you may configure multiple
@@ -66,14 +68,14 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'managers' => [
             'driver' => 'eloquent',
-            'model' => Edaacil\User::class,
+            'model' => Manager::class,
         ],
 
-        // 'users' => [
+        // 'managers' => [
         //     'driver' => 'database',
-        //     'table' => 'users',
+        //     'table' => 'managers',
         // ],
     ],
 
@@ -93,8 +95,8 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'managers' => [
+            'provider' => 'managers',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

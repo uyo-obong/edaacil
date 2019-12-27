@@ -16,9 +16,12 @@ class ManagerCheck
      */
     public function handle($request, Closure $next)
     {
+        if (! Auth::user()) {
+            return redirect(route('manager.auth.view'));
+        }
         if (!Auth::user()->role == 'Manager')
         {
-            return redirect('/')->with('error','Unauthorized Action,Access Denied !!');
+            return redirect('/manager/login');
         }
         return $next($request);
     }

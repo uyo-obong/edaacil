@@ -1,5 +1,6 @@
 @extends('manager::layouts.master')
 
+@section('title', 'Manager Account')
 @section('content')
     <section class="content">
         <div class="body_scroll">
@@ -36,9 +37,8 @@
                                             <th>Full Name</th>
                                             <th>Email</th>
                                             <th>Phone No.</th>
-                                            <th>Role</th>
                                             <th>Status</th>
-                                            <th>Address</th>
+                                            <th>Role</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>
@@ -48,9 +48,8 @@
                                             <th>Full Name</th>
                                             <th>Email</th>
                                             <th>Phone No.</th>
-                                            <th>Role</th>
                                             <th>Status</th>
-                                            <th>Address</th>
+                                            <th>Role</th>
                                             <th>Action</th>
                                         </tr>
                                         </tfoot>
@@ -62,8 +61,7 @@
                                             <td>Edinburgh</td>
                                             <td>2011/04/25</td>
                                             <td>$320,800</td>
-                                            <td>$320,800</td>
-                                            <td><a href=""><i class="btn btn-primary zmdi zmdi-eye"></i></a>  <a href=""><i class="btn btn-success zmdi zmdi-edit"></i></a> </td>
+                                            <td><a data-toggle="modal" data-target="#viewAccountModal" type="button" href="#"><i class="float-left btn btn-primary zmdi zmdi-eye"></i></a>  <a data-toggle="modal" data-target="#editAccountModal" type="button" href="#"><i class="float-right btn btn-success zmdi zmdi-edit"></i></a> </td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
@@ -72,8 +70,7 @@
                                             <td>Tokyo</td>
                                             <td>2011/07/25</td>
                                             <td>$170,750</td>
-                                            <td>$170,750</td>
-                                            <td><a href=""><i class="btn btn-primary zmdi zmdi-eye"></i></a>  <a href=""><i class="btn btn-success zmdi zmdi-edit"></i></a> </td>
+                                            <td><a data-toggle="modal" data-target="#viewAccountModal" type="button" href="#"><i class="float-left btn btn-primary zmdi zmdi-eye"></i></a>  <a data-toggle="modal" data-target="#editAccountModal" type="button" href="#"><i class="float-right btn btn-success zmdi zmdi-edit"></i></a> </td>
                                         </tr>
 
                                         </tbody>
@@ -90,4 +87,6 @@
     </section>
 
     @include('manager::account.form')
+    @include('manager::account.edit_account')
+    @include('manager::account.view_account')
 @stop

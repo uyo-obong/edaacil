@@ -2,37 +2,44 @@
 
 Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], function () {
 
-    Route::get('/manager', 'ManagerController@dashboard')->defaults('_config', [
-        'view' => 'manager::dashboard'
-    ])->name('manager.dashboard.view');
-
-    Route::get('/manager/account/list', 'AccountController@list')->defaults('_config', [
-        'view' => 'manager::account.list'
-    ])->name('manager.account.list');
-
-
-    Route::get('/manager/token/list', 'TokenController@list')->defaults('_config', [
-        'view' => 'manager::token.list'
-    ])->name('manager.token.list');
-
-
-    // Auth Controller
-    Route::get('/manager/login', 'AuthController@index')->defaults('_config', [
-        'view' => 'manager::auth.login'
-    ])->name('manager.auth.view');
-        //MANAGER ROUTE
-    Route::get('/manager/login/form', 'AuthController@showManagerLoginForm');
-    Route::post('/login', 'AuthController@managerLogin');
-    Route::post('/logout', 'AuthController@logout');
-
-    Route::post('/create/agent', 'AccountController@createAgentAccount')->name('createAgent');
-    Route::get('agents', 'AccountController@listAgents');
-    Route::get('agents/edit/{id}', 'AccountController@editAgents');
-    Route::put('agents/update/{id}', 'AccountController@updateAgents');
-
     // MANAGER MIDDLEWARE ROUTE
-    Route::middleware(['manager'])->group(function () {
+    Route::group(['middleware' => ['auth', 'manager']], function ()  {
+
+        Route::get('/manager', 'ManagerController@dashboard')->defaults('_config', [
+            'view' => 'manager::dashboard'
+        ])->name('manager.dashboard.view');
+
+        // Manage Account
+        Route::get('/manager/account/list', 'AccountController@list')->defaults('_config', [
+            'view' => 'manager::account.list'
+        ])->name('manager.account.list');
+
+        Route::get('/manager/account/profile', 'AccountController@profile')->defaults('_config', [
+            'view' => 'manager::account.profile'
+        ])->name('manager.account.profile');
+
+        Route::get('/manager/account/edit/profile', 'AccountController@editProfile')->defaults('_config', [
+            'view' => 'manager::account.edit_profile'
+        ])->name('manager.account.edit.profile');
+
+        // Manage Token
+        Route::get('/manager/token/list', 'TokenController@list')->defaults('_config', [
+            'view' => 'manager::token.list'
+        ])->name('manager.token.list');
+
+        Route::post('/manager/token/generate', 'TokenController@createToken')->name('manager.token.generate');
+
+        // Manage Logout
+        Route::get('/manager/logout', 'AuthController@managerLogout')->defaults('_config', [
+            'view' => 'manager::auth.login'
+        ])->name('manager.auth.logout');
 
     });
+
+// Auth Controller
+    Route::get('/manager/login', 'AuthController@index')->defaults('_config', [
+        'view' => 'manager::auth.login'
+    ])->name('manager.auth.view')->middleware('web');
+    Route::post('/manager/login', 'AuthController@managerLogin')->name('manager.auth.login');
 
 });
