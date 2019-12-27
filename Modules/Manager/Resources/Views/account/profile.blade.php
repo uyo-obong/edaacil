@@ -17,7 +17,7 @@
                     </div>
                     <div class="col-lg-5 col-md-6 col-sm-12">
                         <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
-                        <a href="profile-edit.html" class="btn btn-info btn-icon float-right"><i class="zmdi zmdi-edit"></i></a>
+                        <a href="{{ route('manager.account.edit.profile') }}" class="btn btn-info btn-icon float-right"><i class="zmdi zmdi-edit"></i></a>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                     <div class="col-lg-4 col-md-12">
                         <div class="card mcard_3">
                             <div class="body">
-                                <a href="profile.html"><img src="{{ URL::to('assets/images/profile_av.jpg') }}" class="rounded-circle shadow " alt="profile-image"></a>
+                                <a href="#"><img src="{{ URL::to('assets/images/profile_av.jpg') }}" class="rounded-circle shadow " alt="profile-image"></a>
                                 <h4 class="m-t-10">{{ auth()->user()->fullName() }}</h4>
                                 <div class="row">
                                     <div class="col-12">

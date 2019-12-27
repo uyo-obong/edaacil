@@ -4,6 +4,7 @@ namespace Edaacil\Modules\Manager\Http\Controllers;
 
 use Edaacil\Modules\BaseController;
 use Edaacil\Modules\Manager\Http\Repositories\AccountRepository;
+use Illuminate\Support\Facades\Auth;
 
 class AccountController extends BaseController
 {
@@ -37,8 +38,22 @@ class AccountController extends BaseController
         return view($this->_config['view']);
     }
 
+    /**
+     * Return profile page
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function profile()
     {
         return view($this->_config['view']);
+    }
+
+    /**
+     * Return Edit profile page
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function editProfile()
+    {
+        $manager = Auth::user();
+        return view($this->_config['view'], ['manager' => $manager]);
     }
 }

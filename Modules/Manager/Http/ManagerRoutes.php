@@ -18,6 +18,10 @@ Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], functi
             'view' => 'manager::account.profile'
         ])->name('manager.account.profile');
 
+        Route::get('/manager/account/edit/profile', 'AccountController@editProfile')->defaults('_config', [
+            'view' => 'manager::account.edit_profile'
+        ])->name('manager.account.edit.profile');
+
         // Manage Token
         Route::get('/manager/token/list', 'TokenController@list')->defaults('_config', [
             'view' => 'manager::token.list'
