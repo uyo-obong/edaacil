@@ -19,7 +19,8 @@ class ManagerCheck
         if (! Auth::user()) {
             return redirect(route('manager.auth.view'));
         }
-        if (!Auth::user()->role == 'Manager')
+
+        if (Auth::user()->role !== 'Manager')
         {
             return redirect('/manager/login');
         }

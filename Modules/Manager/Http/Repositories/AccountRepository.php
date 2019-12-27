@@ -16,31 +16,23 @@ class AccountRepository extends BaseRepository
     }
 
     public function createAgentAccount(array $agentData){
-        $data = (object)$agentData;
-        Manager::create([
-           'id'=>$this->generateUuid(),
-           'first_name'=>$data->first_name,
-           'last_name'=>$data->last_name,
-           'email'=>$data->email,
-           'phone_no'=>$data->phone_no,
-           'role'=>$data->role,
-           'status'=>'Active',
-           'address'=>$data->address,
-           'city'=>$data->city,
-           'state'=>$data->state,
-           'country'=>$data->country,
-            'password'=>Hash::make('password'),
-        ]);
-        return redirect()->back()->with('success', 'Agent Created Successfully');
-    }
 
-    /**
-     * @param $id
-     * @return mixed
-     */
-    public function editAgents($id){
-        $manager = Manager::where('id', $id)->first();
-        return $manager;
+        $data = (object)$agentData;
+
+        return $this->model()::create([
+            'id'             => $this->generateUuid(),
+            'first_name'     => $data->first_name,
+            'last_name'      => $data->last_name,
+            'email'          => $data->email,
+            'phone_number'   => $data->phone_no,
+            'role'           => $data->role,
+            'status'         => 'Active',
+            'address'        => $data->address,
+            'city'           => $data->city,
+            'state'          => $data->state,
+            'country'        => $data->country,
+            'password'       => Hash::make('password'),
+        ]);
     }
 
     public function updateAgentAccount(array $request,$id){
@@ -52,6 +44,15 @@ class AccountRepository extends BaseRepository
             'status'=>$data->staus,
         ]);
         return back()->with('success','Agent Updated Successfully');
+    }
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function editAgents($id){
+        $manager = Manager::where('id', $id)->first();
+        return $manager;
     }
 
 }

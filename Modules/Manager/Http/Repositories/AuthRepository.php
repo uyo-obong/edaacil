@@ -25,8 +25,13 @@ class AuthRepository extends BaseRepository
     public function managerLogin(array $loginRequest)
     {
         $credentials = collect($loginRequest)->only('email', 'password');
-        if (Auth::attempt(['email' => $credentials['email'], 'password' => $credentials['password']])) {
-            $auth = auth()->user()->where('role', 'Manager')->first();
+
+        Auth::attempt([
+            'email' => $credentials['email'],
+            'password' => $credentials['password']
+        ]);
+
+        if (auth()->user()->role == 'Manager') {
 
             return redirect('/manager');
         }

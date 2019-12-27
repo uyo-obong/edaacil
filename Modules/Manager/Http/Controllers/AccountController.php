@@ -5,6 +5,7 @@ namespace Edaacil\Modules\Manager\Http\Controllers;
 use Edaacil\Modules\BaseController;
 use Edaacil\Modules\Manager\Http\Repositories\AccountRepository;
 
+use Edaacil\Modules\Manager\Http\Requests\CreateAccountRequest;
 use Edaacil\Modules\Manager\Http\Requests\UpdateAgentAccount;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -52,22 +53,16 @@ class AccountController extends BaseController
         return view($this->_config['view']);
     }
 
-
-    public function createAgentAccount(Request $createAgentAccount){
-
-        Validator::make($createAgentAccount->all(), [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required',
-            'phone_no' => 'required',
-            'address' => 'required',
-            'city' => 'required',
-            'state' => 'required',
-            'country' => 'required',
-        ]);
-
-//        dd($createAgentAccount->all());
-        return $this->accountRepository->createAgentAccount($createAgentAccount->all());
+    /**
+     * Create new account
+     * @param CreateAccountRequest $createAccount
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function createAgentAccount(CreateAccountRequest $createAccount){
+        $account =  $this->accountRepository->createAgentAccount($createAccount->all());
+        if ($account)
+            session()->flash('success', 'Account Created Successfully');
+            return redirect()->back();
     }
 
 
