@@ -22,6 +22,9 @@ Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], functi
             'view' => 'manager::account.edit_profile'
         ])->name('manager.account.edit.profile');
 
+        Route::post('/manager/account/create/agent','AccountController@createAgentAccount')->name('manager.account.create.agent');
+        Route::post('/manager/account/update/agent', 'AccountController@updateAgentAccount')->name('manager.account.update.agent');
+
         // Manage Token
         Route::get('/manager/token/list', 'TokenController@list')->defaults('_config', [
             'view' => 'manager::token.list'
