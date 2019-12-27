@@ -748,6 +748,7 @@ class ComposerStaticInit1cf8063ab5a671ae5209e2147991a690
         'Edaacil\\Modules\\Manager\\Http\\Repositories\\ManagerRepository' => __DIR__ . '/../..' . '/Modules/Manager/Http/Repositories/ManagerRepository.php',
         'Edaacil\\Modules\\Manager\\Http\\Repositories\\TokenRepository' => __DIR__ . '/../..' . '/Modules/Manager/Http/Repositories/TokenRepository.php',
         'Edaacil\\Modules\\Manager\\Http\\Requests\\AgentLoginRequest' => __DIR__ . '/../..' . '/Modules/Agent/Http/Requests/LoginRequest.php',
+        'Edaacil\\Modules\\Manager\\Http\\Requests\\GenerateTokenRequest' => __DIR__ . '/../..' . '/Modules/Manager/Http/Requests/GenerateTokenRequest.php',
         'Edaacil\\Modules\\Manager\\Http\\Requests\\LoginRequest' => __DIR__ . '/../..' . '/Modules/Manager/Http/Requests/LoginRequest.php',
         'Edaacil\\Modules\\Manager\\ManagerServiceProvider' => __DIR__ . '/../..' . '/Modules/Manager/ManagerServiceProvider.php',
         'Edaacil\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',

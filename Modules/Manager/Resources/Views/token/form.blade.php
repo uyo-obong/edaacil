@@ -7,7 +7,7 @@
             <form id="form_validation" method="POST" action="{{ route('manager.token.generate') }}">
                 <div class="modal-body">
                     <div class="form-group form-float">
-                        <input type="number" class="form-control" placeholder="Enter amount of pin" name="token" required aria-required="true">
+                        <input type="number" class="form-control" placeholder="Enter amount of pin" name="name" required aria-required="true">
                     </div>
 
                 </div>
