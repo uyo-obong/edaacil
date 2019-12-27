@@ -50,6 +50,7 @@ class TokenController extends BaseController
     {
         $token = $this->tokenRepository->createToken($request->all());
         if ($token)
+            session()->flash('success', 'Token(s) has been generated successfully.');
             return redirect(route('manager.token.list'));
     }
 }

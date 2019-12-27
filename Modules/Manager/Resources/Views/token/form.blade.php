@@ -8,6 +8,7 @@
                 <div class="modal-body">
                     <div class="form-group form-float">
                         <input type="number" class="form-control" placeholder="Enter amount of pin" name="name" required aria-required="true">
+                        <small>Maximum tokens to generate at a time is 50</small>
                     </div>
 
                 </div>

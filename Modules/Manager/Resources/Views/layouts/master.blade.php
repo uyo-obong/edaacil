@@ -78,6 +78,9 @@
 
 <script src="{{ URL::to('assets/bundles/fullcalendarscripts.bundle.js') }}"></script>
 <script src="{{ URL::to('assets/js/pages/calendar/calendar.js') }}"></script>
+
+<script src="{{ URL::to('assets/plugins/bootstrap-notify/bootstrap-notify.js') }}"></script> <!-- Bootstrap Notify Plugin Js -->
+@include('manager::utiles.notifications.notify')
 </body>
 
 </html>

@@ -16,11 +16,11 @@
                     </div>
                 </div>
             </li>
-            <li class="active open"><a href="/manager"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+            <li  class="{{ request()->is('manager') ? 'active open' : '' }}"><a href="/manager"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
 
-            <li><a href="{{ route('manager.token.list') }}"><i class="zmdi zmdi-spinner"></i><span>Generate Token</span></a></li>
+            <li class="{{ request()->is('manager/token/list') ? 'active open' : '' }}"><a href="{{ route('manager.token.list') }}"><i class="zmdi zmdi-spinner"></i><span>Generate Token</span></a></li>
 
-            <li><a href="{{ route('manager.account.list') }}"><i class="zmdi zmdi-accounts-list"></i><span>Manage Account</span></a>
+            <li class="{{ request()->is('manager/account/list') ? 'active open' : '' }}"><a href="{{ route('manager.account.list') }}"><i class="zmdi zmdi-accounts-list"></i><span>Manage Account</span></a>
             </li>
 
         </ul>
