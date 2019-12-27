@@ -18,7 +18,7 @@ class CreateManagersTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->unique();
-            $table->string('phone_number');
+            $table->string('phone_no');
             $table->enum('role',['Manager','Agent']);
             $table->enum('status',['Active','Disabled'])->default('Active');
             $table->string('address');

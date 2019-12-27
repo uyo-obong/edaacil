@@ -4,7 +4,7 @@
             <div class="modal-header">
                 <h4 class="title" id="largeModalLabel">Add Account</h4>
             </div>
-            <form id="form_validation" method="POST" action="">
+            <form id="form_validation" method="post" action="{{ route('manager.account.create.agent') }}">
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
