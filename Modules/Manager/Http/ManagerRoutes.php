@@ -10,6 +10,7 @@ Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], functi
         'view' => 'manager::account.list'
     ])->name('manager.account.list');
 
+
     Route::get('/manager/token/list', 'TokenController@list')->defaults('_config', [
         'view' => 'manager::token.list'
     ])->name('manager.token.list');
@@ -23,9 +24,15 @@ Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], functi
     Route::get('/manager/login/form', 'AuthController@showManagerLoginForm');
     Route::post('/login', 'AuthController@managerLogin');
     Route::post('/logout', 'AuthController@logout');
-        // MANAGER MIDDLEWARE ROUTE
+
+    Route::post('/create/agent', 'AccountController@createAgentAccount')->name('createAgent');
+    Route::get('agents', 'AccountController@listAgents');
+    Route::get('agents/edit/{id}', 'AccountController@editAgents');
+    Route::put('agents/update/{id}', 'AccountController@updateAgents');
+
+    // MANAGER MIDDLEWARE ROUTE
     Route::middleware(['manager'])->group(function () {
-        Route::post('/create/agent', 'AccountController@managerCreateAgent');
+
     });
 
 });

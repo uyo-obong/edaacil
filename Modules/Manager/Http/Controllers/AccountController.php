@@ -4,6 +4,8 @@ namespace Edaacil\Modules\Manager\Http\Controllers;
 
 use Edaacil\Modules\BaseController;
 use Edaacil\Modules\Manager\Http\Repositories\AccountRepository;
+use Edaacil\Modules\Manager\Http\Requests\CreateAgentAccount;
+use Edaacil\Modules\Manager\Http\Requests\UpdateAgentAccount;
 
 class AccountController extends BaseController
 {
@@ -37,7 +39,21 @@ class AccountController extends BaseController
         return view($this->_config['view']);
     }
 
-    public function managerCreateAgent(){
+    public function createAgentAccount(CreateAgentAccount $createAgentAccount){
+        return $this->accountRepository->createAgentAccount($createAgentAccount->all());
+    }
 
+    public function listAgents(){
+
+    }
+
+    public function editAgents($id){
+        $manager = $this->accountRepository->editAgents($id);
+        return view($this->_config['view'], ['manager' => $manager]);
+
+    }
+
+    public function updateAgents(UpdateAgentAccount $updateAgentAccount,$id){
+        return $this->accountRepository->updateAgents($updateAgentAccount->all(),$id);
     }
 }
