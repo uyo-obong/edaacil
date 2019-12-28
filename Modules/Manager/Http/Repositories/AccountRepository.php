@@ -20,7 +20,7 @@ class AccountRepository extends BaseRepository
      * @return mixed
      * @throws \Exception
      */
-    public function createAgentAccount(array $agentData){
+    public function createAccount(array $agentData){
 
         $data = (object)$agentData;
 

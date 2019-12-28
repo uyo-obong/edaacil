@@ -62,7 +62,7 @@
                                                 <td>{{ $account->phone_number }}</td>
                                                 <td>{{ $account->status }}</td>
                                                 <td>{{ $account->role }}</td>
-                                                <td><a data-toggle="modal" data-target="#viewAccountModal" type="button" href="#"><i class="float-left btn btn-primary zmdi zmdi-eye"></i></a>  <a data-toggle="modal" data-email="{{ $account->email }}" data-status="{{ $account->status }}" data-id="{{ $account->id }}" data-target="#editAccountModal" type="button" href="#"><i class="editAccountModal float-right btn btn-success zmdi zmdi-edit"></i></a> </td>
+                                                <td> @include('manager::account.buttons.view')  @include('manager::account.buttons.edit')  </td>
                                             </tr>
                                         @endforeach
 
@@ -96,6 +96,30 @@
             modal.find('.modal-body #accountId').val(accountId);
             modal.find('.modal-body #email').val(email);
             modal.find('.modal-body #status').val(status).change();
-        })
+        });
+    </script>
+
+    <script>
+        $('#viewAccountModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var fullName = button.data('name');
+            var role = button.data('role');
+            var email = button.data('email');
+            var phone = button.data('phone');
+            var address = button.data('address');
+            var city = button.data('city');
+            var state = button.data('state');
+            var country = button.data('country');
+
+            var modal = $(this);
+            modal.find('.modal-body #fullName').text(fullName);
+            modal.find('.modal-body #role').text('Edaacil '+role);
+            modal.find('.modal-body #email').text(email);
+            modal.find('.modal-body #phone').text(phone);
+            modal.find('.modal-body #address').text(address);
+            modal.find('.modal-body #city').text(city);
+            modal.find('.modal-body #state').text(state);
+            modal.find('.modal-body #country').text(country);
+        });
     </script>
 @endpush

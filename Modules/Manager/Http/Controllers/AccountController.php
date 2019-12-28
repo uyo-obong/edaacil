@@ -68,8 +68,9 @@ class AccountController extends BaseController
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
-    public function createAgentAccount(CreateAccountRequest $createAccount){
-        $account =  $this->accountRepository->createAgentAccount($createAccount->all());
+    public function createAccount(CreateAccountRequest $createAccount)
+    {
+        $account =  $this->accountRepository->createAccount($createAccount->all());
         if ($account)
             session()->flash('success', 'Account Created Successfully');
         return redirect()->back();

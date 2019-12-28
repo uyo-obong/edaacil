@@ -22,7 +22,7 @@ Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], functi
             'view' => 'manager::account.edit_profile'
         ])->name('manager.account.edit.profile');
 
-        Route::post('/manager/account/create','AccountController@createAgentAccount')->name('manager.account.create.agent');
+        Route::post('/manager/account/create','AccountController@createAccount')->name('manager.account.create.agent');
         Route::put('/manager/account/update', 'AccountController@updateAccount')->name('manager.account.update');
 
         // Manage Token
