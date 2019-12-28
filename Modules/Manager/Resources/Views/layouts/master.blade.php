@@ -81,6 +81,8 @@
 
 <script src="{{ URL::to('assets/plugins/bootstrap-notify/bootstrap-notify.js') }}"></script> <!-- Bootstrap Notify Plugin Js -->
 @include('manager::utiles.notifications.notify')
+
+@stack('scripts')
 </body>
 
 </html>

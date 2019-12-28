@@ -54,24 +54,17 @@
                                         </tr>
                                         </tfoot>
                                         <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Tiger Nixon Accountant</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                            <td><a data-toggle="modal" data-target="#viewAccountModal" type="button" href="#"><i class="float-left btn btn-primary zmdi zmdi-eye"></i></a>  <a data-toggle="modal" data-target="#editAccountModal" type="button" href="#"><i class="float-right btn btn-success zmdi zmdi-edit"></i></a> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Garrett Winters Accountant</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>2011/07/25</td>
-                                            <td>$170,750</td>
-                                            <td><a data-toggle="modal" data-target="#viewAccountModal" type="button" href="#"><i class="float-left btn btn-primary zmdi zmdi-eye"></i></a>  <a data-toggle="modal" data-target="#editAccountModal" type="button" href="#"><i class="float-right btn btn-success zmdi zmdi-edit"></i></a> </td>
-                                        </tr>
+                                        @foreach( $accounts as $account)
+                                            <tr>
+                                                <td>{{ $loop->index + 1 }}</td>
+                                                <td>{{ $account->fullName() }}</td>
+                                                <td>{{ $account->email }}</td>
+                                                <td>{{ $account->phone_number }}</td>
+                                                <td>{{ $account->status }}</td>
+                                                <td>{{ $account->role }}</td>
+                                                <td><a data-toggle="modal" data-target="#viewAccountModal" type="button" href="#"><i class="float-left btn btn-primary zmdi zmdi-eye"></i></a>  <a data-toggle="modal" data-email="{{ $account->email }}" data-status="{{ $account->status }}" data-id="{{ $account->id }}" data-target="#editAccountModal" type="button" href="#"><i class="editAccountModal float-right btn btn-success zmdi zmdi-edit"></i></a> </td>
+                                            </tr>
+                                        @endforeach
 
                                         </tbody>
                                     </table>
@@ -90,3 +83,19 @@
     @include('manager::account.edit_account')
     @include('manager::account.view_account')
 @stop
+
+@push('scripts')
+    <script>
+        $('#editAccountModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var accountId = button.data('id');
+            var email = button.data('email');
+            var status = button.data('status');
+
+            var modal = $(this);
+            modal.find('.modal-body #accountId').val(accountId);
+            modal.find('.modal-body #email').val(email);
+            modal.find('.modal-body #status').val(status).change();
+        })
+    </script>
+@endpush
