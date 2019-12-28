@@ -18,4 +18,21 @@ class ManagerRepository extends BaseRepository
 
 
 
+    public function updateManagerInformation(array $request,$id){
+
+        $data = (object) $request;
+        $manager = $this->model()->where('id', $id)->first();
+        $manager->update([
+            'first_name'=>$data->first_name,
+            'last_name'=>$data->last_name,
+            'email'=>$data->email,
+            'phone_no'=>$data->phone_no,
+            'address'=>$data->address,
+            'city'=>$data->city,
+            'state'=>$data->state,
+            'country'=>$data->country,
+        ]);
+    }
+
+
 }

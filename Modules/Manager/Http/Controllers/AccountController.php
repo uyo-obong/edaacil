@@ -76,19 +76,7 @@ class AccountController extends BaseController
         return view($this->_config['view'], ['manager' => $manager]);
     }
 
-    /**
-     * @param UpdateAgentAccount $updateAgentAccount
-     * @param $id
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function updateAgentAccount(Request $updateAgentAccount,$id){
-        Validator::make($updateAgentAccount->all(), [
-            'email' => 'required',
-            'status'=> 'required',
-        ]);
 
-        return $this->accountRepository->updateAgentAccount($updateAgentAccount->all(),$id);
-    }
 
 
 

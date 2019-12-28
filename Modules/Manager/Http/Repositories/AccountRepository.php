@@ -35,17 +35,6 @@ class AccountRepository extends BaseRepository
         ]);
     }
 
-    public function updateAgentAccount(array $request,$id){
-
-        $data = (object) $request;
-        $manager = Manager::where('id', $id)->first();
-        $manager->update([
-            'email'=>$data->email,
-            'status'=>$data->staus,
-        ]);
-        return back()->with('success','Agent Updated Successfully');
-    }
-
     /**
      * @param $id
      * @return mixed

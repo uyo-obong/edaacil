@@ -20,6 +20,7 @@ class TokenRepository extends BaseRepository
      * @return array|mixed
      * @throws \Exception
      */
+    #this calls the generateToken Logic
     public function createToken(array $data)
     {
         $token = [];
@@ -42,6 +43,8 @@ class TokenRepository extends BaseRepository
      * @param $data
      * @return array
      */
+
+    # This function generate tokens without and endpoint
     private function generateToken($data) :array
     {
         $data = (object)$data;

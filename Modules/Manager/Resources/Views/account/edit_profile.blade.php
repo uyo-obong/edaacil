@@ -31,7 +31,7 @@
                                 <h2><strong>Security</strong> Settings</h2>
                             </div>
                             <div class="body">
-                                <form id="form_validation" method="POST" action="">
+                                <form id="form_validation" method="post" action="">
                                     <div class="row">
                                         <div class="col-lg-4 col-md-12">
                                             <div class="form-group">
@@ -61,7 +61,7 @@
                                 <h2><strong>Account</strong> Settings</h2>
                             </div>
                             <div class="body">
-                                <form id="form_validation" method="POST" action="">
+                                <form id="form_validation" method="post" action="{{route('manager.account.manager.update.profile')}}">
                                     <div class="row clearfix">
 
                                         <div class="col-lg-12 col-md-12">
@@ -102,7 +102,7 @@
 
                                                         <div class="col-lg-6 col-md-6">
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" value="{{ $manager->phone_number }}" placeholder="Phone Number">
+                                                                <input type="text" class="form-control" value="{{ $manager->phone_no }}" placeholder="Phone Number">
                                                             </div>
                                                         </div>
 
