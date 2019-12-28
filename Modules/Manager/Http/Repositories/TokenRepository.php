@@ -57,4 +57,14 @@ class TokenRepository extends BaseRepository
 
         return $randomTokens;
     }
+
+    /**
+     * Delete pin from database
+     * @param $tokenId
+     * @return mixed
+     */
+    public function deleteToken($tokenId)
+    {
+       return $this->model()::where('id', $tokenId)->delete();
+    }
 }

@@ -53,4 +53,17 @@ class TokenController extends BaseController
             session()->flash('success', 'Token(s) has been generated successfully.');
             return redirect(route('manager.token.list'));
     }
+
+    /**
+     * Delete pin from database
+     * @param $tokenId
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function deleteToken($tokenId)
+    {
+        $token = $this->tokenRepository->deleteToken($tokenId);
+        if ($token)
+            session()->flash('success', 'Token has been deleted successfully.');
+            return redirect()->back();
+    }
 }

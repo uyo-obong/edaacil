@@ -58,7 +58,11 @@
                                                 <td><a class="{{ $token->status == 'Unused' ? 'badge-primary' : 'badge-danger' }}" href="">{{ $token->status }}</a></td>
                                                 <td>____</td>
                                                 <td>{{ $token->created_at->diffForHumans() }}</td>
-                                                <td><a class="btn btn-danger" href="">Delete</a> </td>
+                                                <form action="{{ route('manager.token.delete', $token->id) }}" method="POST">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                    <td><button class="btn btn-danger">Delete</button></td>
+                                                </form>
                                             </tr>
                                         @endforeach
 
