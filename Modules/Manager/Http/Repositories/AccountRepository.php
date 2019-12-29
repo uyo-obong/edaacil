@@ -2,9 +2,11 @@
 
 namespace Edaacil\Modules\Manager\Http\Repositories;
 
+use Edaacil\Mail\SendWelcomeEmailToNewAgent;
 use Edaacil\Modules\BaseRepository;
 use Edaacil\Modules\Manager\Http\Models\Manager;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class AccountRepository extends BaseRepository
 {
@@ -24,7 +26,7 @@ class AccountRepository extends BaseRepository
 
         $data = (object)$agentData;
 
-        return $this->model()::create([
+        $manager =  $this->model()::create([
             'id'             => $this->generateUuid(),
             'first_name'     => $data->first_name,
             'last_name'      => $data->last_name,
@@ -36,8 +38,11 @@ class AccountRepository extends BaseRepository
             'city'           => $data->city,
             'state'          => $data->state,
             'country'        => $data->country,
-            'password'       => Hash::make('password'),
+            'password'       => Hash::make(str_random(6)),
+
         ]);
+        Mail::to($data['email'])->send(new SendWelcomeEmailToNewAgent($manager));
+
     }
 
     /**
