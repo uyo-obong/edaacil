@@ -4,6 +4,7 @@ namespace Edaacil\Modules\Manager\Http\Repositories;
 
 use Edaacil\Modules\BaseRepository;
 use Edaacil\Modules\Manager\Http\Models\Manager;
+use function Edaacil\Http\Helpers\imageUploader;
 
 class ManagerRepository extends BaseRepository
 {
@@ -31,6 +32,7 @@ class ManagerRepository extends BaseRepository
             'city'=>$data->city,
             'state'=>$data->state,
             'country'=>$data->country,
+            'image_uploader'=> 'profileImages/'.imageUploader($data),
         ]);
     }
 

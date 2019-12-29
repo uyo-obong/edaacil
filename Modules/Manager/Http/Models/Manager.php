@@ -29,7 +29,8 @@ class Manager extends Authenticatable
         'state',
         'country',
         'password',
-    ];
+        'image_uploader',
+];
     /**
      * @var bool
      */
