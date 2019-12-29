@@ -4,16 +4,12 @@ Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], functi
 
     // MANAGER MIDDLEWARE ROUTE
     Route::group(['middleware' => ['auth', 'manager']], function ()  {
-            // Manager Controller
+
         Route::get('/manager', 'ManagerController@dashboard')->defaults('_config', [
             'view' => 'manager::dashboard'
         ])->name('manager.dashboard.view');
 
-        Route::post('/manager/account/manager/update/profile', 'ManagerController@updateManagerInformation')->name('manager.account.manager.update.profile');
-
-
-
-            //  Account Controller
+        // Manage Account
         Route::get('/manager/account/list', 'AccountController@list')->defaults('_config', [
             'view' => 'manager::account.list'
         ])->name('manager.account.list');
@@ -22,23 +18,23 @@ Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], functi
             'view' => 'manager::account.profile'
         ])->name('manager.account.profile');
 
-
-
         Route::get('/manager/account/edit/profile', 'AccountController@editProfile')->defaults('_config', [
             'view' => 'manager::account.edit_profile'
         ])->name('manager.account.edit.profile');
 
-        Route::post('/manager/account/create','AccountController@createAgentAccount')->name('manager.account.create.agent');
-        Route::post('/manager/account/update', 'AccountController@updateAgentAccount')->name('manager.account.update.agent');
+        Route::post('/manager/account/create','AccountController@createAccount')->name('manager.account.create.agent');
+        Route::put('/manager/account/update', 'AccountController@updateAccount')->name('manager.account.update');
 
-            // Token Controller
+        // Manage Token
         Route::get('/manager/token/list', 'TokenController@list')->defaults('_config', [
             'view' => 'manager::token.list'
         ])->name('manager.token.list');
 
         Route::post('/manager/token/generate', 'TokenController@createToken')->name('manager.token.generate');
 
-            // Auth Controller
+        Route::delete('/manager/token/{tokenId}/delete', 'TokenController@deleteToken')->name('manager.token.delete');
+
+        // Manage Logout
         Route::get('/manager/logout', 'AuthController@managerLogout')->defaults('_config', [
             'view' => 'manager::auth.login'
         ])->name('manager.auth.logout');

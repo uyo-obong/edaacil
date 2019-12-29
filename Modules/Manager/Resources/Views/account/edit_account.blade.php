@@ -4,18 +4,20 @@
             <div class="modal-header">
                 <h4 class="title" id="mediumModalLabel">Edit Account</h4>
             </div>
-            <form id="form_validation" method="post" action="{{route('manager.account.update.agent')}}">
+            <form id="form_validation" method="post" action="{{ route('manager.account.update') }}">
                 <div class="modal-body">
+                    {{ method_field('PUT') }}
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" id="accountId" name="accountId" value="">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group form-float">
-                                <input type="text" class="form-control" placeholder="Email Address" name="email" required>
+                                <input type="text" class="form-control" id="email" value="" placeholder="Email Address" name="email" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group form-float">
-                                <select  class="form-control show-tick" name="role" required>
-                                    <option value="">-- Please select status --</option>
+                                <select  class="form-control show-tick" id="status" name="status" required>
                                     <option value="Active">Active</option>
                                     <option value="Disabled">Disabled</option>
                                 </select>
@@ -32,3 +34,4 @@
         </div>
     </div>
 </div>
+

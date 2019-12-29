@@ -53,6 +53,10 @@ class Manager extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * Return full name
+     * @return string
+     */
     public function fullName()
     {
         return $this->first_name . ' ' . $this->last_name;

@@ -5,7 +5,6 @@ namespace Edaacil\Modules\Manager\Http\Repositories;
 use Edaacil\Modules\BaseRepository;
 use Edaacil\Modules\Manager\Http\Models\Manager;
 use Illuminate\Support\Facades\Hash;
-use Ramsey\Uuid\Uuid;
 
 class AccountRepository extends BaseRepository
 {
@@ -15,7 +14,13 @@ class AccountRepository extends BaseRepository
         return Manager::class;
     }
 
-    public function createAgentAccount(array $agentData){
+    /**
+     * Create account
+     * @param array $agentData
+     * @return mixed
+     * @throws \Exception
+     */
+    public function createAccount(array $agentData){
 
         $data = (object)$agentData;
 
@@ -36,12 +41,19 @@ class AccountRepository extends BaseRepository
     }
 
     /**
-     * @param $id
+     * Update account
+     * @param array $request
      * @return mixed
      */
-    public function editAgents($id){
-        $manager = Manager::where('id', $id)->first();
-        return $manager;
+    public function updateAccount(array $request){
+        $data = (object) $request;
+
+        $manager = $this->model()::where('id', $data->accountId)->first();
+        return $manager->update([
+            'email'  => $data->email,
+            'status' => $data->status,
+        ]);
+
     }
 
 }

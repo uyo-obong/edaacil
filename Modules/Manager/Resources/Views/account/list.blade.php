@@ -54,24 +54,17 @@
                                         </tr>
                                         </tfoot>
                                         <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Tiger Nixon Accountant</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                            <td><a data-toggle="modal" data-target="#viewAccountModal" type="button" href="#"><i class="float-left btn btn-primary zmdi zmdi-eye"></i></a>  <a data-toggle="modal" data-target="#editAccountModal" type="button" href="#"><i class="float-right btn btn-success zmdi zmdi-edit"></i></a> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Garrett Winters Accountant</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>2011/07/25</td>
-                                            <td>$170,750</td>
-                                            <td><a data-toggle="modal" data-target="#viewAccountModal" type="button" href="#"><i class="float-left btn btn-primary zmdi zmdi-eye"></i></a>  <a data-toggle="modal" data-target="#editAccountModal" type="button" href="#"><i class="float-right btn btn-success zmdi zmdi-edit"></i></a> </td>
-                                        </tr>
+                                        @foreach( $accounts as $account)
+                                            <tr>
+                                                <td>{{ $loop->index + 1 }}</td>
+                                                <td>{{ $account->fullName() }}</td>
+                                                <td>{{ $account->email }}</td>
+                                                <td>{{ $account->phone_number }}</td>
+                                                <td>{{ $account->status }}</td>
+                                                <td>{{ $account->role }}</td>
+                                                <td> @include('manager::account.buttons.view')  @include('manager::account.buttons.edit')  </td>
+                                            </tr>
+                                        @endforeach
 
                                         </tbody>
                                     </table>
@@ -90,3 +83,43 @@
     @include('manager::account.edit_account')
     @include('manager::account.view_account')
 @stop
+
+@push('scripts')
+    <script>
+        $('#editAccountModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var accountId = button.data('id');
+            var email = button.data('email');
+            var status = button.data('status');
+
+            var modal = $(this);
+            modal.find('.modal-body #accountId').val(accountId);
+            modal.find('.modal-body #email').val(email);
+            modal.find('.modal-body #status').val(status).change();
+        });
+    </script>
+
+    <script>
+        $('#viewAccountModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var fullName = button.data('name');
+            var role = button.data('role');
+            var email = button.data('email');
+            var phone = button.data('phone');
+            var address = button.data('address');
+            var city = button.data('city');
+            var state = button.data('state');
+            var country = button.data('country');
+
+            var modal = $(this);
+            modal.find('.modal-body #fullName').text(fullName);
+            modal.find('.modal-body #role').text('Edaacil '+role);
+            modal.find('.modal-body #email').text(email);
+            modal.find('.modal-body #phone').text(phone);
+            modal.find('.modal-body #address').text(address);
+            modal.find('.modal-body #city').text(city);
+            modal.find('.modal-body #state').text(state);
+            modal.find('.modal-body #country').text(country);
+        });
+    </script>
+@endpush

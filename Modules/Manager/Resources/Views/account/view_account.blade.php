@@ -15,28 +15,28 @@
                                             <img src="{{ URL::to('assets/images/lg/avatar2.jpg') }}" class="rounded-circle" alt="profile-image">
                                         </div>
                                         <div class="user">
-                                            <h5 class="mt-3 mb-1">Fidel Tonn</h5>
-                                            <div class="btn btn-outline-success">Edaacil Agent</div>
-                                            <small class="text-muted">fidel.tonn@gmail.com</small>
+                                            <h5 class="mt-3 mb-1" id="fullName"></h5>
+                                            <div class="btn btn-outline-success" id="role"></div>
+                                            <small class="text-muted" id="email"></small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-8 col-md-12">
                                 <small class="text-muted">Phone Number: </small>
-                                <p>08097554655</p>
+                                <p id="phone"></p>
                                 <hr>
                                 <small class="text-muted">Address: </small>
-                                <p>100unit, Uyo</p>
+                                <p id="address"></p>
                                 <hr>
                                 <small class="text-muted">City: </small>
-                                <p>Uyo</p>
+                                <p id="city"></p>
                                 <hr>
                                 <small class="text-muted">State: </small>
-                                <p>Akwa Ibom</p>
+                                <p id="state"></p>
                                 <hr>
                                 <small class="text-muted">Country: </small>
-                                <p>Ghana</p>
+                                <p id="country"></p>
                                 <hr>
 
                             </div>
