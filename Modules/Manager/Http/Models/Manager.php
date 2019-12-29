@@ -21,7 +21,7 @@ class Manager extends Authenticatable
         'first_name',
         'last_name',
         'email',
-        'phone_number',
+        'phone_no',
         'role',
         'status',
         'address',

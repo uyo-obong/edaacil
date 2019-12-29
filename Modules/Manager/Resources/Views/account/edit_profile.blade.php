@@ -31,7 +31,7 @@
                                 <h2><strong>Security</strong> Settings</h2>
                             </div>
                             <div class="body">
-                                <form id="form_validation" method="POST" action="">
+                                <form id="form_validation" method="post" action="">
                                     <div class="row">
                                         <div class="col-lg-4 col-md-12">
                                             <div class="form-group">
@@ -61,7 +61,8 @@
                                 <h2><strong>Account</strong> Settings</h2>
                             </div>
                             <div class="body">
-                                <form id="form_validation" method="POST" action="">
+                                <form id="form_validation" method="post" action="{{route('manager.account.manager.update.profile')}}">
+                                    {{ method_field('PUT') }}
                                     <div class="row clearfix">
 
                                         <div class="col-lg-12 col-md-12">
@@ -73,6 +74,7 @@
                                                                 <img src="{{ URL::to('assets/images/image-gallery/5.jpg') }}" alt="img" class="img-fluid">
                                                             </div>
                                                             <div class="file-name">
+                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                                 <input type="hidden" value="{{ $manager->id }}" name="managerId">
                                                                 <input type="file" class="file">
                                                             </div>
@@ -89,7 +91,7 @@
                                                         </div>
 
                                                         <div class="col-lg-6 col-md-6">
-                                                            <div class="form-group">
+                                                                <div class="form-group">
                                                                 <input type="text" class="form-control" value="{{ $manager->first_name }}" placeholder="First Name" required>
                                                             </div>
                                                         </div>
@@ -102,7 +104,7 @@
 
                                                         <div class="col-lg-6 col-md-6">
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" value="{{ $manager->phone_number }}" placeholder="Phone Number">
+                                                                <input type="text" class="form-control" value="{{ $manager->phone_no }}" placeholder="Phone Number">
                                                             </div>
                                                         </div>
 

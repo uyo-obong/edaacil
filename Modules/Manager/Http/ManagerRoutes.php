@@ -8,6 +8,7 @@ Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], functi
         Route::get('/manager', 'ManagerController@dashboard')->defaults('_config', [
             'view' => 'manager::dashboard'
         ])->name('manager.dashboard.view');
+        Route::put('/manager/account/manager/update/profile', 'ManagerController@updateManagerInformation')->name('manager.account.manager.update.profile');
 
         // Manage Account
         Route::get('/manager/account/list', 'AccountController@list')->defaults('_config', [
@@ -17,6 +18,7 @@ Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], functi
         Route::get('/manager/account/profile', 'AccountController@profile')->defaults('_config', [
             'view' => 'manager::account.profile'
         ])->name('manager.account.profile');
+
 
         Route::get('/manager/account/edit/profile', 'AccountController@editProfile')->defaults('_config', [
             'view' => 'manager::account.edit_profile'
