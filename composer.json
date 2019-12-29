@@ -46,6 +46,10 @@
         "classmap": [
             "database/seeds",
             "database/factories"
+        ],
+
+        "file": [
+            "Edaacil/Http/Helpers"
         ]
     },
     "autoload-dev": {
