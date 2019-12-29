@@ -33,7 +33,7 @@ class ManagerController extends BaseController
 
     public function updateManagerInformation(UpdateMangerProfile $updateMangerProfile,$id)
     {
-
+        dd([$updateMangerProfile,$id]);
         $manager = $this->managerRepository->updateManagerInformation($updateMangerProfile->all(),$id);
         if ($manager)
             session()->flash('success', 'Manager-Profile Updated Successfully');

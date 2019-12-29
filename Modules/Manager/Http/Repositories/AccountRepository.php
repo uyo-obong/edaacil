@@ -24,7 +24,7 @@ class AccountRepository extends BaseRepository
             'first_name'     => $data->first_name,
             'last_name'      => $data->last_name,
             'email'          => $data->email,
-            'phone_number'   => $data->phone_no,
+            'phone_no'       => $data->phone_no,
             'role'           => $data->role,
             'status'         => 'Active',
             'address'        => $data->address,

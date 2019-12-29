@@ -89,7 +89,7 @@
                                                         </div>
 
                                                         <div class="col-lg-6 col-md-6">
-                                                            <div class="form-group">
+                                                                <div class="form-group">
                                                                 <input type="text" class="form-control" value="{{ $manager->first_name }}" placeholder="First Name" required>
                                                             </div>
                                                         </div>
