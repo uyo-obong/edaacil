@@ -62,6 +62,7 @@
                             </div>
                             <div class="body">
                                 <form id="form_validation" method="post" action="{{route('manager.account.manager.update.profile')}}">
+                                    {{ method_field('PUT') }}
                                     <div class="row clearfix">
 
                                         <div class="col-lg-12 col-md-12">
@@ -73,6 +74,7 @@
                                                                 <img src="{{ URL::to('assets/images/image-gallery/5.jpg') }}" alt="img" class="img-fluid">
                                                             </div>
                                                             <div class="file-name">
+                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                                 <input type="hidden" value="{{ $manager->id }}" name="managerId">
                                                                 <input type="file" class="file">
                                                             </div>

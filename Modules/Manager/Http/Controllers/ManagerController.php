@@ -31,10 +31,9 @@ class ManagerController extends BaseController
         return view($this->_config['view']);
     }
 
-    public function updateManagerInformation(UpdateMangerProfile $updateMangerProfile,$id)
+    public function updateManagerInformation(UpdateMangerProfile $updateMangerProfile)
     {
-        dd([$updateMangerProfile,$id]);
-        $manager = $this->managerRepository->updateManagerInformation($updateMangerProfile->all(),$id);
+        $manager = $this->managerRepository->updateManagerInformation($updateMangerProfile->all());
         if ($manager)
             session()->flash('success', 'Manager-Profile Updated Successfully');
         return redirect()->back();
