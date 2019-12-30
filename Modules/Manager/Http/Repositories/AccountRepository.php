@@ -25,6 +25,14 @@ class AccountRepository extends BaseRepository
     public function createAccount(array $agentData){
 
         $data = (object)$agentData;
+        // Available alphabetical characters
+        $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        // generate a pin based on 2 * 3 digits + a random character
+        $pin = mt_rand(100, 999). mt_rand(100, 999) . $characters[rand(2, strlen($characters) - 3)];
+
+        // shuffle the result
+        $string = str_shuffle($pin);
 
         $manager =  $this->model()::create([
             'id'             => $this->generateUuid(),
@@ -38,11 +46,9 @@ class AccountRepository extends BaseRepository
             'city'           => $data->city,
             'state'          => $data->state,
             'country'        => $data->country,
-            'password'       => Hash::make(str_random(6)),
-
+            'password'       => $string,
         ]);
-        Mail::to($data['email'])->send(new SendWelcomeEmailToNewAgent($manager));
-
+        Mail::to($data->email)->send(new SendWelcomeEmailToNewAgent($manager));
     }
 
     /**

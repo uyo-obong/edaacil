@@ -34,6 +34,7 @@ class SendWelcomeEmailToNewAgent extends Mailable
      */
     public function build()
     {
-        return $this->view($this->_config['view']);// please kindly create a view file that will return the random generated password to the agent.
+        return $this->view('emails.welcome');
+
     }
 }
