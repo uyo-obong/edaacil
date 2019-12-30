@@ -54,6 +54,7 @@ class AgentController extends BaseController
      */
     public function certificate()
     {
-        return view($this->_config['view']);
+        return $this->agentRepository->certificate();
     }
+
 }

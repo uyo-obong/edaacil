@@ -23,9 +23,9 @@
 
     <div class="card small_mcard_1">
         <div class="body">
-            <form id="form_validation" method="POST">
+            <form id="form_validation" method="GET" action="{{ route('agent.certificate.index') }}">
                 <div class="form-group form-float">
-                    <input type="number" class="form-control" placeholder="Enter Token To Proceed" name="token" required>
+                    <input type="text" class="form-control" placeholder="Enter Token To Proceed" name="token">
                 </div>
 
                 <div class="form-group form-float">

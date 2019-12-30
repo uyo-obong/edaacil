@@ -5,7 +5,6 @@ Route::group(['namespace' => 'Edaacil\Modules\Agent\Http\Controllers'], function
     // MANAGER MIDDLEWARE ROUTE
     Route::group(['middleware' => ['auth', 'agent']], function () {
 
-
         Route::get('/agent', 'AgentController@dashboard')->defaults('_config', [
             'view' => 'agent::dashboard'
         ])->name('agent.dashboard.view');
@@ -13,7 +12,6 @@ Route::group(['namespace' => 'Edaacil\Modules\Agent\Http\Controllers'], function
         Route::get('/agent/profile', 'AgentController@profile')->defaults('_config', [
             'view' => 'agent::data.profile'
         ])->name('agent.data.profile');
-
 
         Route::get('/agent/certificate', 'AgentController@certificate')->defaults('_config', [
             'view' => 'agent::certificate.index'

@@ -45,5 +45,9 @@
 <script src="{{ URL::to('assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js') }}"></script> <!-- Bootstrap Colorpicker Js -->
 <script src="{{ URL::to('assets/plugins/jquery-inputmask/jquery.inputmask.bundle.js') }}"></script> <!-- Input Mask Plugin Js -->
 <script src="{{ URL::to('assets/js/pages/forms/advanced-form-elements.js') }}"></script>
+
+<script src="{{ URL::to('assets/plugins/bootstrap-notify/bootstrap-notify.js') }}"></script> <!-- Bootstrap Notify Plugin Js -->
+@include('manager::utiles.notifications.notify')
+
 @stack('scripts')
 </html>
