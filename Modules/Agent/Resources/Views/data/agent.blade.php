@@ -6,7 +6,7 @@
                 <h6 class="mb-0 mt-2">John Doe</h6>
                 <p class="mb-0"><small>Edaacil Agent</small></p>
                 <a class="btn btn-primary" href="" title="Update Profile">Profile</a>
-                <a class="float-right btn btn-danger" href="" title="Sign Out"><i class="zmdi zmdi-power"></i></a>
+                <a class="float-right btn btn-danger" href="{{ route('agent.auth.logout') }}" title="Sign Out"><i class="zmdi zmdi-power"></i></a>
             </div>
         </div>
         <div class="footer">

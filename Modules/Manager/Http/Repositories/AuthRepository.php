@@ -31,7 +31,7 @@ class AuthRepository extends BaseRepository
             'password' => $credentials['password']
         ]);
 
-        if (auth()->user()->role == 'Manager') {
+        if (auth()->user() != null && auth()->user()->role == 'Manager') {
 
             return redirect('/manager');
         }

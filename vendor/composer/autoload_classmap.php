@@ -234,6 +234,7 @@ return array(
     'Edaacil\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
     'Edaacil\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'Edaacil\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
+    'Edaacil\\Http\\Middleware\\AgentCheck' => $baseDir . '/app/Http/Middleware/AgentCheck.php',
     'Edaacil\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'Edaacil\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',
     'Edaacil\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',

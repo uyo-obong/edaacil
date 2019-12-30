@@ -719,6 +719,7 @@ class ComposerStaticInit1cf8063ab5a671ae5209e2147991a690
         'Edaacil\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'Edaacil\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'Edaacil\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'Edaacil\\Http\\Middleware\\AgentCheck' => __DIR__ . '/../..' . '/app/Http/Middleware/AgentCheck.php',
         'Edaacil\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'Edaacil\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
         'Edaacil\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',

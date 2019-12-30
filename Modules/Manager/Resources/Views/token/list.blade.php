@@ -55,7 +55,7 @@
                                             <tr>
                                                 <td>{{ $loop->index + 1 }}</td>
                                                 <td>{{ $token->token }}</td>
-                                                <td><a class="{{ $token->status == 'Unused' ? 'badge-primary' : 'badge-danger' }}" href="">{{ $token->status }}</a></td>
+                                                <td><a class="{{ $token->status == 'Unused' ? 'badge-success' : 'badge-danger' }}" href="#">{{ $token->status }}</a></td>
                                                 <td>____</td>
                                                 <td>{{ $token->created_at->diffForHumans() }}</td>
                                                 <form action="{{ route('manager.token.delete', $token->id) }}" method="POST">

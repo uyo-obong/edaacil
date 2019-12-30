@@ -37,16 +37,14 @@ Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], functi
         Route::delete('/manager/token/{tokenId}/delete', 'TokenController@deleteToken')->name('manager.token.delete');
 
         // Manage Logout
-        Route::get('/manager/logout', 'AuthController@managerLogout')->defaults('_config', [
-            'view' => 'manager::auth.login'
-        ])->name('manager.auth.logout');
+        Route::get('/manager/logout', 'AuthController@managerLogout')->name('manager.auth.logout');
 
     });
 
 // Auth Controller
     Route::get('/manager/login', 'AuthController@index')->defaults('_config', [
         'view' => 'manager::auth.login'
-    ])->name('manager.auth.view')->middleware('web');
+    ])->name('manager.auth.view');
     Route::post('/manager/login', 'AuthController@managerLogin')->name('manager.auth.login');
 
 });

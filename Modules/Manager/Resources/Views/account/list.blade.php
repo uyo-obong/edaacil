@@ -60,7 +60,7 @@
                                                 <td>{{ $account->fullName() }}</td>
                                                 <td>{{ $account->email }}</td>
                                                 <td>{{ $account->phone_number }}</td>
-                                                <td>{{ $account->status }}</td>
+                                                <td><a class="{{ $account->status == 'Active' ? 'badge-success' : 'badge-danger' }}" href="" > {{ $account->status }}</a></td>
                                                 <td>{{ $account->role }}</td>
                                                 <td> @include('manager::account.buttons.view')  @include('manager::account.buttons.edit')  </td>
                                             </tr>

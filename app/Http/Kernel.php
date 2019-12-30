@@ -63,6 +63,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'manager' => \Edaacil\Http\Middleware\ManagerCheck::class,
+        'agent' => \Edaacil\Http\Middleware\AgentCheck::class,
     ];
 
     /**

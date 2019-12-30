@@ -56,6 +56,6 @@ class AuthController extends BaseController
     public function managerLogout()
     {
         Auth::logout();
-        return view($this->_config['view']);
+        return redirect(route('manager.auth.view'));
     }
 }
