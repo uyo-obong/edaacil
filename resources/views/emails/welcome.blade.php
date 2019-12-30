@@ -230,7 +230,7 @@
                             <td class="inner contents">
                                 <p class="h1">Hi John</p>
                                 <p>
-                                    We are pleased to welcome you as an Agent of Edaa Cooperative Insurance Limited. We feel honored that you have chosen us to work with us, and we are eager to work with you.
+                                    We are pleased to welcome you as an Agent of Edaacil Cooperative Insurance Limited. We feel honored that you have choosen us to work with us, and we are eager to work with you.
 
                                 </p>
 
@@ -248,7 +248,7 @@
                                     <table class="contents">
                                         <tr>
                                             <td>
-                                                <a class="button" href="">Login Here</a>
+                                                <a class="button" href="{{route('agent.auth.login')}}">Login Here</a>
                                             </td>
                                         </tr>
                                     </table>
@@ -266,8 +266,8 @@
                             <td class="inner contents">
                                 <br>
                                 <p>We look forward to a long and successful association. Kindly use the details below to login to your account:- </p>
-                                <p>Email Address: Johndoe@gmail.com</p>
-                                <p>Password: ****</p>
+                                <p>{{$manager['email']}}</p>
+                                <p> {{$manager['password']}}</p>
                             </td>
                         </tr>
                     </table>
@@ -281,7 +281,7 @@
                         <tr>
                             <td class="inner contents">
                                 <br>
-                                <p>Edaa Team</p>
+                                <p>Edaacil Team</p>
                             </td>
                         </tr>
                     </table>
