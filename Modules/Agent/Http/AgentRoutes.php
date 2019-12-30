@@ -10,8 +10,12 @@ Route::group(['namespace' => 'Edaacil\Modules\Agent\Http\Controllers'], function
             'view' => 'agent::dashboard'
         ])->name('agent.dashboard.view');
 
+        Route::get('/agent/profile', 'AgentController@profile')->defaults('_config', [
+            'view' => 'agent::data.profile'
+        ])->name('agent.data.profile');
 
-        Route::get('/agent/certificate', 'AgentController@index')->defaults('_config', [
+
+        Route::get('/agent/certificate', 'AgentController@certificate')->defaults('_config', [
             'view' => 'agent::certificate.index'
         ])->name('agent.certificate.index');
 

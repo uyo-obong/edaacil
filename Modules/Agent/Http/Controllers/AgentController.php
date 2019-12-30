@@ -39,10 +39,20 @@ class AgentController extends BaseController
     }
 
     /**
+     * Return agent profile details
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function profile()
+    {
+        $agent = auth()->user();
+        return view($this->_config['view'], ['agent' => $agent]);
+    }
+
+    /**
      * Return form view for obtaining certificate
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function certificate()
     {
         return view($this->_config['view']);
     }
