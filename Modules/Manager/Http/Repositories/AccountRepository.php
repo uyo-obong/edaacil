@@ -7,7 +7,7 @@ use Edaacil\Modules\BaseRepository;
 use Edaacil\Modules\Manager\Http\Models\Manager;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use function Edaacil\Http\Helpers\imageUploader;
+
 
 class AccountRepository extends BaseRepository
 {
@@ -45,7 +45,7 @@ class AccountRepository extends BaseRepository
             'city'           => $data->city,
             'state'          => $data->state,
             'country'        => $data->country,
-            'password'       => $string,
+            'password'       => Hash::make($string),
         ]);
         Mail::to($data->email)->send(new SendWelcomeEmailToNewAgent($manager));
     }
@@ -67,7 +67,6 @@ class AccountRepository extends BaseRepository
 
 
     public function updateManagerInformation(array $request){
-//        dd($request);
         $data = (object) $request;
         $manager = $this->model()::where('id', $data->managerId)->first();
         return $manager->update([
@@ -79,9 +78,9 @@ class AccountRepository extends BaseRepository
             'city'=>$data->city,
             'state'=>$data->state,
             'country'=>$data->country,
-//            'image_uploader'=> 'profileImages/'.imageUploader($data),
         ]);
     }
+
 
 
 }
