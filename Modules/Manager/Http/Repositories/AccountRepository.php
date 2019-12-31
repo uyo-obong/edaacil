@@ -7,6 +7,7 @@ use Edaacil\Modules\BaseRepository;
 use Edaacil\Modules\Manager\Http\Models\Manager;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use function Edaacil\Http\Helpers\imageUploader;
 
 class AccountRepository extends BaseRepository
 {
@@ -27,10 +28,8 @@ class AccountRepository extends BaseRepository
         $data = (object)$agentData;
         // Available alphabetical characters
         $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
         // generate a pin based on 2 * 3 digits + a random character
         $pin = mt_rand(100, 999). mt_rand(100, 999) . $characters[rand(2, strlen($characters) - 3)];
-
         // shuffle the result
         $string = str_shuffle($pin);
 
@@ -64,7 +63,25 @@ class AccountRepository extends BaseRepository
             'email'  => $data->email,
             'status' => $data->status,
         ]);
-
     }
+
+
+    public function updateManagerInformation(array $request){
+//        dd($request);
+        $data = (object) $request;
+        $manager = $this->model()::where('id', $data->managerId)->first();
+        return $manager->update([
+            'first_name'=>$data->first_name,
+            'last_name'=>$data->last_name,
+            'email'=>$data->email,
+            'phone_no'=>$data->phone_no,
+            'address'=>$data->address,
+            'city'=>$data->city,
+            'state'=>$data->state,
+            'country'=>$data->country,
+//            'image_uploader'=> 'profileImages/'.imageUploader($data),
+        ]);
+    }
+
 
 }

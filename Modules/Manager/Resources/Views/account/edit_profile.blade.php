@@ -86,54 +86,54 @@
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6">
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" value="{{ $manager->last_name }}" placeholder="Last Name">
+                                                                <input type="text" class="form-control" value="{{ $manager->last_name }}" name="last_name" placeholder="Last Name">
                                                             </div>
                                                         </div>
 
                                                         <div class="col-lg-6 col-md-6">
                                                                 <div class="form-group">
-                                                                <input type="text" class="form-control" value="{{ $manager->first_name }}" placeholder="First Name" required>
+                                                                <input type="text" class="form-control" value="{{ $manager->first_name }}" name="first_name" placeholder="First Name" required>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-lg-6 col-md-6">
                                                             <div class="form-group">
-                                                                <input type="email" class="form-control" value="{{ $manager->email }}" placeholder="Email Address" required>
+                                                                <input type="email" class="form-control" value="{{ $manager->email }}" name="email" placeholder="Email Address" required>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-lg-6 col-md-6">
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" value="{{ $manager->phone_no }}" placeholder="Phone Number">
+                                                                <input type="text" class="form-control" value="{{ $manager->phone_no }}" name="phone_no" placeholder="Phone Number">
                                                             </div>
                                                         </div>
 
                                                         <div class="col-lg-12 col-md-12">
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" value="{{ $manager->address }}" placeholder="Address">
+                                                                <input type="text" class="form-control" value="{{ $manager->address }}" name="address" placeholder="Address">
                                                             </div>
                                                         </div>
 
                                                         <div class="col-lg-4 col-md-4">
                                                             <div class="form-group">
-                                                                <input readonly type="text" class="form-control" value="{{ $manager->city }}" placeholder="City" required>
+                                                                <input  type="text" class="form-control" value="{{ $manager->city }}" name="city" placeholder="City" required>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-lg-4 col-md-4">
                                                             <div class="form-group">
-                                                                <input readonly type="text" class="form-control" value="{{ $manager->state }}" placeholder="State" required>
+                                                                <input  type="text" class="form-control" value="{{ $manager->state }}" name="state" placeholder="State" required>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-lg-4 col-md-4">
                                                             <div class="form-group">
-                                                                <input readonly type="text" class="form-control" value="{{ $manager->country }}" placeholder="Country" required>
+                                                                <input  type="text" class="form-control" value="{{ $manager->country }}" name="country" placeholder="Country" required>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-md-12">
-                                                            <button class="float-right btn btn-primary">Save Changes</button>
+                                                            <button type="submit" class="float-right btn btn-primary">Save Changes</button>
                                                         </div>
 
                                                     </div>

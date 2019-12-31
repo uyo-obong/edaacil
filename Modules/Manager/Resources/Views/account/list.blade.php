@@ -105,7 +105,7 @@
             var fullName = button.data('name');
             var role = button.data('role');
             var email = button.data('email');
-            var phone = button.data('phone');
+            var phone_no = button.data('phone_no');
             var address = button.data('address');
             var city = button.data('city');
             var state = button.data('state');
@@ -115,7 +115,7 @@
             modal.find('.modal-body #fullName').text(fullName);
             modal.find('.modal-body #role').text('Edaacil '+role);
             modal.find('.modal-body #email').text(email);
-            modal.find('.modal-body #phone').text(phone);
+            modal.find('.modal-body #phone_no').text(phone_no);
             modal.find('.modal-body #address').text(address);
             modal.find('.modal-body #city').text(city);
             modal.find('.modal-body #state').text(state);
