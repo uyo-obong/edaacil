@@ -38,14 +38,6 @@ class AgentController extends BaseController
     public function dashboard()
     {
         $certificates = Certificate::where('manager_id', auth()->user()->id)->get();
-
-        $verifyCertificates = Certificate::all();
-        foreach ($verifyCertificates as $verified) {
-            $token = Token::where('token', $verified->token_id)->update([
-                'status' => 'Used'
-            ]);
-        }
-
         return view($this->_config['view'], ['certificates' => $certificates]);
     }
 
