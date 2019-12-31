@@ -47,7 +47,8 @@ class AccountRepository extends BaseRepository
             'country'        => $data->country,
             'password'       => Hash::make($string),
         ]);
-        Mail::to($data->email)->send(new SendWelcomeEmailToNewAgent($manager));
+        
+        Mail::to($data->email)->send(new SendWelcomeEmailToNewAgent($manager,$string));
     }
 
     /**
