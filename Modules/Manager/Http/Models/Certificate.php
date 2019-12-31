@@ -25,4 +25,22 @@ class Certificate extends Model
         'expiring_date',
         'type_of_cover',
     ];
+
+    /**
+     * Return manager model
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function manager()
+    {
+        return $this->belongsTo(Manager::class, 'manager_id');
+    }
+
+    /**
+     * Return token model
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function token()
+    {
+        return $this->belongsTo(Token::class, 'token_id');
+    }
 }

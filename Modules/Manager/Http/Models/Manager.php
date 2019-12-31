@@ -62,4 +62,13 @@ class Manager extends Authenticatable
     {
         return $this->first_name . ' ' . $this->last_name;
     }
+
+    /**
+     * return certificate model
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function certificates()
+    {
+        return $this->hasMany(Certificate::class, 'certificate_id');
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Edaacil\Modules\Manager\Http\Requests;
+namespace Edaacil\Modules\Agent\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
