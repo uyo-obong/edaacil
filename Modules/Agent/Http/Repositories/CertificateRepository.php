@@ -34,7 +34,7 @@ class CertificateRepository extends BaseRepository
 
         $token = Token::where('token', $data['token'])->where('status', 'Unused')->first();
 
-        if ($token === null) {
+        if ($token === null || $this->checkUsedToken() === true) {
             session()->flash('danger', 'Sorry, seem you are trying to access wrong/used token!');
             return redirect(route('agent.dashboard.view'));
         }
@@ -42,6 +42,12 @@ class CertificateRepository extends BaseRepository
         return view('agent::certificate.index', ['certificate' => $certificate]);
     }
 
+    /**
+     * Issue out certificate to client
+     * @param array $data
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
+     */
     public function certificateIssue(array $data)
     {
         $data = (object)$data;
@@ -79,10 +85,31 @@ class CertificateRepository extends BaseRepository
         return redirect()->back();
     }
 
+    /**
+     * Get current data from carbon
+     * @return string
+     */
     private function registrationDate()
     {
         $now = Carbon::now();
         return $now->day.'/'.$now->month.'/'.$now->year;
+    }
+
+    /**
+     * Verify if the token has been used in any certificate before
+     * @return array
+     */
+    private function checkUsedToken()
+    {
+        $token = [];
+
+        $verifyCertificates = Certificate::all();
+        foreach ($verifyCertificates as $verified) {
+            $token = Token::where('token', $verified->token_id)->update([
+                'status' => 'Used'
+            ]);
+        }
+        return $token;
     }
 
 }
