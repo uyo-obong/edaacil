@@ -6,7 +6,6 @@ use Carbon\Carbon;
 use Edaacil\Modules\BaseRepository;
 use Edaacil\Modules\Manager\Http\Models\Certificate;
 use Edaacil\Modules\Manager\Http\Models\Token;
-use Edaacil\Modules\Manager\Http\Requests\CertificateIssueRequest;
 
 class CertificateRepository extends BaseRepository
 {
@@ -39,7 +38,8 @@ class CertificateRepository extends BaseRepository
             return redirect(route('agent.dashboard.view'));
         }
         $certificate = $this->model()::where('manager_id', auth()->user()->id)->with('manager')->latest()->first();
-        return view('agent::certificate.index', ['certificate' => $certificate]);
+        $urlPath = $this->urlPath()->id;
+        return view('agent::certificate.index', ['certificate' => $certificate, 'urlPath' => $urlPath]);
     }
 
     /**
@@ -61,11 +61,12 @@ class CertificateRepository extends BaseRepository
 
         $url = url()->previous();
         $explode = explode('=', $url);
+        $token = Token::where('token', $explode[1])->first();
 
         $certificate = $this->model()::create([
             'id'                    => $this->generateUuid(),
             'manager_id'            => auth()->user()->id,
-            'token_id'              => $explode[1],
+            'token_id'              => $token->id,
             'email'                 => $data->email,
             'phone_number'          => $data->phone_number,
             'certificate_number'    => '7383736',
@@ -103,13 +104,24 @@ class CertificateRepository extends BaseRepository
     {
         $token = [];
 
-        $verifyCertificates = Certificate::all();
+        $verifyCertificates = Certificate::with('token')->get();
         foreach ($verifyCertificates as $verified) {
-            $token = Token::where('token', $verified->token_id)->update([
+            $token = Token::where('id', $verified->token->id)->update([
                 'status' => 'Used'
             ]);
         }
         return $token;
+    }
+
+    /**
+     * Getting full url for verification
+     * @return mixed
+     */
+    private function urlPath()
+    {
+        $url = request()->fullUrl();
+        $explode = explode('=', $url);
+        return Token::where('token', $explode[1])->first();
     }
 
 }

@@ -37,7 +37,7 @@ class AgentController extends BaseController
      */
     public function dashboard()
     {
-        $certificates = Certificate::where('manager_id', auth()->user()->id)->get();
+        $certificates = Certificate::where('manager_id', auth()->user()->id)->with('token')->get();
         return view($this->_config['view'], ['certificates' => $certificates]);
     }
 

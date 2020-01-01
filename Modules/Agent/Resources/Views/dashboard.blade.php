@@ -49,7 +49,7 @@
                                     @foreach( $certificates as $certificate)
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
-                                            <td>{{ $certificate->token_id }}</td>
+                                            <td>{{ $certificate->token->token }}</td>
                                             <td>{{ $certificate->name_of_policy_holder }}</td>
                                             <td>{{ Carbon\Carbon::now()->day }}</td>
                                             <td>{{ Carbon\Carbon::now()->format('F') }}</td>

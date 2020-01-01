@@ -18,8 +18,8 @@ class Token extends Model
      * return certificate model
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function certificates()
+    public function certificate()
     {
-        return $this->hasOne(Certificate::class, 'certificate_id');
+        return $this->hasOne(Certificate::class);
     }
 }
