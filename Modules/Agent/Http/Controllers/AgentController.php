@@ -5,7 +5,6 @@ namespace Edaacil\Modules\Agent\Http\Controllers;
 use Edaacil\Modules\Agent\Http\Repositories\AgentRepository;
 use Edaacil\Modules\BaseController;
 use Edaacil\Modules\Manager\Http\Models\Certificate;
-use Edaacil\Modules\Manager\Http\Models\Token;
 
 class AgentController extends BaseController
 {
@@ -37,8 +36,9 @@ class AgentController extends BaseController
      */
     public function dashboard()
     {
+        $counter = $this->agentRepository->certificateCounter();
         $certificates = Certificate::where('manager_id', auth()->user()->id)->with('token')->get();
-        return view($this->_config['view'], ['certificates' => $certificates]);
+        return view($this->_config['view'], ['certificates' => $certificates, 'counter' => $counter]);
     }
 
     /**
