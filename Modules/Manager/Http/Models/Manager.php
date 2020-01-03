@@ -29,12 +29,13 @@ class Manager extends Authenticatable
         'state',
         'country',
         'password',
-        'image_uploader',
+        'profile_image',
 ];
     /**
      * @var bool
      */
     public $incrementing = false;
+
 
     /**
      * The attributes that should be hidden for arrays.

@@ -228,7 +228,7 @@
                     <table width="100%">
                         <tr>
                             <td class="inner contents">
-                                <p class="h1">Hi John</p>
+                                <p>{{$manager->fullName()}}</p>
                                 <p>
                                     We are pleased to welcome you as an Agent of Edaacil Cooperative Insurance Limited. We feel honored that you have choosen us to work with us, and we are eager to work with you.
 
@@ -267,7 +267,7 @@
                                 <br>
                                 <p>We look forward to a long and successful association. Kindly use the details below to login to your account:- </p>
                                 <p>{{$manager['email']}}</p>
-                                <p> {{$manager['password']}}</p>
+                                <p> {{$password}}</p>
                             </td>
                         </tr>
                     </table>

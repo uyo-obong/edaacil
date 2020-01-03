@@ -49,7 +49,7 @@
         ],
 
         "file": [
-            "Edaacil/Http/Helpers"
+            "app/Http/Helpers"
         ]
     },
     "autoload-dev": {

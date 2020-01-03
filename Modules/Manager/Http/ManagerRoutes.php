@@ -8,7 +8,6 @@ Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], functi
         Route::get('/manager', 'ManagerController@dashboard')->defaults('_config', [
             'view' => 'manager::dashboard'
         ])->name('manager.dashboard.view');
-        Route::put('/manager/account/manager/update/profile', 'ManagerController@updateManagerInformation')->name('manager.account.manager.update.profile');
 
         // Manage Account
         Route::get('/manager/account/list', 'AccountController@list')->defaults('_config', [
@@ -26,6 +25,8 @@ Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], functi
 
         Route::post('/manager/account/create','AccountController@createAccount')->name('manager.account.create.agent');
         Route::put('/manager/account/update', 'AccountController@updateAccount')->name('manager.account.update');
+        Route::put('/manager/account/manager/update/profile','AccountController@updateManagerInformation')->name('manager.account.manager.update.profile');
+
 
         // Manage Token
         Route::get('/manager/token/list', 'TokenController@list')->defaults('_config', [
