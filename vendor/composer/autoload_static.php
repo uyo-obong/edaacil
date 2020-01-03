@@ -708,6 +708,7 @@ class ComposerStaticInit1cf8063ab5a671ae5209e2147991a690
         'Dotenv\\Regex\\Result' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Regex/Result.php',
         'Dotenv\\Regex\\Success' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Regex/Success.php',
         'Dotenv\\Validator' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Validator.php',
+        'Edaacil\\Charts\\Charts' => __DIR__ . '/../..' . '/app/Charts/Charts.php',
         'Edaacil\\Console\\Commands\\AppName' => __DIR__ . '/../..' . '/app/Console/Commands/AppName.php',
         'Edaacil\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'Edaacil\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',

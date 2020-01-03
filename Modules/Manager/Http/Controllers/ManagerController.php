@@ -3,9 +3,12 @@
 namespace Edaacil\Modules\Manager\Http\Controllers;
 
 
+use ConsoleTVs\Charts\Classes\Chartjs\Chart;
+use Edaacil\Charts\Charts;
 use Edaacil\Modules\BaseController;
 use Edaacil\Modules\Manager\Http\Models\Certificate;
 use Edaacil\Modules\Manager\Http\Repositories\ManagerRepository;
+use Illuminate\Support\Facades\DB;
 
 class ManagerController extends BaseController
 {
@@ -29,7 +32,8 @@ class ManagerController extends BaseController
     public function dashboard()
     {
         $certificates = Certificate::with('token', 'manager')->get();
-        return view($this->_config['view'], ['certificates' => $certificates]);
+        $chart = $this->managerRepository->dashboard();
+        return view($this->_config['view'], ['certificates' => $certificates, 'chart' => $chart]);
     }
 
 

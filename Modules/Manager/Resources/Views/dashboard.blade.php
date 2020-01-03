@@ -27,7 +27,9 @@
                         </div>
 
                         <div class="body">
-                            <div id="chart-area-spline-sracked" class="c3_chart d_sales"></div>
+                            {!! $chart->container() !!}
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+                            {!! $chart->script() !!}
                         </div>
                     </div>
                 </div>
@@ -85,5 +87,6 @@
 
         </div>
     </section>
-
 @stop
+@push('scripts')
+@endpush
