@@ -47,7 +47,7 @@
                                     <tr>
                                         <th>S/N</th>
                                         <th>Token</th>
-                                        <th>Owner</th>
+                                        <th>Holder</th>
                                         <th>Issued By</th>
                                         <th>Issued On</th>
                                         <th>Action</th>
@@ -57,29 +57,23 @@
                                     <tr>
                                         <th>S/N</th>
                                         <th>Token</th>
-                                        <th>Owner</th>
+                                        <th>Holder</th>
                                         <th>Issued By</th>
                                         <th>Issued On</th>
                                         <th>Action</th>
                                     </tr>
                                     </tfoot>
                                     <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Garrett Winters</td>
-                                        <td>Testing</td>
-                                        <td>Testing</td>
-                                        <td>John Doe</td>
-                                        <td><a class="btn btn-success" href="">View</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Garrett Winters</td>
-                                        <td>Testing</td>
-                                        <td>Testing</td>
-                                        <td>John Doe</td>
-                                        <td><a class="btn btn-success" href="">View</a> </td>
-                                    </tr>
+                                    @foreach($certificates as $certificate)
+                                        <tr>
+                                            <td>{{ $loop->index + 1 }}</td>
+                                            <td>{{ $certificate->token['token'] }}</td>
+                                            <td>{{ $certificate->name_of_policy_holder }}</td>
+                                            <td>{{ $certificate->manager->fullName() }}</td>
+                                            <td>{{ $certificate->created_at->format('d, M Y') }}</td>
+                                            <td><a class="btn btn-success" href="">View</a> </td>
+                                        </tr>
+                                    @endforeach
 
                                     </tbody>
                                 </table>

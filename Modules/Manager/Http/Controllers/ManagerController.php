@@ -4,6 +4,7 @@ namespace Edaacil\Modules\Manager\Http\Controllers;
 
 
 use Edaacil\Modules\BaseController;
+use Edaacil\Modules\Manager\Http\Models\Certificate;
 use Edaacil\Modules\Manager\Http\Repositories\ManagerRepository;
 use Edaacil\Modules\Manager\Http\Requests\UpdateMangerProfile;
 
@@ -28,7 +29,8 @@ class ManagerController extends BaseController
 
     public function dashboard()
     {
-        return view($this->_config['view']);
+        $certificates = Certificate::with('token', 'manager')->get();
+        return view($this->_config['view'], ['certificates' => $certificates]);
     }
 
     public function updateManagerInformation(UpdateMangerProfile $updateMangerProfile)
