@@ -6,6 +6,8 @@ use Edaacil\Modules\BaseController;
 use Edaacil\Modules\Manager\Http\Repositories\AccountRepository;
 use Edaacil\Modules\Manager\Http\Requests\CreateAccountRequest;
 use Edaacil\Modules\Manager\Http\Requests\UpdateAccountRequest;
+use Edaacil\Modules\Manager\Http\Requests\UpdateMangerInformation;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 
@@ -87,6 +89,15 @@ class AccountController extends BaseController
         if ($account)
             session()->flash('success', 'Account Updated Successfully');
         return Redirect::back();
+    }
+
+    public function updateManagerInformation(UpdateMangerInformation $updateMangerInformation)
+    {
+
+        $manager = $this->accountRepository->updateManagerInformation($updateMangerInformation->all());
+        if ($manager)
+            session()->flash('success', 'Manager-Profile Updated Successfully');
+        return redirect()->back();
     }
 
 }
