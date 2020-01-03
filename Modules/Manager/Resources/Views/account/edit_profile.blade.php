@@ -61,7 +61,7 @@
                                 <h2><strong>Account</strong> Settings</h2>
                             </div>
                             <div class="body">
-                                <form id="form_validation" method="post" action="{{route('manager.account.manager.update.profile')}}">
+                                <form id="form_validation" method="post" action="{{route('manager.account.manager.update.profile')}}" enctype="multipart/form-data">
                                     {{ method_field('PUT') }}
                                     <div class="row clearfix">
 
@@ -71,12 +71,12 @@
                                                     <div class="card">
                                                         <a href="javascript:void(0);" class="file">
                                                             <div class="image">
-                                                                <img src="{{ URL::to('assets/images/image-gallery/5.jpg') }}" alt="img" class="img-fluid">
+{{--                                                                <img style="width: 100%" src="/storage/profile_image/{{$manager->profile_image}}">--}}
                                                             </div>
                                                             <div class="file-name">
                                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                                 <input type="hidden" value="{{ $manager->id }}" name="managerId">
-                                                                <input type="file" class="file">
+                                                                <input type="file" class="file" name="profile_image" value="">
                                                             </div>
                                                         </a>
                                                     </div>
