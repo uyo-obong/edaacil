@@ -4,6 +4,7 @@ namespace Edaacil\Modules\Manager\Http\Controllers;
 
 use Edaacil\Modules\BaseController;
 use Edaacil\Modules\Manager\Http\Repositories\AccountRepository;
+use Edaacil\Modules\Manager\Http\Requests\ChangeManagerPassword;
 use Edaacil\Modules\Manager\Http\Requests\CreateAccountRequest;
 use Edaacil\Modules\Manager\Http\Requests\UpdateAccountRequest;
 use Edaacil\Modules\Manager\Http\Requests\UpdateMangerInformation;
@@ -97,6 +98,14 @@ class AccountController extends BaseController
         $manager = $this->accountRepository->updateManagerInformation($updateMangerInformation->all());
         if ($manager)
             session()->flash('success', 'Manager-Profile Updated Successfully');
+        return Redirect::back();
+    }
+
+    public function managerChangePassword(ChangeManagerPassword $changeManagerPassword){
+
+        $manager = $this->accountRepository->managerChangePassword($changeManagerPassword->all());
+        if ($manager)
+            session()->flash('success', 'Manager Password Changed Successfully');
         return redirect()->back();
     }
 

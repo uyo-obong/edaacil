@@ -27,6 +27,8 @@ Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], functi
         Route::put('/manager/account/update', 'AccountController@updateAccount')->name('manager.account.update');
         Route::put('/manager/account/manager/update/profile','AccountController@updateManagerInformation')->name('manager.account.manager.update.profile');
 
+        Route::put('/manager/account/manager/change/password', 'AccountController@managerChangePassword')->name('manager.account.manager.change.password');
+
 
         // Manage Token
         Route::get('/manager/token/list', 'TokenController@list')->defaults('_config', [

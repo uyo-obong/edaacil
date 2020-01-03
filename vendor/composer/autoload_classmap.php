@@ -267,6 +267,7 @@ return array(
     'Edaacil\\Modules\\Manager\\Http\\Repositories\\AuthRepository' => $baseDir . '/Modules/Manager/Http/Repositories/AuthRepository.php',
     'Edaacil\\Modules\\Manager\\Http\\Repositories\\ManagerRepository' => $baseDir . '/Modules/Manager/Http/Repositories/ManagerRepository.php',
     'Edaacil\\Modules\\Manager\\Http\\Repositories\\TokenRepository' => $baseDir . '/Modules/Manager/Http/Repositories/TokenRepository.php',
+    'Edaacil\\Modules\\Manager\\Http\\Requests\\ChangeManagerPassword' => $baseDir . '/Modules/Manager/Http/Requests/ChangeManagerPassword.php',
     'Edaacil\\Modules\\Manager\\Http\\Requests\\CreateAccountRequest' => $baseDir . '/Modules/Manager/Http/Requests/CreateAccountRequest.php',
     'Edaacil\\Modules\\Manager\\Http\\Requests\\GenerateTokenRequest' => $baseDir . '/Modules/Manager/Http/Requests/GenerateTokenRequest.php',
     'Edaacil\\Modules\\Manager\\Http\\Requests\\LoginRequest' => $baseDir . '/Modules/Manager/Http/Requests/LoginRequest.php',
