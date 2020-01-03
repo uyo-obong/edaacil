@@ -63,15 +63,17 @@ class CertificateRepository extends BaseRepository
         $explode = explode('=', $url);
         $token = Token::where('token', $explode[1])->first();
 
+        $certificateNumber = rand(100000, 999999);
+
         $certificate = $this->model()::create([
             'id'                    => $this->generateUuid(),
             'manager_id'            => auth()->user()->id,
             'token_id'              => $token->id,
             'email'                 => $data->email,
             'phone_number'          => $data->phone_number,
-            'certificate_number'    => '7383736',
-            'policy_number'         => '82726383',
-            'index_mark'            => '723834394',
+            'certificate_number'    => $certificateNumber,
+            'policy_number'         => $this->policyNumber($data),
+            'index_mark'            => $this->indexMarkNumber(),
             'plate_number'          => $data->plate_number,
             'chassis_number'        => $data->chassis_number,
             'make_of_vehicle'       => $data->make_of_vehicle,
@@ -106,7 +108,7 @@ class CertificateRepository extends BaseRepository
 
         $verifyCertificates = Certificate::with('token')->get();
         foreach ($verifyCertificates as $verified) {
-            $token = Token::where('id', $verified->token->id)->update([
+            $token = Token::where('id', $verified->token['id'])->update([
                 'status' => 'Used'
             ]);
         }
@@ -122,6 +124,44 @@ class CertificateRepository extends BaseRepository
         $url = request()->fullUrl();
         $explode = explode('=', $url);
         return Token::where('token', $explode[1])->first();
+    }
+
+    /**
+     * Generate policy number
+     * @param $data
+     * @return string
+     */
+    private function policyNumber($data)
+    {
+        // Get last policy number from database
+        $certificate =  $this->model()::select('policy_number')->latest()->first();
+        $oldPolicyNumber = $certificate !== null ? $certificate->policy_number : '00100920';
+
+        $explode = explode('/', $oldPolicyNumber);
+        $setPolicyNumber = $explode[0] == '00100920' ? $explode[0] : $explode[3] ;
+
+        // increment the last digit
+        $lastIncreament = str_pad($setPolicyNumber + 1, 8, 0, STR_PAD_LEFT);
+
+        // Get the first three letters in the plate number
+        $plateAbbr = substr($data->plate_number, 0, 3);
+
+        $year = Carbon::now()->year;
+        return 'ECIL/S/'.$data->policy_number.'/'.$lastIncreament.'/'.$plateAbbr.'/'.$year;
+    }
+
+    /**
+     * Generate index mark number
+     * @return string
+     */
+    private function indexMarkNumber()
+    {
+        // Get last index mark number from database
+        $indexMark = $this->model()::select('index_mark')->latest()->first();
+        $oldIndexNumber = $indexMark !== null ? $indexMark->index_mark : '00000';
+
+        // increment the last digit
+        return str_pad($oldIndexNumber + 1, 5, 0, STR_PAD_LEFT);
     }
 
 }

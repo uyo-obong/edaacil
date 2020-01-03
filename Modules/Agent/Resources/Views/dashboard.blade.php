@@ -29,7 +29,7 @@
                                     <tr>
                                         <th>S/N</th>
                                         <th>Token</th>
-                                        <th>Owner</th>
+                                        <th>Holder</th>
                                         <th>Day</th>
                                         <th>Month</th>
                                         <th>Year</th>
@@ -39,7 +39,7 @@
                                     <tr>
                                         <th>S/N</th>
                                         <th>Token</th>
-                                        <th>Owner</th>
+                                        <th>Holder</th>
                                         <th>Day</th>
                                         <th>Month</th>
                                         <th>Year</th>
@@ -49,11 +49,11 @@
                                     @foreach( $certificates as $certificate)
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
-                                            <td>{{ $certificate->token->token }}</td>
+                                            <td>{{ $certificate->token['token'] }}</td>
                                             <td>{{ $certificate->name_of_policy_holder }}</td>
-                                            <td>{{ Carbon\Carbon::now()->day }}</td>
-                                            <td>{{ Carbon\Carbon::now()->format('F') }}</td>
-                                            <td>{{ Carbon\Carbon::now()->year }}</td>
+                                            <td>{{ $certificate->created_at->format('d') }}</td>
+                                            <td>{{ $certificate->created_at->format('M') }}</td>
+                                            <td>{{ $certificate->created_at->format('Y') }}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>

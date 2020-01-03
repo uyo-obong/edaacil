@@ -2,12 +2,12 @@
 
 @section('title', 'Certificate')
 @push('css')
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <style>
-        @page {
-            margin-top: 2cm;
-            margin-bottom: 2cm;
-            margin-left: 2cm;
-            margin-right: 2cm;
+        @media print and (width: 105mm) and (height: 148mm) {
+            @page {
+                margin: 3cm;
+            }
         }
     </style>
 @endpush
@@ -83,11 +83,21 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="input-group form-float masked-input">
+                                        <div class="input-group masked-input">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="zmdi zmdi-calendar"></i></span>
+                                                <span class="input-group-text">Expiring Date</span>
                                             </div>
-                                            <input type="text" value="{{ old("expiring_date") }}" class="form-control" placeholder="Expiring Date (Ex: 12/12/2021)" name="expiring_date">
+                                            <input type='text'  class="form-control" name="expiring_date" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group form-float">
+                                            <select class="form-control show-tick" name="policy_number">
+                                                <option value="">-- Select policy number --</option>
+                                                <option value="PM">Private Motor</option>
+                                                <option value="CM">Commercial Motor</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -101,15 +111,25 @@
                     </div>
                 </div>
 
-               @includeIf('agent::certificate.form')
+                @includeIf('agent::certificate.data')
 
             </div>
-
-
         </div>
     </div>
 @stop
 @push('scripts')
+    <script src="{{ URL::to('assets/bundles/mainscripts.bundle.js') }}"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script>
+        $(function() {
+            $('input[name="expiring_date"]').daterangepicker({
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 2018,
+            });
+        });
+    </script>
     <script>
         function printPageArea(){
             var print_div = document.getElementById("printCertificate");

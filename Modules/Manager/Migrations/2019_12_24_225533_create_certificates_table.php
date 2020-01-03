@@ -17,7 +17,6 @@ class CreateCertificatesTable extends Migration
             $table->uuid('id')->primary();
             $table->string('manager_id');
             $table->string('token_id');
-            $table->foreign('token_id')->references('id')->on('tokens');
             $table->string('email')->unique();
             $table->string('phone_number');
             $table->string('certificate_number');

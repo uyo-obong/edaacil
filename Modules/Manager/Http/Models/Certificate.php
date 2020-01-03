@@ -26,6 +26,12 @@ class Certificate extends Model
         'type_of_cover',
     ];
 
+
+    public function policyNumber()
+    {
+        return $this->policy_number;
+    }
+
     /**
      * Return manager model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
