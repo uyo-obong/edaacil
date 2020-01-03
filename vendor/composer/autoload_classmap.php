@@ -223,6 +223,7 @@ return array(
     'Dotenv\\Regex\\Result' => $vendorDir . '/vlucas/phpdotenv/src/Regex/Result.php',
     'Dotenv\\Regex\\Success' => $vendorDir . '/vlucas/phpdotenv/src/Regex/Success.php',
     'Dotenv\\Validator' => $vendorDir . '/vlucas/phpdotenv/src/Validator.php',
+    'Edaacil\\Charts\\Charts' => $baseDir . '/app/Charts/Charts.php',
     'Edaacil\\Console\\Commands\\AppName' => $baseDir . '/app/Console/Commands/AppName.php',
     'Edaacil\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'Edaacil\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
