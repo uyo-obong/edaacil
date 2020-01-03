@@ -13,4 +13,13 @@ class Token extends Model
         'token',
         'status',
     ];
+
+    /**
+     * return certificate model
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function certificate()
+    {
+        return $this->hasOne(Certificate::class);
+    }
 }

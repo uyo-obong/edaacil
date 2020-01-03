@@ -3,8 +3,8 @@
 namespace Edaacil\Modules\Agent\Http\Controllers;
 
 use Edaacil\Modules\Agent\Http\Repositories\AuthAgentRepository;
+use Edaacil\Modules\Agent\Http\Requests\AgentLoginRequest;
 use Edaacil\Modules\BaseController;
-use Edaacil\Modules\Manager\Http\Requests\AgentLoginRequest;
 use Illuminate\Support\Facades\Auth;
 
 class AuthAgentController extends BaseController

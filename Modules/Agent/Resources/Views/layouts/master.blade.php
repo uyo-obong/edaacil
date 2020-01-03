@@ -6,6 +6,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Custom Css -->
     <link rel="stylesheet" href="{{ URL::to('assets/plugins/bootstrap/css/bootstrap.min.css') }}">
+    <link href="{{ URL::to('assets/plugins/bootstrap-select/css/bootstrap-select.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ URL::to('assets/css/style.min.css') }}">
     <!-- JQuery DataTable Css -->
     <link rel="stylesheet" href="{{ URL::to('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css') }}">
@@ -45,5 +46,9 @@
 <script src="{{ URL::to('assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js') }}"></script> <!-- Bootstrap Colorpicker Js -->
 <script src="{{ URL::to('assets/plugins/jquery-inputmask/jquery.inputmask.bundle.js') }}"></script> <!-- Input Mask Plugin Js -->
 <script src="{{ URL::to('assets/js/pages/forms/advanced-form-elements.js') }}"></script>
+
+<script src="{{ URL::to('assets/plugins/bootstrap-notify/bootstrap-notify.js') }}"></script> <!-- Bootstrap Notify Plugin Js -->
+@include('manager::utiles.notifications.notify')
+
 @stack('scripts')
 </html>

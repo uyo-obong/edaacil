@@ -36,7 +36,6 @@
                                     <option value="">-- Please select role --</option>
                                     <option value="manager">Manager</option>
                                     <option value="agent">Agent</option>
-
                                 </select>
                             </div>
                         </div>

@@ -3,6 +3,7 @@
 namespace Edaacil\Modules\Manager\Http\Controllers;
 
 use Edaacil\Modules\BaseController;
+use Edaacil\Modules\Manager\Http\Models\Certificate;
 use Edaacil\Modules\Manager\Http\Repositories\TokenRepository;
 use Edaacil\Modules\Manager\Http\Requests\GenerateTokenRequest;
 
@@ -36,7 +37,8 @@ class TokenController extends BaseController
      */
     public function list()
     {
-        $tokens = $this->tokenRepository->model()::all()->sortByDesc('created_at');
+
+        $tokens = $this->tokenRepository->model()::with('certificate')->get()->sortByDesc('created_at');
         return view($this->_config['view'], ['tokens' => $tokens]);
     }
 
@@ -51,7 +53,7 @@ class TokenController extends BaseController
         $token = $this->tokenRepository->createToken($request->all());
         if ($token)
             session()->flash('success', 'Token(s) has been generated successfully.');
-            return redirect(route('manager.token.list'));
+        return redirect(route('manager.token.list'));
     }
 
     /**
@@ -64,6 +66,6 @@ class TokenController extends BaseController
         $token = $this->tokenRepository->deleteToken($tokenId);
         if ($token)
             session()->flash('success', 'Token has been deleted successfully.');
-            return redirect()->back();
+        return redirect()->back();
     }
 }

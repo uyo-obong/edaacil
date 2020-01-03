@@ -73,7 +73,6 @@
 
 <script src="{{ URL::to('assets/plugins/select2/select2.min.js') }}"></script> <!-- Select2 Js -->
 
-{{--<script src="{{ URL::to('assets/plugins/jquery-steps/jquery.steps.js') }}"></script> <!-- JQuery Steps Plugin Js -->--}}
 <script src="{{ URL::to('assets/js/pages/forms/form-validation.js') }}"></script>
 
 <script src="{{ URL::to('assets/bundles/fullcalendarscripts.bundle.js') }}"></script>

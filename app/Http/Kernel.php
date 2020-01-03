@@ -64,6 +64,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'manager' => \Edaacil\Http\Middleware\ManagerCheck::class,
         'agent' => \Edaacil\Http\Middleware\AgentCheck::class,
+        'token' => \Edaacil\Http\Middleware\VerifyToken::class,
     ];
 
     /**

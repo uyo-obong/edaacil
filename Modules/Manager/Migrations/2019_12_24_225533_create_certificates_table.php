@@ -26,8 +26,8 @@ class CreateCertificatesTable extends Migration
             $table->string('chassis_number');
             $table->string('make_of_vehicle');
             $table->string('name_of_policy_holder');
-            $table->dateTime('registration_date');
-            $table->dateTime('expiring_date');
+            $table->string('registration_date');
+            $table->string('expiring_date');
             $table->string('type_of_cover');
             $table->timestamps();
         });
