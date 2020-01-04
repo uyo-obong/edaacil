@@ -79,10 +79,16 @@ class AccountRepository extends BaseRepository
     public function updateManagerInformation(array $request)
     {
         $data = (object)$request;
-//        dd($request);
+
+        $fileName = 'profile_image'.time().'.'.request()->profile_image->getClientOriginalExtension();
+
+        $storage = $request['profile_image']->store('profile-images','public',$fileName);
+
+
+
         $manager = $this->model()::where('id', $data->managerId)->first();
 
-        $manager->update([
+        return $manager->update([
             'first_name' => $data->first_name,
             'last_name' => $data->last_name,
             'email' => $data->email,
@@ -91,8 +97,17 @@ class AccountRepository extends BaseRepository
             'city' => $data->city,
             'state' => $data->state,
             'country' => $data->country,
+            'profile_image'=>$storage,
         ]);
 
+    }
+
+    public function managerChangePassword($data){
+        $data = (object) $data;
+        $manager = $this->model()::where('id', auth()->user()->id)->where('email', auth()->user()->email)->first();
+        return $manager->update([
+            'password'=>Hash::make($data->password),
+        ]);
     }
 
 

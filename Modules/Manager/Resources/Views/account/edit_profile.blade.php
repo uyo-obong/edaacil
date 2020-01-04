@@ -31,8 +31,13 @@
                                 <h2><strong>Security</strong> Settings</h2>
                             </div>
                             <div class="body">
-                                <form id="form_validation" method="post" action="">
+                                <form id="form_validation" method="post" action="{{route('manager.account.manager.change.password')}}" enctype="multipart/form-data">
+                                    {{ method_field('PUT') }}
                                     <div class="row">
+                                        <div class="file-name">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <input type="hidden" value="{{ $manager->id }}" name="managerId">
+                                        </div>
                                         <div class="col-lg-4 col-md-12">
                                             <div class="form-group">
                                                 <input type="email" name="email" class="form-control" placeholder="Enter Your Email" required>
@@ -45,11 +50,11 @@
                                         </div>
                                         <div class="col-lg-4 col-md-12">
                                             <div class="form-group">
-                                                <input type="password" name="confirm_password" class="form-control" placeholder="Retype Password" required>
+                                                <input type="password" name="password_confirmation" class="form-control" placeholder="Retype Password" required>
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button class="float-right btn btn-info">Save Changes</button>
+                                            <button type="submit" class="float-right btn btn-info">Save Changes</button>
                                         </div>
                                     </div>
                                 </form>
@@ -71,7 +76,7 @@
                                                     <div class="card">
                                                         <a href="javascript:void(0);" class="file">
                                                             <div class="image">
-{{--                                                                <img style="width: 100%" src="/storage/profile_image/{{$manager->profile_image}}">--}}
+                                                                <img src="/storage/{{$manager->profile_image}}">
                                                             </div>
                                                             <div class="file-name">
                                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
