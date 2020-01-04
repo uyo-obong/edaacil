@@ -31,7 +31,7 @@ class ManagerController extends BaseController
 
     public function dashboard()
     {
-        $certificates = Certificate::with('token', 'manager')->get();
+        $certificates = Certificate::with('token', 'manager')->latest()->get();
         $chart = $this->managerRepository->dashboard();
         return view($this->_config['view'], ['certificates' => $certificates, 'chart' => $chart]);
     }

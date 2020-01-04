@@ -22,15 +22,16 @@ class ManagerRepository extends BaseRepository
     public function dashboard()
     {
         $today_sales = Certificate::whereDate('created_at', today())->count();
-        $users_3_days_ago = Certificate::whereDate('created_at', today()->subDays(3))->count();
+        $sales_1_day_ago = Certificate::whereDate('created_at', today()->subDays(1))->count();
+        $sales_2_days_ago = Certificate::whereDate('created_at', today()->subDays(2))->count();
         $sales_7_days_ago = Certificate::whereDate('created_at', today()->subDays(7))->count();
         $sales_14_days_ago = Certificate::whereDate('created_at', today()->subDays(14))->count();
         $sales_21_days_ago = Certificate::whereDate('created_at', today()->subDays(21))->count();
 
         $chart = new Chart();
 
-        $chart->labels(['3 weeks ago', '2 weeks ago', '1 week ago', '3 days ago', 'Today']);
-        $chart->dataset('Total Sales', 'line', [$sales_21_days_ago, $sales_14_days_ago, $sales_7_days_ago, $users_3_days_ago, $today_sales])->backgroundcolor(collect(["#e47297"]));
+        $chart->labels(['3 weeks ago', '2 weeks ago', '1 week ago', '2 days ago', 'yesterday', 'Today']);
+        $chart->dataset('Total Sales', 'line', [$sales_21_days_ago, $sales_14_days_ago, $sales_7_days_ago, $sales_2_days_ago, $sales_1_day_ago, $today_sales])->backgroundcolor(collect(["#e47297"]));
         $chart->options( [
             'scales' => [
                 'xAxes' => [],

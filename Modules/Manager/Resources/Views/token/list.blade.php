@@ -35,7 +35,7 @@
                                             <th>S/N</th>
                                             <th>Token</th>
                                             <th>Status</th>
-                                            <th>User</th>
+                                            <th>Holder</th>
                                             <th>Created</th>
                                             <th>Delete</th>
                                         </tr>
@@ -45,7 +45,7 @@
                                             <th>S/N</th>
                                             <th>Token</th>
                                             <th>Status</th>
-                                            <th>User</th>
+                                            <th>Holder</th>
                                             <th>Created</th>
                                             <th>Delete</th>
                                         </tr>

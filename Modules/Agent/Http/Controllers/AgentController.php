@@ -37,7 +37,7 @@ class AgentController extends BaseController
     public function dashboard()
     {
         $counter = $this->agentRepository->certificateCounter();
-        $certificates = Certificate::where('manager_id', auth()->user()->id)->with('token')->get();
+        $certificates = Certificate::where('manager_id', auth()->user()->id)->with('token')->latest()->get();
         return view($this->_config['view'], ['certificates' => $certificates, 'counter' => $counter]);
     }
 

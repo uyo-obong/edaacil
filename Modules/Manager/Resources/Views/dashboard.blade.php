@@ -73,7 +73,7 @@
                                             <td>{{ $certificate->name_of_policy_holder }}</td>
                                             <td>{{ $certificate->manager->fullName() }}</td>
                                             <td>{{ $certificate->created_at->format('d, M Y') }}</td>
-                                            <td><a class="btn btn-success" href="">View</a> </td>
+                                            <td>@includeIf('manager::reprint-data.buttons.view')</td>
                                         </tr>
                                     @endforeach
 
@@ -87,6 +87,67 @@
 
         </div>
     </section>
+
+  @includeIf('manager::reprint-data.certificate-modal')
+
 @stop
 @push('scripts')
+    <script>
+        $('#viewCertificateModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            console.log(button);
+            var certificateId = button.data('id');
+            var token = button.data('token');
+            var holderName = button.data('name');
+            var policyNumber = button.data('policy-number');
+            var certificateNumber = button.data('certificate-number');
+            var indexMark = button.data('index-mark');
+            var plateNumber = button.data('plate-number');
+            var chassisNumber = button.data('chassis-number');
+            var vehicle = button.data('make-of-vehicle');
+            var cover = button.data('type-of-cover');
+            var registration = button.data('registration');
+            var expiring = button.data('expiring');
+
+
+            var modal = $(this);
+            modal.find('.modal-content #holderName').text(holderName);
+            modal.find('.modal-content #certificateId').text(certificateId);
+            modal.find('.modal-content #token').text(token);
+            modal.find('.modal-content #policyNumber').append(policyNumber);
+            modal.find('.modal-content #certificateNumber').append(certificateNumber);
+            modal.find('.modal-content #indexMark').append(indexMark);
+            modal.find('.modal-content #plateNumber').append(plateNumber);
+            modal.find('.modal-content #chassisNumber').append(chassisNumber);
+            modal.find('.modal-content #vehicle').append(vehicle);
+            modal.find('.modal-content #cover').append(cover);
+            modal.find('.modal-content #registration').append(registration);
+            modal.find('.modal-content #expiring').append(expiring);
+        });
+    </script>
+
+    <script>
+        function printPageArea(){
+            var print_div = document.getElementById("printCertificate");
+            var print_area = window.self;
+            print_area.document.write(print_div.innerHTML);
+            print_area.document.close();
+            print_area.focus();
+            print_area.print();
+            print_area.closePrintView();
+
+        }
+
+        function closePrintView() {
+            window.location.href = '/manager';
+        }
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $(".reload").click(function(){
+                history.go(0);
+            });
+        });
+    </script>
 @endpush

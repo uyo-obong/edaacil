@@ -50,6 +50,24 @@ class AuthAgentController extends BaseController
     }
 
     /**
+     * Return forgot password page
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function forgotPassword()
+    {
+        return view($this->_config['view']);
+    }
+
+    /**
+     * Return Reset password page
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function passwordReset()
+    {
+        return view($this->_config['view']);
+    }
+
+    /**
      * Logout Agent
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */

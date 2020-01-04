@@ -41,7 +41,7 @@ class AccountController extends BaseController
      */
     public function list()
     {
-        $accounts =  $this->accountRepository->model()::all();
+        $accounts =  $this->accountRepository->model()::latest()->get();
         return view($this->_config['view'], ['accounts' => $accounts]);
     }
 
@@ -91,6 +91,11 @@ class AccountController extends BaseController
         return Redirect::back();
     }
 
+    /**
+     * Update Account Information
+     * @param UpdateMangerInformation $updateMangerInformation
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function updateManagerInformation(UpdateMangerInformation $updateMangerInformation)
     {
 
