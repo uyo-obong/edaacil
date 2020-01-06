@@ -25,7 +25,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="float-right btn btn-info">Save Changes</button>
+                                    <button class="float-right btn btn-primary">Save Changes</button>
                                 </div>
                             </div>
                         </form>

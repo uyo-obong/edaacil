@@ -3,7 +3,7 @@
 <head>
     <title>Edaacil - Login</title>
     <!-- Favicon-->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ URL::to('favicon.ico') }}" type="image/x-icon">
     <!-- Custom Css -->
     <link rel="stylesheet" href="{{ URL::to('assets/plugins/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ URL::to('assets/css/style.min.css') }}">

@@ -181,7 +181,8 @@ return [
          *  Modules Service Providers...
          */
         Edaacil\Modules\Manager\ManagerServiceProvider::class,
-        Edaacil\Modules\Manager\AgentServiceProvider::class,
+        Edaacil\Modules\Agent\AgentServiceProvider::class,
+        Edaacil\Modules\Client\ClientServiceProvider::class,
 
     ],
 
