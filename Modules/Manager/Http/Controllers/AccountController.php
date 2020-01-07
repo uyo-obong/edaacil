@@ -8,7 +8,6 @@ use Edaacil\Modules\Manager\Http\Requests\ChangeManagerPassword;
 use Edaacil\Modules\Manager\Http\Requests\CreateAccountRequest;
 use Edaacil\Modules\Manager\Http\Requests\UpdateAccountRequest;
 use Edaacil\Modules\Manager\Http\Requests\UpdateMangerInformation;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 

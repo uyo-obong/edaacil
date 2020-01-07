@@ -3,7 +3,7 @@
 <head>
     <title>Edaacil - @yield('title')</title>
     <!-- Favicon-->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ URL::to('favicon.ico') }}" type="image/x-icon">
     <!-- Custom Css -->
     <link rel="stylesheet" href="{{ URL::to('assets/plugins/bootstrap/css/bootstrap.min.css') }}">
     <link href="{{ URL::to('assets/plugins/bootstrap-select/css/bootstrap-select.css') }}" rel="stylesheet" />

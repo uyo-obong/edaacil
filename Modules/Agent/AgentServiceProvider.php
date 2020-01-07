@@ -1,6 +1,6 @@
 <?php
 
-namespace Edaacil\Modules\Manager;
+namespace Edaacil\Modules\Agent;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
