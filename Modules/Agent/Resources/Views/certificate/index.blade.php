@@ -76,9 +76,15 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="form-group form-float">
                                             <input type="text" value="{{ old("type_of_cover") }}" class="form-control" placeholder="Type of Cover" name="type_of_cover" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group form-float">
+                                            <input type="text" value="{{ old("amount") }}" class="form-control" placeholder="Amount" name="amount" required>
                                         </div>
                                     </div>
 

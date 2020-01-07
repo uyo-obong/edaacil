@@ -17,8 +17,10 @@ class CreateCertificatesTable extends Migration
             $table->uuid('id')->primary();
             $table->string('manager_id');
             $table->string('token_id');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('phone_number');
+            $table->string('amount');
+            $table->string('policy_name');
             $table->string('certificate_number');
             $table->string('policy_number');
             $table->string('index_mark');

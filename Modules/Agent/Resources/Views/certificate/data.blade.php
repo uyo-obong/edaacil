@@ -5,45 +5,52 @@
         </div>
         <div class="body">
             @if($certificate != null && $urlPath == $certificate->token_id)
-            <div id="printCertificate">
-                <div style="padding-top: 150px"></div>
+                <div id="printCertificate">
+                    <div style="padding-top: 150px"></div>
 
-                <div style="float: right">Policy No.: {{ $certificate->policy_number }}</div><div  >Certificate No.: {{ $certificate->certificate_number }}</div>
-                <br>
-                <ol>
-                    <li>Index Mark and Registration No. of Vehicle Plate: {{ $certificate->index_mark }}</li>
-                    <li>Chassis Number: {{ $certificate->chassis_number }}</li>
-                    <li>Make of Vehicle: {{ $certificate->make_of_vehicle }}</li>
-                    <li>Name of Policy Holder: {{ $certificate->name_of_policy_holder }}</li>
-                    <li>Effective Date of Commencement of Insurance for the Purposes of the Act: {{ $certificate->registration_date }}</li>
-                    <li>Date of Expiry of Insurance: {{ $certificate->expiring_date }}</li>
-                    <li>Type of Cover: {{ $certificate->type_of_cover }}</li>
+                    <div style="float: right">Policy No.: {{ $certificate->policy_number }} </div><div id="certificateNumber">Certificate No.: {{ $certificate->certificate_number }}</div>
+                    <br>
+                    <ol>
+                        <li id="plateNumber">Index Mark and Registration <br> No. of Vehicle Plate: {{ $certificate->index_mark }}</li>
+                        <li id="chassisNumber">Chassis Number: {{ $certificate->chassis_number }}</li>
+                        <li id="vehicle">Make of Vehicle: {{ $certificate->make_of_vehicle }}</li>
+                        <li id="certificateNumber">Name of Policy Holder: {{ $certificate->name_of_policy_holder }}</li>
+                        <li id="registration">Effective Date of Commencement of Insurance for the Purposes of the Act: {{ $certificate->registration_date }}</li>
+                        <li id="expiring">Date of Expiry of Insurance: {{ $certificate->expiring_date }}</li>
+                        <li id="cover">Type of Cover: {{ $certificate->type_of_cover }}</li>
 
-                    <li>Persons or classes of persons entitled to drive whilst the vehicles is being used in connection with the policy holder's business:-
-                        <ul>
-                            <li><p>(a) The policy holder.</p>
-                                <p>(b) Any other person who is driving on the policy holder's order or with his permission. Whilst the vehicles is being used for social domestic or pleasure purposes:-</p>
-                            </li>
-                            <li>
-                                <p>(a) The policy holder.</p>
-                                <p>(b) Any other person who is driving on the policy holder's order or with his permission. Provided that the person driving is permitted in accordance with the licensing or other laws or regulations to drive the Motor Vehicle or has been so permitted and is not disqualified by order of a Court of law or by reason of any enactment or regulation in that behalf from driving such Motor Vehicle.</p>
-                            </li>
-                        </ul>
-                    </li>
+                        <li>Persons or classes of persons entitled to drive whilst the vehicles is being used in connection with the policy holder's business:-
+                            <ul>
+                                <li>(a) The policy holder.<br>
+                                    (b) Any other person who is driving on the policy holder's order or with his permission. Whilst the vehicles is being used for social domestic or pleasure purposes:-
+                                </li>
 
-                    <li><b>Limitations As To Use<sup>*</sup></b>
-                        <p>Use only for social, domestic and pleasure purposes and for the Policy-holder's business. The policy does not cover<sup>*</sup></p>
-                        <p>(a) Use for hiring racing, pace-making, reliability trial speed-testing</p>
-                        <p>(b) Use while drawing a trailer except the towing (other than for reward) of any one disabled mechanically propelled vehicle.</p>
-                        <p>(a) Use for the conveyance of passengers for hire or reward.</p>
-                    </li>
+                                <li>
+                                    (a) The policy holder.<br>
+                                    (b) Any other person who is driving on the policy holder's order or with his permission. Provided that the person driving is permitted in accordance with the licensing or other laws or regulations to drive the Motor Vehicle or has been so permitted and is not disqualified by order of a Court of law or by reason of any enactment or regulation in that behalf from driving such Motor Vehicle.
+                                </li>
+                            </ul>
+                        </li>
+                        <li><b>Limitations As To Use<sup>*</sup> {{ $certificate->policy_name }}</b><br>
+                            Use only for social, domestic and pleasure purposes and for the Policy-holder's business. The policy does not cover<sup>*</sup><br>
+                            (a) Use for hiring racing, pace-making, reliability trial speed-testing<br>
+                            (b) Use while drawing a trailer except the towing (other than for reward) of any one disabled mechanically propelled vehicle.<br>
+                            (c) Use for the conveyance of passengers for hire or reward.
+                        </li>
+                    </ol>
+                    <p><b>I/WE HEREBY CERTIFY</b> that the Policy to which this certificate related is issued in accordance with the above provisions of the Motor Vehicles. (Third Party Insurance) Ordinance</p>
 
-                </ol>
-            </div>
-            <form>
-                <input type="button" value="Print" class="float-right btn btn-primary" onclick="printPageArea()">
-            </form>
-            <div class="clearfix"></div>
+                    <div style="padding-top: 50px"></div>
+                    <div style="float: right"><img src="{{ URL::to('signature.png') }}" alt="signature" width="160" height="50"><br>___________________________<br>Authority of the society </div>
+                    <div><img src="" alt="Image"><br>___________________________<br>EXAMINED BY</div>
+                </div>
+                <div class="clearfix"></div>
+                <form>
+                    <input type="button" value="Print" class="float-right btn btn-primary" onclick="printPageArea()">
+                </form>
+                <div class="clearfix"></div>
+        </div>
+
         @else
             <div class="body text-center">
                 <h4 class="m-t-0">Certificate loading...</h4>
@@ -54,5 +61,5 @@
         @endif
     </div>
 
-    </div>
+</div>
 </div>

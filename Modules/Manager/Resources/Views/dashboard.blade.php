@@ -95,11 +95,12 @@
     <script>
         $('#viewCertificateModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
-            console.log(button);
             var certificateId = button.data('id');
             var token = button.data('token');
             var holderName = button.data('name');
+            var amount = button.data('amount');
             var policyNumber = button.data('policy-number');
+            var policyName = button.data('policy-name');
             var certificateNumber = button.data('certificate-number');
             var indexMark = button.data('index-mark');
             var plateNumber = button.data('plate-number');
@@ -112,6 +113,8 @@
 
             var modal = $(this);
             modal.find('.modal-content #holderName').text(holderName);
+            modal.find('.modal-content #amount').text(amount);
+            modal.find('.modal-content #policyName').append(policyName);
             modal.find('.modal-content #certificateId').text(certificateId);
             modal.find('.modal-content #token').text(token);
             modal.find('.modal-content #policyNumber').append(policyNumber);
@@ -123,6 +126,7 @@
             modal.find('.modal-content #cover').append(cover);
             modal.find('.modal-content #registration').append(registration);
             modal.find('.modal-content #expiring').append(expiring);
+            console.log(policyName)
         });
     </script>
 
