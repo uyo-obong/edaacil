@@ -43,7 +43,6 @@ class AgentRepository extends BaseRepository
            'last_name'=>$data->last_name,
            'phone_no'=>$data->phone_no,
            'address'=>$data->address,
-//            'profile_image'=> $this->verifyAndStoreImage($request,'profile_image'),
         ]);
     }
 
