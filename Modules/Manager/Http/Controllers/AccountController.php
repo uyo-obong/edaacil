@@ -107,8 +107,9 @@ class AccountController extends BaseController
     }
 
     public function managerChangePassword(ChangeManagerPassword $changeManagerPassword){
-
+//        dd($changeManagerPassword);
         $manager = $this->accountRepository->managerChangePassword($changeManagerPassword->all());
+//        dd($manager);
         if ($manager)
             session()->flash('success', 'Manager Password Changed Successfully');
         return redirect()->back();

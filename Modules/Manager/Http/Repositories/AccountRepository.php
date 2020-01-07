@@ -7,13 +7,6 @@ use Edaacil\Modules\BaseRepository;
 use Edaacil\Modules\Manager\Http\Models\Manager;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Str;
-use function Edaacil\Http\Helpers\imageUploader;
-
-use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image;
 
 
 class AccountRepository extends BaseRepository
@@ -80,9 +73,9 @@ class AccountRepository extends BaseRepository
     {
         $data = (object)$request;
 
-        $fileName = 'profile_image'.time().'.'.request()->profile_image->getClientOriginalExtension();
+//        $fileName = 'profile_image'.time().'.'.request()->profile_image->getClientOriginalExtension();
 
-        $storage = $request['profile_image']->store('profile-images','public',$fileName);
+//        $storage = $request['profile_image']->store('profile-images','public');
 
 
 
@@ -97,7 +90,7 @@ class AccountRepository extends BaseRepository
             'city' => $data->city,
             'state' => $data->state,
             'country' => $data->country,
-            'profile_image'=>$storage,
+//            'profile_image'=>$storage,
         ]);
 
     }
