@@ -63,16 +63,16 @@ class CertificateRepository extends BaseRepository
         $explode = explode('=', $url);
         $token = Token::where('token', $explode[1])->first();
 
-        $certificateNumber = rand(100000, 999999);
-
         $certificate = $this->model()::create([
             'id'                    => $this->generateUuid(),
             'manager_id'            => auth()->user()->id,
             'token_id'              => $token->id,
             'email'                 => $data->email,
+            'amount'                => $data->amount,
             'phone_number'          => $data->phone_number,
-            'certificate_number'    => $certificateNumber,
+            'certificate_number'    => $this->certificateNumber(),
             'policy_number'         => $this->policyNumber($data),
+            'policy_name'           => $data->policy_number == 'PM' ? 'PRIVATE USE' : 'COMMERCIAL USE',
             'index_mark'            => $this->indexMarkNumber(),
             'plate_number'          => $data->plate_number,
             'chassis_number'        => $data->chassis_number,
@@ -162,6 +162,16 @@ class CertificateRepository extends BaseRepository
 
         // increment the last digit
         return str_pad($oldIndexNumber + 1, 5, 0, STR_PAD_LEFT);
+    }
+
+    private function certificateNumber()
+    {
+        // Get last certificate number from database
+        $certificateNumber = $this->model()::select('certificate_number')->latest()->first();
+        $oldCertificateNumber = $certificateNumber !== null ? $certificateNumber->certificate_number : '0063111';
+
+        // increment the last digit
+        return str_pad($oldCertificateNumber + 1, 7, 0, STR_PAD_LEFT);
     }
 
 }
