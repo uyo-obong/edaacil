@@ -40,26 +40,27 @@
                     </ol>
                     <p><b>I/WE HEREBY CERTIFY</b> that the Policy to which this certificate related is issued in accordance with the above provisions of the Motor Vehicles. (Third Party Insurance) Ordinance</p>
 
-                    <div style="padding-top: 50px"></div>
-                    <div style="float: right"><img src="{{ URL::to('signature.png') }}" alt="signature" width="160" height="50"><br>___________________________<br>Authority of the society </div>
-                    <div><img src="" alt="Image"><br>___________________________<br>EXAMINED BY</div>
-                </div>
-                <div class="clearfix"></div>
-                <form>
-                    <input type="button" value="Print" class="float-right btn btn-primary" onclick="printPageArea()">
-                </form>
-                <div class="clearfix"></div>
-        </div>
+                    <div style="float: right; padding-top: 50px; padding-bottom: 60px"><img src="{{ URL::to('signature.png') }}" alt="signature" width="100" height="50"><br><b>__________________</b><br>Authority of the society </div>
 
-        @else
-            <div class="body text-center">
-                <h4 class="m-t-0">Certificate loading...</h4>
-                <div style="display:inline;width:140px;height:140px;"><canvas width="140" height="140"></canvas><input type="text" class="knob dial1" value="97" data-width="140" data-height="140" data-thickness="0.1" data-fgcolor="#00ced1" readonly="readonly" style="width: 74px; height: 46px; position: absolute; vertical-align: middle; margin-top: 46px; margin-left: -107px; border: 0px; background: none; font: bold 28px Arial; text-align: center; color: rgb(0, 206, 209); padding: 0px; -webkit-appearance: none;"></div>
-                <h6 class="m-t-30">You are almost there</h6>
-                <div class="sparkline m-t-20" data-type="bar" data-width="97%" data-height="45px" data-bar-width="2" data-bar-spacing="8" data-bar-color="#00ced1"><canvas width="192" height="45" style="display: inline-block; width: 192px; height: 45px; vertical-align: top;"></canvas></div>
-            </div>
-        @endif
+                    <div><img style="padding-left: 20px" src="{{ URL::to('edaacil-stamp.png') }}" alt="Image" width="100" ><br><b>__________________</b><br>EXAMINED BY</div>
+                </div>
+        </div>
+        <div class="clearfix"></div>
+        <form>
+            <input type="button" value="Print" class="float-right btn btn-primary" onclick="printPageArea()">
+        </form>
+        <div class="clearfix"></div>
     </div>
+
+    @else
+        <div class="body text-center">
+            <h4 class="m-t-0">Certificate loading...</h4>
+            <div style="display:inline;width:140px;height:140px;"><canvas width="140" height="140"></canvas><input type="text" class="knob dial1" value="97" data-width="140" data-height="140" data-thickness="0.1" data-fgcolor="#00ced1" readonly="readonly" style="width: 74px; height: 46px; position: absolute; vertical-align: middle; margin-top: 46px; margin-left: -107px; border: 0px; background: none; font: bold 28px Arial; text-align: center; color: rgb(0, 206, 209); padding: 0px; -webkit-appearance: none;"></div>
+            <h6 class="m-t-30">You are almost there</h6>
+            <div class="sparkline m-t-20" data-type="bar" data-width="97%" data-height="45px" data-bar-width="2" data-bar-spacing="8" data-bar-color="#00ced1"><canvas width="192" height="45" style="display: inline-block; width: 192px; height: 45px; vertical-align: top;"></canvas></div>
+        </div>
+    @endif
+</div>
 
 </div>
 </div>
