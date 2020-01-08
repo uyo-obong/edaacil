@@ -50,4 +50,7 @@ Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], functi
     ])->name('manager.auth.view');
     Route::post('/manager/login', 'AuthController@managerLogin')->name('manager.auth.login');
 
+
+
+
 });

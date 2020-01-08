@@ -75,7 +75,7 @@ class AccountRepository extends BaseRepository
 
 //        $fileName = 'profile_image'.time().'.'.request()->profile_image->getClientOriginalExtension();
 
-//        $storage = $request['profile_image']->store('profile-images','public');
+        $storage = $request['profile_image']->store('profile-images','public');
 
 
 
@@ -90,7 +90,7 @@ class AccountRepository extends BaseRepository
             'city' => $data->city,
             'state' => $data->state,
             'country' => $data->country,
-//            'profile_image'=>$storage,
+            'profile_image'=>$storage,
         ]);
 
     }
