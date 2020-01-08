@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit1cf8063ab5a671ae5209e2147991a690
+class ComposerStaticInit8cf45fcdd99f6513b4d35b66cc732c71
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -739,7 +739,9 @@ class ComposerStaticInit1cf8063ab5a671ae5209e2147991a690
         'Edaacil\\Modules\\Agent\\Http\\Repositories\\AuthAgentRepository' => __DIR__ . '/../..' . '/Modules/Agent/Http/Repositories/AuthAgentRepository.php',
         'Edaacil\\Modules\\Agent\\Http\\Repositories\\CertificateRepository' => __DIR__ . '/../..' . '/Modules/Agent/Http/Repositories/CertificateRepository.php',
         'Edaacil\\Modules\\Agent\\Http\\Requests\\AgentLoginRequest' => __DIR__ . '/../..' . '/Modules/Agent/Http/Requests/LoginRequest.php',
+        'Edaacil\\Modules\\Agent\\Http\\Requests\\AgentUpdateProfile' => __DIR__ . '/../..' . '/Modules/Agent/Http/Requests/AgentUpdateProfile.php',
         'Edaacil\\Modules\\Agent\\Http\\Requests\\CertificateIssueRequest' => __DIR__ . '/../..' . '/Modules/Agent/Http/Requests/CertificateIssueRequest.php',
+        'Edaacil\\Modules\\Agent\\Http\\Requests\\ChangeAgentPassword' => __DIR__ . '/../..' . '/Modules/Agent/Http/Requests/ChangeAgentPassword.php',
         'Edaacil\\Modules\\BaseController' => __DIR__ . '/../..' . '/Modules/BaseController.php',
         'Edaacil\\Modules\\BaseRepository' => __DIR__ . '/../..' . '/Modules/BaseRepository.php',
         'Edaacil\\Modules\\Client\\ClientServiceProvider' => __DIR__ . '/../..' . '/Modules/Client/ClientServiceProvider.php',
@@ -767,6 +769,7 @@ class ComposerStaticInit1cf8063ab5a671ae5209e2147991a690
         'Edaacil\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'Edaacil\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'Edaacil\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'Edaacil\\Traits\\StoreImageTrait' => __DIR__ . '/../..' . '/app/Traits/Traits.php',
         'Egulias\\EmailValidator\\EmailLexer' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/EmailLexer.php',
         'Egulias\\EmailValidator\\EmailParser' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/EmailParser.php',
         'Egulias\\EmailValidator\\EmailValidator' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/EmailValidator.php',
@@ -4784,10 +4787,10 @@ class ComposerStaticInit1cf8063ab5a671ae5209e2147991a690
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit1cf8063ab5a671ae5209e2147991a690::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit1cf8063ab5a671ae5209e2147991a690::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit1cf8063ab5a671ae5209e2147991a690::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit1cf8063ab5a671ae5209e2147991a690::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit8cf45fcdd99f6513b4d35b66cc732c71::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit8cf45fcdd99f6513b4d35b66cc732c71::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit8cf45fcdd99f6513b4d35b66cc732c71::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit8cf45fcdd99f6513b4d35b66cc732c71::$classMap;
 
         }, null, ClassLoader::class);
     }
