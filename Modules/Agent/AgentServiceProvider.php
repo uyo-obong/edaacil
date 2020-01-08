@@ -12,7 +12,7 @@ class AgentServiceProvider extends BaseServiceProvider
      * @return void
      */
     public function boot() {
-        // 'Haqqman/Modules/User/Migrations' folder path
+        // 'Edaacil/Modules/User/Migrations' folder path
         $this->loadMigrationsFrom(__DIR__.'/Migrations');
 
         // Load routes

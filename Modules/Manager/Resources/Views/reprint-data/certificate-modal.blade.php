@@ -44,9 +44,9 @@
                     </ol>
                     <p><b>I/WE HEREBY CERTIFY</b> that the Policy to which this certificate related is issued in accordance with the above provisions of the Motor Vehicles. (Third Party Insurance) Ordinance</p>
 
-                    <div style="padding-top: 50px"></div>
-                    <div style="float: right"><img src="{{ URL::to('signature.png') }}" alt="signature" width="160" height="50"><br>___________________________<br>Authority of the society </div>
-                    <div><img src="" alt="Image"><br>___________________________<br>EXAMINED BY</div>
+                    <div style="float: right; padding-top: 50px; padding-bottom: 60px"><img src="{{ URL::to('signature.png') }}" alt="signature" width="100" height="50"><br><b>__________________</b><br>Authority of the society </div>
+
+                    <div><img style="padding-left: 20px" src="{{ URL::to('edaacil-stamp.png') }}" alt="Image" width="100" ><br><b>__________________</b><br>EXAMINED BY</div>
                 </div>
                 <div class="clearfix"></div>
 
