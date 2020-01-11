@@ -9,11 +9,6 @@ use Ramsey\Uuid\Uuid;
 
 abstract class BaseRepository
 {
-
-    private $SMS_SENDER = "Edaacil";
-    private $SMS_USERNAME = 'legendary1';
-    private $SMS_PASSWORD = 'Excellentloaded1';
-
     /**
      * Specify Model class name
      *
@@ -51,7 +46,7 @@ abstract class BaseRepository
     {
         $phone_number = $data->phone_number;
 
-        $message = "Your certificate is ready. thank you for using our service.";
+        $message = "Your certificate is ready. thank you for using our service. EDAACIL";
 
         return $this->initiateSmsGuzzle($phone_number, $message);
 
@@ -71,10 +66,10 @@ abstract class BaseRepository
         return $client->post('http://api.smartsmssolutions.com/smsapi.php?', [
             'verify' => false,
             'form_params' => [
-                'username'  => $this->SMS_USERNAME,
-                'password'  => $this->SMS_PASSWORD,
+                'username'  => env('SMS_USERNAME'),
+                'password'  => env('SMS_PASSWORD'),
                 'message'   => $message,
-                'sender'    => $this->SMS_SENDER,
+                'sender'    => env('SMS_SENDER'),
                 'recipient' => $phone_number,
             ],
         ]);
