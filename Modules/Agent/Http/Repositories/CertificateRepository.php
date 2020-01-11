@@ -51,7 +51,6 @@ class CertificateRepository extends BaseRepository
     public function certificateIssue(array $data)
     {
         $data = (object)$data;
-
         $verifyEmail = $this->model()::where('email', $data->email)->first();
 
         if ($verifyEmail) {
@@ -84,6 +83,7 @@ class CertificateRepository extends BaseRepository
         ]);
 
         if ($certificate)
+            $this->getClientNumber($data);
             session()->flash('success', 'Certificate is ready to issue out');
         return redirect()->back();
     }

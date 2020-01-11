@@ -44,12 +44,14 @@
 
                     <div><img style="padding-left: 20px" src="{{ URL::to('edaacil-stamp.png') }}" alt="Image" width="100" ><br><b>__________________</b><br>EXAMINED BY</div>
                 </div>
+
+                <div class="clearfix"></div>
+                <form>
+                    <input type="button" value="Print" class="float-right btn btn-primary" onclick="printPageArea()">
+                </form>
+                <div class="clearfix"></div>
         </div>
-        <div class="clearfix"></div>
-        <form>
-            <input type="button" value="Print" class="float-right btn btn-primary" onclick="printPageArea()">
-        </form>
-        <div class="clearfix"></div>
+
     </div>
 
     @else

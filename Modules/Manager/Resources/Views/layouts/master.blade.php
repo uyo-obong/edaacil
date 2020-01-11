@@ -46,6 +46,8 @@
 
 @include('manager::utiles.theme-settings')
 
+@include('manager::utiles.check-sms-balance.balance')
+
 @yield('content')
 
 <!-- Jquery Core Js -->
