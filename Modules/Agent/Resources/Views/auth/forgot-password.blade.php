@@ -20,15 +20,19 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-sm-12">
-                <form class="card auth_form" method="POST" action="">
+                <form class="card auth_form" method="POST" action="{{route('password')}}">
                     <div class="header">
                         <img class="logo" src="{{ URL::to('assets/images/edaacil-logo.png') }}" alt="">
                         <h5>Forgot Password?</h5>
                         <span>Enter your e-mail address below to reset your password.</span>
                     </div>
+                    <div class="file-name">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input type="hidden" value="{{$agent->id}}" name="agentId">
+                    </div>
                     <div class="body">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Enter Email">
+                            <input type="text" class="form-control" value="{{$agent->email}}" placeholder="Enter Email">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="zmdi zmdi-email"></i></span>
                             </div>

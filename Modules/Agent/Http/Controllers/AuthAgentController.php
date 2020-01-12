@@ -4,8 +4,11 @@ namespace Edaacil\Modules\Agent\Http\Controllers;
 
 use Edaacil\Modules\Agent\Http\Repositories\AuthAgentRepository;
 use Edaacil\Modules\Agent\Http\Requests\AgentLoginRequest;
+use Edaacil\Modules\Agent\Http\Requests\ForgotPassword;
 use Edaacil\Modules\BaseController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class AuthAgentController extends BaseController
 {
@@ -58,6 +61,21 @@ class AuthAgentController extends BaseController
         return view($this->_config['view']);
     }
 
+    public function agentForgotPassword(Request $forgotPassword){
+        try {
+            $this->validate($forgotPassword, [
+                'email' => 'required|exists:managers,email'
+            ]);
+        } catch (ValidationException $e) {
+        }
+        dd($forgotPassword->email);
+        $agent = $this->authAgentRepository->agentForgotPassword($forgotPassword->all());
+        dd($agent);
+        if ($agent)
+            session()->flash('success', 'we have e-mailed your password reset link!');
+        return redirect()->back();
+    }
+
     /**
      * Return Reset password page
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -66,6 +84,13 @@ class AuthAgentController extends BaseController
     {
         return view($this->_config['view']);
     }
+
+//    public function agentResetPassword(){
+//        $agent = $this->authAgentRepository->agentForgotPassword();
+//        if ($agent)
+//            session()->flash('success', 'Congratulations,You have Successfully Reset Your Password!');
+//        return redirect()->back();
+//    }
 
     /**
      * Logout Agent
