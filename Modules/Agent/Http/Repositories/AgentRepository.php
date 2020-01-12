@@ -34,6 +34,10 @@ class AgentRepository extends BaseRepository
        return $day->count();
     }
 
+    /**
+     * @param array $request
+     * @return mixed
+     */
     public function agentUpdateProfile(array $request){
         $data = (object) $request;
 
@@ -46,6 +50,10 @@ class AgentRepository extends BaseRepository
         ]);
     }
 
+    /**
+     * @param array $request
+     * @return mixed
+     */
     public function agentChangePassword(array $request){
         $data = (object) $request;
         $agent = $this->model()::where('id', auth()->user()->id)->where('email', auth()->user()->email)->first();

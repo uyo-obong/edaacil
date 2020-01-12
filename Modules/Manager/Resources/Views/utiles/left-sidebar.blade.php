@@ -23,6 +23,9 @@
             <li class="{{ request()->is('manager/account/list') ? 'active open' : '' }}"><a href="{{ route('manager.account.list') }}"><i class="zmdi zmdi-accounts-list"></i><span>Manage Account</span></a>
             </li>
 
+            <li class=""><a data-toggle="modal" data-target="#viewSmsBalanceModal" type="button" href="#"><i class="zmdi zmdi-money-box"></i><span>Check Sms Balance</span></a>
+            </li>
+
         </ul>
     </div>
 </aside>

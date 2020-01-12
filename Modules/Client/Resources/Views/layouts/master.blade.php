@@ -142,14 +142,14 @@ Header
 
                 <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
                     <div class="box">
-                        <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
+                        <div class="icon"><i class="ion-ios-home-outline" style="color: #ff689b;"></i></div>
                         <h4 class="title"><a href="">Home Insurance</a></h4>
                         <p class="description">This insurance commonly called homeowner's insurance, which a type of property insurance that covers a private residence.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-duration="1.4s">
                     <div class="box">
-                        <div class="icon"><i class="ion-ios-bookmarks-outline" style="color: #e9bf06;"></i></div>
+                        <div class="icon"><i class="ion-ios-person-outline" style="color: #e9bf06;"></i></div>
                         <h4 class="title"><a href="">Householder Insurance</a></h4>
                         <p class="description">This is a policy to cover your household contents and includes coverage for fatal injury to you as the insured.</p>
                     </div>
@@ -164,7 +164,7 @@ Header
                 </div>
                 <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
                     <div class="box">
-                        <div class="icon"><i class="ion-ios-speedometer-outline" style="color:#41cf2e;"></i></div>
+                        <div class="icon"><i class="ion-ios-rainy-outline" style="color:#41cf2e;"></i></div>
                         <h4 class="title"><a href="">Marine Insurance</a></h4>
                         <p class="description">Marine insurance covers the loss or damage of ships, cargo, terminals, and any transport by which the property is acquired.</p>
                     </div>
@@ -256,7 +256,7 @@ Header
 
                     <p>Co-op agents use their experience and knowledge as insurance professionals to make recommendations based on your individual needs.</p>
 
-                    <p>Contact our customer care for available agent in your locality 0803839484!</p>
+                    <p>Contact our customer care for available agent in your locality <a href="tel:18475555555`" class="btn-services scrollto">0803839484</a> </p>
                 </div>
             </div>
 
