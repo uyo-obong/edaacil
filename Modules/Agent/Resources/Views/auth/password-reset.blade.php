@@ -22,12 +22,14 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-sm-12">
-                <form class="card auth_form">
+                <form class="card auth_form"method="POST" action="">
                     <div class="header">
                         <img class="logo" src="{{ URL::to('assets/images/edaacil-logo.png') }}" alt="">
                         <h5>Reset Password</h5>
                     </div>
                     <div class="body">
+{{--                        <form class="card auth_form" >--}}
+
                         <div class="input-group mb-3">
                             <input type="password" class="form-control" placeholder="New Password">
                             <div class="input-group-append">
@@ -41,6 +43,7 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block waves-effect waves-light">SIGN IN</button>
+{{--                        </form>--}}
                     </div>
                 </form>
                 <div class="copyright text-center">

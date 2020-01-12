@@ -53,4 +53,7 @@ class AgentRepository extends BaseRepository
             'password'=> Hash::make($data->password),
         ]);
     }
+
+
+
 }
