@@ -766,6 +766,7 @@ class ComposerStaticInit8cf45fcdd99f6513b4d35b66cc732c71
         'Edaacil\\Modules\\Manager\\Http\\Requests\\UpdateAccountRequest' => __DIR__ . '/../..' . '/Modules/Manager/Http/Requests/UpdateAccountRequest.php',
         'Edaacil\\Modules\\Manager\\Http\\Requests\\UpdateMangerInformation' => __DIR__ . '/../..' . '/Modules/Manager/Http/Requests/UpdateMangerInformation.php',
         'Edaacil\\Modules\\Manager\\ManagerServiceProvider' => __DIR__ . '/../..' . '/Modules/Manager/ManagerServiceProvider.php',
+        'Edaacil\\Notifications\\PasswordReset' => __DIR__ . '/../..' . '/app/Notifications/PasswordReset.php',
         'Edaacil\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'Edaacil\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'Edaacil\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

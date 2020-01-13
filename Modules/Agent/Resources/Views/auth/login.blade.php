@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-sm-12 mx-auto">
-                <form id="form_validation" class="card auth_form" method="POST" action="{{ route('agent.auth.login') }}">
+                <form id="form_validation" class="card auth_form" method="POST" action="">
                     <div class="header">
                         <img class="logo" src="assets/images/logo.svg" alt="">
                         <h1>Welcome Agent!</h1>
@@ -35,7 +35,7 @@
                         <div class="input-group mb-3">
                             <input type="password" class="form-control" placeholder="Password"  name="password" required>
                             <div class="input-group-append">
-                                <span class="input-group-text"><a href="forgot-password.html" class="forgot" title="Forgot Password"><i class="zmdi zmdi-lock"></i></a></span>
+                                <span class="input-group-text"><a href="{{ route('agent.auth.forgot') }}" class="forgot" title="Forgot Password"><i class="zmdi zmdi-lock"></i></a></span>
                             </div>
                         </div>
                         <div class="checkbox">

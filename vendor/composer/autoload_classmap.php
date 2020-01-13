@@ -279,6 +279,7 @@ return array(
     'Edaacil\\Modules\\Manager\\Http\\Requests\\UpdateAccountRequest' => $baseDir . '/Modules/Manager/Http/Requests/UpdateAccountRequest.php',
     'Edaacil\\Modules\\Manager\\Http\\Requests\\UpdateMangerInformation' => $baseDir . '/Modules/Manager/Http/Requests/UpdateMangerInformation.php',
     'Edaacil\\Modules\\Manager\\ManagerServiceProvider' => $baseDir . '/Modules/Manager/ManagerServiceProvider.php',
+    'Edaacil\\Notifications\\PasswordReset' => $baseDir . '/app/Notifications/PasswordReset.php',
     'Edaacil\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'Edaacil\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'Edaacil\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',

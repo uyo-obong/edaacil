@@ -37,10 +37,10 @@ Route::group(['namespace' => 'Edaacil\Modules\Agent\Http\Controllers'], function
     Route::get('/agent/forgot/password', 'AuthAgentController@forgotPassword')->defaults('_config', [
         'view' => 'agent::auth.forgot-password'
     ])->name('agent.auth.forgot');
-    Route::post('agent/forgot-password', 'AuthAgentController@agentForgotPassword')->name('password');
+    Route::post('agent/forgot-password', 'AuthAgentController@agentForgotPassword')->name('agent.password');
 
 
-    Route::get('/agent/password/reset', 'AuthAgentController@passwordReset')->defaults('_config', [
+    Route::get('/agent/password/reset/{token}', 'AuthAgentController@passwordReset')->defaults('_config', [
         'view' => 'agent::auth.password-reset'
     ])->name('agent.auth.reset');
     Route::post('agent/reset-password', 'AuthAgentController@agentResetPassword')->name('agent.reset.password');

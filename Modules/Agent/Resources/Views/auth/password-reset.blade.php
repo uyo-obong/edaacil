@@ -8,6 +8,9 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
 
+    <!-- Favicon-->
+    <link rel="icon" href="{{ URL::to('favicon.ico') }}" type="image/x-icon">
+
     <title>Edaacil - Agent password reset</title>
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -22,28 +25,25 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-sm-12">
-                <form class="card auth_form"method="POST" action="">
+                <form class="card auth_form" method="POST" action="{{ route('agent.reset.password') }}">
                     <div class="header">
                         <img class="logo" src="{{ URL::to('assets/images/edaacil-logo.png') }}" alt="">
                         <h5>Reset Password</h5>
                     </div>
                     <div class="body">
-{{--                        <form class="card auth_form" >--}}
-
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control" placeholder="New Password">
+                            <input type="password" class="form-control" name="password" placeholder="New Password" required>
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="zmdi zmdi-lock"></i></span>
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control" placeholder="Retype Password">
+                            <input type="password" class="form-control" name="password_confirmation" placeholder="Retype Password" required>
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="zmdi zmdi-lock"></i></span>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block waves-effect waves-light">SIGN IN</button>
-{{--                        </form>--}}
+                        <button type="submit" class="btn btn-primary btn-block waves-effect waves-light">RESET PASSWORD</button>
                     </div>
                 </form>
                 <div class="copyright text-center">
@@ -64,6 +64,8 @@
 <!-- Jquery Core Js -->
 <script src="{{ URL::to('assets/bundles/libscripts.bundle.js') }}"></script>
 <script src="{{ URL::to('assets/bundles/vendorscripts.bundle.js') }}"></script> <!-- Lib Scripts Plugin Js -->
+<script src="{{ URL::to('assets/plugins/bootstrap-notify/bootstrap-notify.js') }}"></script> <!-- Bootstrap Notify Plugin Js -->
+@include('manager::utiles.notifications.notify')
 </body>
 
 </html>

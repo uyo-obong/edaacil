@@ -6,27 +6,27 @@ use Edaacil\Modules\Manager\Http\Models\Manager;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\URL;
 
-class PasswordReset extends Notification
+class ConfirmPasswordReset extends Notification
 {
-    use Queueable,Notifiable;
+    use Queueable;
 
-    public $token;
-
-    public $agent;
+    /**
+     * @var Manager
+     */
+    private $agent;
 
     /**
      * Create a new notification instance.
      *
      * @param Manager $agent
-     * @param $token
      */
-    public function __construct(Manager $agent, $token)
+    public function __construct(Manager $agent)
     {
         $this->agent = $agent;
-        $this->token = $token;
+        $this->url = URL::to('/');
     }
 
     /**
@@ -48,13 +48,13 @@ class PasswordReset extends Notification
      */
     public function toMail($notifiable)
     {
-
         return (new MailMessage)
-            ->view('emails.reset-password', [
+            ->view('emails.confirm-password-reset', [
                 'agent' => $this->agent,
-                'token' => $this->token
+                'url'  => $this->url
             ])
-            ->subject('Password Reset');
+            ->subject('Congratulations');
+
     }
 
     /**

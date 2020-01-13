@@ -14,11 +14,8 @@
                         <table width="100%">
                             <tr>
                                 <td class="inner contents">
-                                    <p>Hi {{$manager->fullName()}}</p>
-                                    <p>
-                                        We are pleased to welcome you as an Agent of Edaacil Cooperative Insurance Limited. We feel honored that you have choose to work with us, and we are eager to work with you.
-
-                                    </p>
+                                    <p>Hi {{ $agent->first_name }}!</p>
+                                    <p>You are receiving this email because we received a password reset request for your account.</p>
 
                                 </td>
                             </tr>
@@ -34,7 +31,7 @@
                                         <table class="contents">
                                             <tr>
                                                 <td>
-                                                    <a class="button" href="{{route('agent.auth.login')}}">Login Here</a>
+                                                    <a class="button" href="{{ $token }}">Reset Password</a>
                                                 </td>
                                             </tr>
                                         </table>
@@ -50,10 +47,9 @@
                         <table width="100%">
                             <tr>
                                 <td class="inner contents">
+                                    <p>Note: This link is going to expire after 60 minutes</p>
                                     <br>
-                                    <p>We look forward to a long and successful association. Kindly use the details below to login to your account:- </p>
-                                    <p>Email: {{$manager['email']}}</p>
-                                    <p>Password: {{$password}}</p>
+                                    <p>Please ignore if you did not request a password reset, no further action is required. </p>
                                 </td>
                             </tr>
                         </table>
