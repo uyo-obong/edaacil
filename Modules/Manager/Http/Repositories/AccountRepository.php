@@ -74,14 +74,10 @@ class AccountRepository extends BaseRepository
     {
         $data = (object)$request;
 
-//        $fileName = 'profile_image'.time().'.'.request()->profile_image->getClientOriginalExtension();
-
         $storage = $request['profile_image']->store('profile-images','public');
 
 
-
         $manager = $this->model()::where('id', $data->managerId)->first();
-
         return $manager->update([
             'first_name' => $data->first_name,
             'last_name' => $data->last_name,
