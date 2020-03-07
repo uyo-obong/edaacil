@@ -6,4 +6,6 @@ Route::group(['namespace' => 'Edaacil\Modules\Client\Http\Controllers'], functio
             'view' => 'client::index'
         ])->name('client.index');
 
+        Route::post('/create/contact','ClientController@createContact')->name('contact');
+
 });
