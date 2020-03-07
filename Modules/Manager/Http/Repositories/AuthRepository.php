@@ -38,4 +38,5 @@ class AuthRepository extends BaseRepository
         return redirect()->route('manager.auth.view')->with("invalid", "Invalid email/or password");
     }
 
+
 }
