@@ -180,8 +180,8 @@ Header
     <section id="why-us" class="wow fadeIn">
         <div class="container">
             <header class="section-header">
-                <h3>Why choose us?</h3>
-                <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
+                <h3>Policy Statement</h3>
+                <p>We don't only insure but we <strong>indemnify.</strong></p>
             </header>
 
             <div class="row row-eq-height justify-content-center">
@@ -190,8 +190,8 @@ Header
                     <div class="card wow bounceInUp">
                         <i class="fa fa-diamond"></i>
                         <div class="card-body">
-                            <h5 class="card-title">Policy Statement</h5>
-                            <p class="card-text">Deleniti optio et nisi dolorem debitis. Aliquam nobis est temporibus sunt ab inventore officiis aut voluptatibus.omnis et eaque omnis sint aut. Ducimus dolorum aspernatur omnis et eaque omnis sint aut. Ducimus dolorum aspernatur</p>
+                            <h5 class="card-title">Vision Statement</h5>
+                            <p class="card-text">Re-defining taste in Co-operative insurance business with a touch of Execelent and hope creation and protection.</p>
                         </div>
                     </div>
                 </div>
@@ -200,8 +200,9 @@ Header
                     <div class="card wow bounceInUp">
                         <i class="fa fa-language"></i>
                         <div class="card-body">
-                            <h5 class="card-title">Terms of service</h5>
-                            <p class="card-text">Voluptates nihil et quis omnis et eaque omnis sint aut. Ducimus dolorum aspernatur. omnis et eaque omnis sint aut. Ducimus dolorum aspernatur omnis et eaque omnis sint aut. Ducimus dolorum aspernatur</p>
+                            <h5 class="card-title">Mission Statement</h5>
+                            <p class="card-text">To unluck the potentials and quality of co-operative insurance using them to improve and maintain the quality of services through customer care protection and profitability</p>
+                            <p>Caring,Quality,Reliability,Protection and Services.</p>
                         </div>
                     </div>
                 </div>
@@ -243,7 +244,7 @@ Header
             <header class="section-header">
                 <br>
                 <h3 class="section-title">Our Agents</h3>
-                <p> Co-op's local agents help you stay covered</p>
+                <p> Co-operative's local agents help you stay covered</p>
             </header>
 
             <div class="row">
@@ -256,7 +257,7 @@ Header
 
                     <p>Co-op agents use their experience and knowledge as insurance professionals to make recommendations based on your individual needs.</p>
 
-                    <p>Contact our customer care for available agent in your locality <a href="tel:18475555555`" class="btn-services scrollto">0803839484</a> </p>
+                    <p>Contact our customer care for available agent in your locality <a href="tel:18475555555`" class="btn-services scrollto">09060961527</a> </p>
                 </div>
             </div>
 
@@ -276,53 +277,53 @@ Header
 
             <div class="row">
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp">
+                <div class="col-md-4 wow fadeInUp">
                     <div class="member">
-                        <img src="{{ URL::to('client/img/team-1.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ URL::to('CEO.jpeg') }}" class="img-fluid" alt="">
                         <div class="member-info">
                             <div class="member-info-content">
-                                <h4>Walter White</h4>
+                                <h4>Godwin Edoho</h4>
                                 <span>Chief Executive Officer</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class=" col-md-4 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="member">
-                        <img src="{{ URL::to('client/img/team-2.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ URL::to('PM.jpeg') }}" class="img-fluid" alt="">
                         <div class="member-info">
                             <div class="member-info-content">
-                                <h4>Sarah Jhonson</h4>
+                                <h4>Sarah Edoho</h4>
                                 <span>Product Manager</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                <div class=" col-md-4 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="member">
-                        <img src="{{ URL::to('client/img/team-3.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ URL::to('CTO.jpeg') }}" class="img-fluid" alt="">
                         <div class="member-info">
                             <div class="member-info-content">
-                                <h4>William Anderson</h4>
+                                <h4>Abasiekeme Godwin</h4>
                                 <span>CTO</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="member">
-                        <img src="{{ URL::to('client/img/team-4.jpg') }}" class="img-fluid" alt="">
-                        <div class="member-info">
-                            <div class="member-info-content">
-                                <h4>Amanda Jepson</h4>
-                                <span>Accountant</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">--}}
+{{--                    <div class="member">--}}
+{{--                        <img src="{{ URL::to('client/img/team-4.jpg') }}" class="img-fluid" alt="">--}}
+{{--                        <div class="member-info">--}}
+{{--                            <div class="member-info-content">--}}
+{{--                                <h4>Amanda Jepson</h4>--}}
+{{--                                <span>Accountant</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
             </div>
 
@@ -346,59 +347,50 @@ Header
                 <div class="col-lg-12 col-md-4 col-xs-6">
                     <ul id="faq-list" class="wow fadeInUp">
                         <li>
-                            <a data-toggle="collapse" class="collapsed" href="#faq1">Non consectetur a erat nam at lectus urna duis? <i class="ion-android-remove"></i></a>
+                            <a data-toggle="collapse" class="collapsed" href="#faq1">Is the a limit to insuring with Edda Co-operative insurance? <i class="ion-android-remove"></i></a>
                             <div id="faq1" class="collapse" data-parent="#faq-list">
                                 <p>
-                                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                                    The is no limit to insuring.
                                 </p>
                             </div>
                         </li>
 
                         <li>
-                            <a data-toggle="collapse" href="#faq2" class="collapsed">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque? <i class="ion-android-remove"></i></a>
+                            <a data-toggle="collapse" href="#faq2" class="collapsed">Can I change the car details on my policy online?<i class="ion-android-remove"></i></a>
                             <div id="faq2" class="collapse" data-parent="#faq-list">
                                 <p>
-                                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                                    No. You will be required to forward your request to your insurer.
+
                                 </p>
                             </div>
                         </li>
 
                         <li>
-                            <a data-toggle="collapse" href="#faq3" class="collapsed">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi? <i class="ion-android-remove"></i></a>
+                            <a data-toggle="collapse" href="#faq3" class="collapsed">What are the minimum requirements?<i class="ion-android-remove"></i></a>
                             <div id="faq3" class="collapse" data-parent="#faq-list">
                                 <p>
-                                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                                    The minimum requirement is third party policy
                                 </p>
                             </div>
                         </li>
 
                         <li>
-                            <a data-toggle="collapse" href="#faq4" class="collapsed">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla? <i class="ion-android-remove"></i></a>
+                            <a data-toggle="collapse" href="#faq4" class="collapsed">Does anyone who drives my car insured? <i class="ion-android-remove"></i></a>
                             <div id="faq4" class="collapse" data-parent="#faq-list">
                                 <p>
-                                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                                    YES, provided the person is driving with your permission/consent and the person has a valid driver’s license.
                                 </p>
                             </div>
                         </li>
 
                         <li>
-                            <a data-toggle="collapse" href="#faq5" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="ion-android-remove"></i></a>
+                            <a data-toggle="collapse" href="#faq5" class="collapsed">Can a policy be purchased via SMS or email on Edaa platform? <i class="ion-android-remove"></i></a>
                             <div id="faq5" class="collapse" data-parent="#faq-list">
                                 <p>
-                                    Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+                                    Yes it can, provided you patronized a genuine agent,with your car registration number or policy number.
                                 </p>
                             </div>
                         </li>
-
-                        <li>
-                            <a data-toggle="collapse" href="#faq6" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="ion-android-remove"></i></a>
-                            <div id="faq6" class="collapse" data-parent="#faq-list">
-                                <p>
-                                    Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
-                                </p>
-                            </div>
-                        </li>
-
                     </ul>
                 </div>
             </div>
@@ -429,15 +421,15 @@ Header
                     <div class="row">
                         <div class="col-md-5 info">
                             <i class="ion-ios-location-outline"></i>
-                            <p>A108 Adam Street, NY 535022</p>
+                            <p>#24 Banking layout, UYO</p>
                         </div>
                         <div class="col-md-4 info">
                             <i class="ion-ios-email-outline"></i>
-                            <p>info@example.com</p>
+                            <p>edaacil@gmail.com</p>
                         </div>
                         <div class="col-md-3 info">
                             <i class="ion-ios-telephone-outline"></i>
-                            <p>+1 5589 55488 55</p>
+                            <p>+234 80 5845 4125</p>
                         </div>
                     </div>
 
@@ -485,7 +477,7 @@ Header
 
                 <div class="col-lg-4 col-md-6 footer-info">
                     <h3>Edaacil</h3>
-                    <p> EDAA Co-operative Ins. Ltd. is the first registered Cooperative Insurance in the state, memeber Association of Cooperative Insurance Society of Nigeria (ACISON). Affiliate of (NCIS) National Cooperative Insurance Soc. And one of the leading cooperative insurance society and financial services body in the country.</p>
+                    <p> EDAA Co-operative Ins. Ltd. is the first registered Cooperative Insurance in the state, member Association of Cooperative Insurance Society of Nigeria (ACISON). Affiliate of (NCIS) National Cooperative Insurance Soc. And one of the leading cooperative insurance society and financial services body in the country.</p>
                 </div>
 
                 <div class="col-lg-2 col-md-6 footer-links">
@@ -494,18 +486,18 @@ Header
                         <li><a href="#intro">Home</a></li>
                         <li><a href="#about">About us</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#why-us">Terms of service</a></li>
+{{--                        <li><a href="#why-us">Terms o</a></li>--}}
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-contact">
                     <h4>Contact Us</h4>
                     <p>
-                        A108 Adam Street <br>
+                        Banking layout <br>
                         Uyo,Akwa Ibom State<br>
-                        United States <br>
-                        <strong>Phone:</strong> 0807 5488 525<br>
-                        <strong>Email:</strong> info@example.com<br>
+                        Nigeria <br>
+                        <strong>Phone:</strong> 0805 845 4125<br>
+                        <strong>Email:</strong> edacil@gmail.com<br>
                     </p>
 
                 </div>
