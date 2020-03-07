@@ -46,7 +46,7 @@
 
                     <div style="float: right; padding-top: 50px; padding-bottom: 60px"><img src="{{ URL::to('signature.png') }}" alt="signature" width="100" height="50"><br><b>__________________</b><br>Authority of the society </div>
 
-                    <div><img style="padding-left: 20px" src="{{ URL::to('edaacil-stamp.png') }}" alt="Image" width="100" ><br><b>__________________</b><br>EXAMINED BY</div>
+                    <div><img style="padding-left: 20px" src="{{ URL::to('edaacil-stamp.png') }}" alt="Image" width="100" ><br><b>__________________</b><br>Examined by</div>
                 </div>
                 <div class="clearfix"></div>
 

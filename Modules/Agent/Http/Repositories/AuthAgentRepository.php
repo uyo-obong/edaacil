@@ -10,7 +10,6 @@ use Edaacil\Notifications\PasswordReset;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -85,6 +84,10 @@ class AuthAgentRepository extends BaseRepository
     }
 
 
+    /**
+     * Password reset logic for agent
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function agentResetPassword()
     {
         $validator = Validator::make(request()->all(), [
