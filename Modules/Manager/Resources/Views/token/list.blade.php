@@ -53,7 +53,7 @@
                                         <tbody>
                                         @foreach($tokens as $token)
                                             <tr>
-                                                @if($token !== 'null')
+                                                @if($token !== null)
                                                     <td>{{ $loop->index + 1 }}</td>
                                                     <td>{{ $token->token }}</td>
                                                     <td><a class="{{ $token->status == 'Unused' ? 'badge-success' : 'badge-danger' }}" href="#">{{ $token->status }}</a></td>
