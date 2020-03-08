@@ -18,6 +18,9 @@ class ClientServiceProvider extends BaseServiceProvider
 
         // Load views from 'Edaacil/Modules/Client/Views'
         $this->loadViewsFrom(__DIR__ . '/Resources/Views', 'client');
+
+        $this->loadMigrationsFrom(__DIR__.'/Migrations');
+
     }
 
     /**
