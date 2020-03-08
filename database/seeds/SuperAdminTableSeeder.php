@@ -20,8 +20,8 @@ class SuperAdminTableSeeder extends Seeder
             'id'=> Uuid::uuid4()->toString(),
             'first_name'=> 'John',
             'last_name'=> 'Doe',
-            'email'=>'johndoe@gmail.com',
-            'phone_no'=>'07070707070070',
+            'email'=>'godwin@edaacil.com',
+            'phone_no'=>'070********',
             'role'=>'Manager',
             'status'=>'Active',
             'profile_image' => 'profile-images/avatar.png',
@@ -29,7 +29,7 @@ class SuperAdminTableSeeder extends Seeder
             'city'=>'Uyo',
             'state'=>'Akwa Ibom',
             'country'=>'Nigeria',
-            'password'=>Hash::make('password'),
+            'password'=>Hash::make('GodwinEdoho*#@19'),
         ]);
     }
 }
