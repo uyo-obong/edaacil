@@ -51,7 +51,7 @@
                                         </tr>
                                         </tfoot>
                                         <tbody>
-                                        @if($tokens !== null)
+                                        @if(!$tokens->isEmpty())
                                             @foreach($tokens as $token)
                                                 <tr>
                                                     <td>{{ $loop->index + 1 }}</td>
