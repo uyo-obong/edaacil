@@ -53,16 +53,18 @@
                                         <tbody>
                                         @foreach($tokens as $token)
                                             <tr>
-                                                <td>{{ $loop->index + 1 ?: '' }}</td>
-                                                <td>{{ $token ? $token->token : ''  }}</td>
-                                                <td><a class="{{ $token->status == 'Unused' ? 'badge-success' : 'badge-danger' }}" href="#">{{ $token ? $token->status : '' }}</a></td>
-                                                <td>{{ $token ? $token->certificate['name_of_policy_holder'] : '___' }}</td>
-                                                <td>{{ $token ? $token->created_at->diffForHumans() : ''}}</td>
-                                                <form action="{{ route('manager.token.delete', $token->id) }}" method="POST">
-                                                    {{ csrf_field() }}
-                                                    {{ method_field('DELETE') }}
-                                                    <td><button class="btn btn-danger">Delete</button></td>
-                                                </form>
+                                                @if($token !== 'null')
+                                                    <td>{{ $loop->index + 1 }}</td>
+                                                    <td>{{ $token->token }}</td>
+                                                    <td><a class="{{ $token->status == 'Unused' ? 'badge-success' : 'badge-danger' }}" href="#">{{ $token->status }}</a></td>
+                                                    <td>{{ $token->certificate['name_of_policy_holder'] ?: '___' }}</td>
+                                                    <td>{{ $token->created_at->diffForHumans() }}</td>
+                                                    <form action="{{ route('manager.token.delete', $token->id) }}" method="POST">
+                                                        {{ csrf_field() }}
+                                                        {{ method_field('DELETE') }}
+                                                        <td><button class="btn btn-danger">Delete</button></td>
+                                                    </form>
+                                                @endif
                                             </tr>
                                         @endforeach
                                         </tbody>
