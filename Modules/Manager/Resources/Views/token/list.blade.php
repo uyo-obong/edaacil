@@ -51,9 +51,9 @@
                                         </tr>
                                         </tfoot>
                                         <tbody>
-                                        @foreach($tokens as $token)
-                                            <tr>
-                                                @if($token !== null)
+                                        @if($tokens !== null)
+                                            @foreach($tokens as $token)
+                                                <tr>
                                                     <td>{{ $loop->index + 1 }}</td>
                                                     <td>{{ $token->token }}</td>
                                                     <td><a class="{{ $token->status == 'Unused' ? 'badge-success' : 'badge-danger' }}" href="#">{{ $token->status }}</a></td>
@@ -64,9 +64,9 @@
                                                         {{ method_field('DELETE') }}
                                                         <td><button class="btn btn-danger">Delete</button></td>
                                                     </form>
-                                                @endif
-                                            </tr>
-                                        @endforeach
+                                                </tr>
+                                            @endforeach
+                                        @endif
                                         </tbody>
                                     </table>
                                 </div>
