@@ -24,6 +24,7 @@ class CertificateRepository extends BaseRepository
      */
     public function certificate()
     {
+
         $data = request()->all();
 
         if ($data === []) {
@@ -51,6 +52,7 @@ class CertificateRepository extends BaseRepository
     public function certificateIssue(array $data)
     {
         $data = (object)$data;
+
         $verifyEmail = $this->model()::where('email', $data->email)->first();
 
         if ($verifyEmail) {

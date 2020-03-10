@@ -24,7 +24,6 @@ class CertificateIssueRequest extends FormRequest
     public function rules()
     {
         return [
-            "email"                 => "required|email",
             "phone_number"          => "required",
             "amount"                => "required",
             "plate_number"          => "required|string",

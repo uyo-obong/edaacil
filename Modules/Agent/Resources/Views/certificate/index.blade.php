@@ -78,7 +78,7 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group form-float">
-                                            <input type="text" value="{{ old("amount") }}" class="form-control" placeholder="Amount" name="amount" >
+                                            <input type="text" value="{{ old("amount") }}" class="form-control" placeholder="Amount" name="amount">
                                         </div>
                                     </div>
 
