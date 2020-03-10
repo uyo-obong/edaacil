@@ -25,7 +25,6 @@ class CertificateIssueRequest extends FormRequest
     {
         return [
             "phone_number"          => "required",
-            "amount"                => "required",
             "plate_number"          => "required|string",
             "chassis_number"        => "required",
             "make_of_vehicle"       => "required",
