@@ -53,13 +53,6 @@ class CertificateRepository extends BaseRepository
     {
         $data = (object)$data;
 
-        $verifyEmail = $this->model()::where('email', $data->email)->first();
-
-        if ($verifyEmail) {
-            session()->flash('danger', 'Oopz! email has already been used');
-            return redirect()->back();
-        }
-
         $url = url()->previous();
         $explode = explode('=', $url);
         $token = Token::where('token', $explode[1])->first();
