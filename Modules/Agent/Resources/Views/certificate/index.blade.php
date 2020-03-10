@@ -46,12 +46,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-12">
-                                        <div class="form-group form-float">
-                                            <input type="email" value="{{ old("email") }}" class="form-control" placeholder="Email" name="email" required>
-                                        </div>
-                                    </div>
-
                                     <div class="col-md-6">
                                         <div class="form-group form-float">
                                             <input type="text" value="{{ old("phone_number") }}" class="form-control" placeholder="Phone Number" name="phone_number" required>
@@ -84,7 +78,7 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group form-float">
-                                            <input type="text" value="{{ old("amount") }}" class="form-control" placeholder="Amount" name="amount" required>
+                                            <input type="text" value="{{ old("amount") }}" class="form-control" placeholder="Amount" name="amount" >
                                         </div>
                                     </div>
 

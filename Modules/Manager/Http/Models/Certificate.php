@@ -6,13 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Certificate extends Model
 {
+    protected $table = "certificates";
+
     public $incrementing = false;
 
     protected $fillable = [
         'id',
         'manager_id',
         'token_id',
-        'email',
         'amount',
         'phone_number',
         'certificate_number',
