@@ -18,7 +18,7 @@
                         <li id="plateNumber">Index Mark and Registration <br> No. of Vehicle Plate: </li>
                         <li id="chassisNumber">Chassis Number: </li>
                         <li id="vehicle">Make of Vehicle: </li>
-                        <li id="certificateNumber">Name of Policy Holder: </li>
+                        <li id="holderName">Name of Policy Holder: </li>
                         <li id="registration">Effective Date of Commencement of Insurance for the Purposes of the Act: </li>
                         <li id="expiring">Date of Expiry of Insurance: </li>
                         <li id="cover">Type of Cover: </li>

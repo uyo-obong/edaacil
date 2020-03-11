@@ -112,7 +112,7 @@
 
 
             var modal = $(this);
-            modal.find('.modal-content #holderName').text(holderName);
+            modal.find('.modal-content #holderName').append(holderName);
             modal.find('.modal-content #amount').text(amount);
             modal.find('.modal-content #policyName').append(policyName);
             modal.find('.modal-content #certificateId').text(certificateId);

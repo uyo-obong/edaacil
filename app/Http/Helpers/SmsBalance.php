@@ -1,6 +1,7 @@
 <?php
 
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Config;
 
 /**
  * Get current sms balance
@@ -13,9 +14,9 @@ function checkSmsBalance()
     $request = $client->post('http://api.smartsmssolutions.com/smsapi.php?', [
         'verify' => false,
         'form_params' => [
-            'username'  => env('SMS_USERNAME'),
-            'password'  => env('SMS_PASSWORD'),
-            'balance'   => env('SMS_BALANCE')
+            'username'  => Config::get('app.sms_username'),
+            'password'  => Config::get('app.sms_password'),
+            'balance'   => Config::get('app.sms_balance')
         ],
     ]);
 

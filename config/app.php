@@ -123,6 +123,23 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+
+    /*
+     |------------------------------------------------------------------------
+     | Sms configuration settings
+     |------------------------------------------------------------------------
+     | This settings control the sms api configuration that will allow sending
+     | of sms,
+     |
+     |
+     */
+
+    'sms_username' =>  'odokamae@gmail.com',
+    'sms_password' => 'Abasiekemedoho2020',
+    'sms_sender' => 'Edaacil',
+    'sms_balance' => 'true',
+
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

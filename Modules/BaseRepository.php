@@ -5,6 +5,7 @@ namespace Edaacil\Modules;
 
 
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Config;
 use Ramsey\Uuid\Uuid;
 
 abstract class BaseRepository
@@ -66,10 +67,10 @@ abstract class BaseRepository
         return $client->post('http://api.smartsmssolutions.com/smsapi.php?', [
             'verify' => false,
             'form_params' => [
-                'username'  => env('SMS_USERNAME'),
-                'password'  => env('SMS_PASSWORD'),
+                'username'  => Config::get('app.sms_username'),
+                'password'  => Config::get('app.sms_password'),
                 'message'   => $message,
-                'sender'    => env('SMS_SENDER'),
+                'sender'    => Config::get('sms_sender'),
                 'recipient' => $phone_number,
             ],
         ]);
