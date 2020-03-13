@@ -70,7 +70,7 @@ abstract class BaseRepository
                 'username'  => Config::get('app.sms_username'),
                 'password'  => Config::get('app.sms_password'),
                 'message'   => $message,
-                'sender'    => Config::get('sms_sender'),
+                'sender'    => Config::get('app.sms_sender'),
                 'recipient' => $phone_number,
             ],
         ]);

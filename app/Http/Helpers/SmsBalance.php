@@ -22,3 +22,4 @@ function checkSmsBalance()
 
     return $request->getBody()->getContents();
 }
+
