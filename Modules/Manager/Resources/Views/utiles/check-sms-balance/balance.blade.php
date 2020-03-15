@@ -6,7 +6,7 @@
             </div>
 
             <div class="modal-body body">
-                <center><h2> {{ checkSmsBalance() }} Units Left</h2></center>
+                <center><h2> {{ checkSmsBalance() <= 2 ? "Your account is low, pls subscribe" : checkSmsBalance() .' Units Left'}} </h2></center>
             </div>
 
             <div class="modal-footer">

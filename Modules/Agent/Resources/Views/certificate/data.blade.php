@@ -11,7 +11,7 @@
                     <div style="float: right">Policy No.: {{ $certificate->policy_number }} </div><div id="certificateNumber">Certificate No.: {{ $certificate->certificate_number }}</div>
                     <br>
                     <ol>
-                        <li id="plateNumber">Index Mark and Registration <br> No. of Vehicle Plate: {{ $certificate->index_mark }}</li>
+                        <li id="plateNumber">Index Mark and Registration <br> No. of Vehicle Plate: {{ $certificate->plate_number }}</li>
                         <li id="chassisNumber">Chassis Number: {{ $certificate->chassis_number }}</li>
                         <li id="vehicle">Make of Vehicle: {{ $certificate->make_of_vehicle }}</li>
                         <li id="certificateNumber">Name of Policy Holder: {{ $certificate->name_of_policy_holder }}</li>
@@ -38,7 +38,7 @@
                             (c) Use for the conveyance of passengers for hire or reward.
                         </li>
                     </ol>
-                    <p><b>I/WE HEREBY CERTIFY</b> that the Policy to which this certificate related is issued in accordance with the above provisions of the Motor Vehicles. (Third Party Insurance) Ordinance</p>
+{{--                    <p><b>I/WE HEREBY CERTIFY</b> that the Policy to which this certificate related is issued in accordance with the above provisions of the Motor Vehicles. (Third Party Insurance) Ordinance</p>--}}
 
                     <div style="float: right; padding-top: 50px; padding-bottom: 60px"><img src="{{ URL::to('signature.png') }}" alt="signature" width="100" height="50"><br><b>__________________</b><br>Authority of the society </div>
 

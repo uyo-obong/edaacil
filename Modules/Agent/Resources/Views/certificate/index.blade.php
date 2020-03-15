@@ -64,12 +64,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-12">
-                                        <div class="form-group form-float">
-                                            <input type="text" value="{{ old("make_of_vehicle") }}" class="form-control" placeholder="Make of Vehicle" name="make_of_vehicle" required>
-                                        </div>
-                                    </div>
-
                                     <div class="col-md-6">
                                         <div class="form-group form-float">
                                             <input type="text" value="{{ old("type_of_cover") }}" class="form-control" placeholder="Type of Cover" name="type_of_cover" required>
