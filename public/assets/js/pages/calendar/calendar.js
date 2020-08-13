@@ -149,40 +149,41 @@ $(function() {
         selectable: true,
 
         events: [
+            // Todo
 
-            {
-
-                title  : 'Birthday Party',
-
-                start  : current + '01',
-
-                className: 'bg-info'
-
-            },
-
-            {
-
-                title  : 'Conference',
-
-                start  : current + '05',
-
-                end    : '2018-08-07',
-
-                className: 'bg-warning'
-
-            },
-
-            {
-
-                title  : 'Meeting',
-
-                start  : current + '09T12:30:00',
-
-                allDay : false, // will make the time show
-
-                className: 'bg-success',
-
-            }
+            // {
+            //
+            //     title  : 'Birthday Party',
+            //
+            //     start  : current + '01',
+            //
+            //     className: 'bg-info'
+            //
+            // },
+            //
+            // {
+            //
+            //     title  : 'Conference',
+            //
+            //     start  : current + '05',
+            //
+            //     end    : '2018-08-07',
+            //
+            //     className: 'bg-warning'
+            //
+            // },
+            //
+            // {
+            //
+            //     title  : 'Meeting',
+            //
+            //     start  : current + '09T12:30:00',
+            //
+            //     allDay : false, // will make the time show
+            //
+            //     className: 'bg-success',
+            //
+            // }
 
         ],
 

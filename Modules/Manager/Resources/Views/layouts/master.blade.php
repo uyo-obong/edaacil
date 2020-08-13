@@ -6,18 +6,26 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
     <title>Edaacil - Manager</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
+    <link rel="icon" href="{{ URL::to('favicon.ico') }}" type="image/x-icon" sizes="16x16"> <!-- Favicon-->
     <link rel="stylesheet" href="{{ URL::to('assets/plugins/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ URL::to('assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css') }}"/>
     <link rel="stylesheet" href="{{ URL::to('assets/plugins/charts-c3/plugin.css') }}"/>
 
     <link rel="stylesheet" href="{{ URL::to('assets/plugins/morrisjs/morris.min.css') }}" />
 
+    <!-- Bootstrap Select Css -->
+    <link rel="stylesheet" href="{{ URL::to('assets/plugins/bootstrap-select/css/bootstrap-select.css') }}" />
+
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{ URL::to('assets/plugins/select2/select2.css') }}" />
+
     <!-- JQuery DataTable Css -->
     <link rel="stylesheet" href="{{ URL::to('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css') }}">
 
     <!-- Custom Css -->
     <link rel="stylesheet" href="{{ URL::to('assets/css/style.min.css') }}">
+
+    <link rel="stylesheet" href="{{ URL::to('assets/plugins/fullcalendar/fullcalendar.min.css') }}">
 </head>
 
 <body class="theme-blush">
@@ -38,6 +46,8 @@
 
 @include('manager::utiles.theme-settings')
 
+@include('manager::utiles.check-sms-balance.balance')
+
 @yield('content')
 
 <!-- Jquery Core Js -->
@@ -55,16 +65,25 @@
 <script src="{{ URL::to('assets/bundles/datatablescripts.bundle.js') }}"></script>
 <script src="{{ URL::to('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js') }}"></script>
 <script src="{{ URL::to('assets/plugins/jquery-datatable/buttons/buttons.bootstrap4.min.js') }}"></script>
-<script src="{{ URL::to('assets/plugins/jquery-datatable/buttons/buttons.colVis.min.js') }}"></script>
-<script src="{{ URL::to('assets/plugins/jquery-datatable/buttons/buttons.flash.min.js') }}"></script>
-<script src="{{ URL::to('assets/plugins/jquery-datatable/buttons/buttons.html5.min.js') }}"></script>
 <script src="{{ URL::to('assets/plugins/jquery-datatable/buttons/buttons.print.min.js') }}"></script>
 
 <script src="{{ URL::to('assets/js/pages/tables/jquery-datatable.js') }}"></script>
 
 <script src="{{ URL::to('assets/plugins/jquery-validation/jquery.validate.js') }}"></script> <!-- Jquery Validation Plugin Css -->
-<script src="{{ URL::to('assets/plugins/jquery-steps/jquery.steps.js') }}"></script> <!-- JQuery Steps Plugin Js -->
+
+<script src="{{ URL::to('assets/plugins/multi-select/js/jquery.multi-select.js') }}"></script> <!-- Multi Select Plugin Js -->
+
+<script src="{{ URL::to('assets/plugins/select2/select2.min.js') }}"></script> <!-- Select2 Js -->
+
 <script src="{{ URL::to('assets/js/pages/forms/form-validation.js') }}"></script>
+
+<script src="{{ URL::to('assets/bundles/fullcalendarscripts.bundle.js') }}"></script>
+<script src="{{ URL::to('assets/js/pages/calendar/calendar.js') }}"></script>
+
+<script src="{{ URL::to('assets/plugins/bootstrap-notify/bootstrap-notify.js') }}"></script> <!-- Bootstrap Notify Plugin Js -->
+@include('manager::utiles.notifications.notify')
+
+@stack('scripts')
 </body>
 
 </html>

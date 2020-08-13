@@ -17,8 +17,25 @@ class Manager extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
-    ];
+        'id',
+        'first_name',
+        'last_name',
+        'email',
+        'phone_no',
+        'role',
+        'status',
+        'address',
+        'city',
+        'state',
+        'country',
+        'password',
+        'profile_image',
+];
+    /**
+     * @var bool
+     */
+    public $incrementing = false;
+
 
     /**
      * The attributes that should be hidden for arrays.
@@ -37,4 +54,22 @@ class Manager extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Return full name
+     * @return string
+     */
+    public function fullName()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
+
+    /**
+     * return certificate model
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function certificates()
+    {
+        return $this->hasMany(Certificate::class, 'certificate_id');
+    }
 }

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Haqqman'),
+    'name' => env('APP_NAME', 'Edaacil'),
 
     /*
     |--------------------------------------------------------------------------
@@ -51,8 +51,8 @@ return [
     | your application so that it is used when running Artisan tasks.
     |
     */
-
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => 'https://edaacil.herokuapp.com/',
+//    'url' => env('APP_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Africa/Lagos',
 
     /*
     |--------------------------------------------------------------------------
@@ -123,6 +123,23 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+
+    /*
+     |------------------------------------------------------------------------
+     | Sms configuration settings
+     |------------------------------------------------------------------------
+     | This settings control the sms api configuration that will allow sending
+     | of sms,
+     |
+     |
+     */
+
+    'sms_username' =>  'odokamae@gmail.com',
+    'sms_password' => 'Abasiekemedoho2020',
+    'sms_sender' => 'Edaacil',
+    'sms_balance' => 'true',
+
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -165,6 +182,8 @@ return [
         /*
          * Package Service Providers...
          */
+//        Barryvdh\Debugbar\ServiceProvider::class,
+        ConsoleTVs\Charts\ChartsServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -179,7 +198,8 @@ return [
          *  Modules Service Providers...
          */
         Edaacil\Modules\Manager\ManagerServiceProvider::class,
-        Edaacil\Modules\Manager\AgentServiceProvider::class,
+        Edaacil\Modules\Agent\AgentServiceProvider::class,
+        Edaacil\Modules\Client\ClientServiceProvider::class,
 
     ],
 
@@ -231,6 +251,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 

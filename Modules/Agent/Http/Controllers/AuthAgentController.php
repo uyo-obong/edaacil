@@ -3,7 +3,12 @@
 namespace Edaacil\Modules\Agent\Http\Controllers;
 
 use Edaacil\Modules\Agent\Http\Repositories\AuthAgentRepository;
+use Edaacil\Modules\Agent\Http\Requests\AgentLoginRequest;
+use Edaacil\Modules\Agent\Http\Requests\ForgotPassword;
 use Edaacil\Modules\BaseController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class AuthAgentController extends BaseController
 {
@@ -35,5 +40,56 @@ class AuthAgentController extends BaseController
     public function index()
     {
         return view($this->_config['view']);
+    }
+
+    /**
+     * Return authenticated agent
+     * @param AgentLoginRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function agentLogin(AgentLoginRequest $request)
+    {
+        return $this->authAgentRepository->agentLogin($request);
+    }
+
+    /**
+     * Return forgot password page
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function forgotPassword()
+    {
+        return view($this->_config['view']);
+    }
+
+    public function agentForgotPassword()
+    {
+        return $this->authAgentRepository->agentForgotPassword();
+    }
+
+    /**
+     * Return Reset password page
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function passwordReset()
+    {
+        return view($this->_config['view']);
+    }
+
+    /**
+     * Return new password
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function agentResetPassword(){
+        return $this->authAgentRepository->agentResetPassword();
+    }
+
+    /**
+     * Logout Agent
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function agentLogout()
+    {
+        Auth::logout();
+        return redirect(route('agent.auth.view'));
     }
 }

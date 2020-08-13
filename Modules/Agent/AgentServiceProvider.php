@@ -1,6 +1,6 @@
 <?php
 
-namespace Edaacil\Modules\Manager;
+namespace Edaacil\Modules\Agent;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
@@ -12,7 +12,7 @@ class AgentServiceProvider extends BaseServiceProvider
      * @return void
      */
     public function boot() {
-        // 'Haqqman/Modules/User/Migrations' folder path
+        // 'Edaacil/Modules/User/Migrations' folder path
         $this->loadMigrationsFrom(__DIR__.'/Migrations');
 
         // Load routes

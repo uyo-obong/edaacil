@@ -35,7 +35,8 @@
                                             <th>S/N</th>
                                             <th>Token</th>
                                             <th>Status</th>
-                                            <th>User</th>
+                                            <th>Holder</th>
+                                            <th>Created</th>
                                             <th>Delete</th>
                                         </tr>
                                         </thead>
@@ -44,26 +45,28 @@
                                             <th>S/N</th>
                                             <th>Token</th>
                                             <th>Status</th>
-                                            <th>User</th>
+                                            <th>Holder</th>
+                                            <th>Created</th>
                                             <th>Delete</th>
                                         </tr>
                                         </tfoot>
                                         <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Tiger Nixon</td>
-                                            <td><a class="badge-primary" href="">Unused</a></td>
-                                            <td>____</td>
-                                            <td><a class="btn btn-danger" href="">Delete</a> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Garrett Winters</td>
-                                            <td><a class="badge-danger" href="">Used</a></td>
-                                            <td>John Doe</td>
-                                            <td><a class="btn btn-danger" href="">Delete</a> </td>
-                                        </tr>
-
+                                        @if(!$tokens->isEmpty())
+                                            @foreach($tokens as $token)
+                                                <tr>
+                                                    <td>{{ $loop->index + 1 }}</td>
+                                                    <td>{{ $token->token }}</td>
+                                                    <td><a class="{{ $token->status == 'Unused' ? 'badge-success' : 'badge-danger' }}" href="#">{{ $token->status }}</a></td>
+                                                    <td>{{ $token->certificate['name_of_policy_holder'] ?: '___' }}</td>
+                                                    <td>{{ $token->created_at->diffForHumans() }}</td>
+                                                    <form action="{{ route('manager.token.delete', $token->id) }}" method="POST">
+                                                        {{ csrf_field() }}
+                                                        {{ method_field('DELETE') }}
+                                                        <td><button class="btn btn-danger">Delete</button></td>
+                                                    </form>
+                                                </tr>
+                                            @endforeach
+                                        @endif
                                         </tbody>
                                     </table>
                                 </div>

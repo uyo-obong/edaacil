@@ -1,5 +1,6 @@
 @extends('manager::layouts.master')
 
+@section('title', 'Manager Account')
 @section('content')
     <section class="content">
         <div class="body_scroll">
@@ -22,51 +23,46 @@
             </div>
 
             <div class="container-fluid">
-                <!-- Basic Examples -->
                 <div class="row clearfix">
                     <div class="col-lg-12">
                         <div class="card">
-
                             <div class="body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>S/N</th>
+                                            <th>Full Name</th>
+                                            <th>Email</th>
+                                            <th>Phone No.</th>
+                                            <th>Status</th>
+                                            <th>Role</th>
+                                            <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>S/N</th>
+                                            <th>Full Name</th>
+                                            <th>Email</th>
+                                            <th>Phone No.</th>
+                                            <th>Status</th>
+                                            <th>Role</th>
+                                            <th>Action</th>
                                         </tr>
                                         </tfoot>
                                         <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>63</td>
-                                            <td>2011/07/25</td>
-                                            <td>$170,750</td>
-                                        </tr>
+                                        @foreach( $accounts as $account)
+                                            <tr>
+                                                <td>{{ $loop->index + 1 }}</td>
+                                                <td>{{ $account->fullName() }}</td>
+                                                <td>{{ $account->email }}</td>
+                                                <td>{{ $account->phone_no }}</td>
+                                                <td><a class="{{ $account->status == 'Active' ? 'badge-success' : 'badge-danger' }}" href="" > {{ $account->status }}</a></td>
+                                                <td>{{ $account->role }}</td>
+                                                <td> @include('manager::account.buttons.view')  @include('manager::account.buttons.edit')  </td>
+                                            </tr>
+                                        @endforeach
 
                                         </tbody>
                                     </table>
@@ -75,11 +71,51 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </section>
 
     @include('manager::account.form')
+    @include('manager::account.edit_account')
+    @include('manager::account.view_account')
 @stop
+
+@push('scripts')
+    <script>
+        $('#editAccountModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var accountId = button.data('id');
+            var email = button.data('email');
+            var status = button.data('status');
+
+            var modal = $(this);
+            modal.find('.modal-body #accountId').val(accountId);
+            modal.find('.modal-body #email').val(email);
+            modal.find('.modal-body #status').val(status).change();
+        });
+    </script>
+
+    <script>
+        $('#viewAccountModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var fullName = button.data('name');
+            var role = button.data('role');
+            var email = button.data('email');
+            var phone_no = button.data('phone_no');
+            var address = button.data('address');
+            var city = button.data('city');
+            var state = button.data('state');
+            var country = button.data('country');
+
+            var modal = $(this);
+            modal.find('.modal-body #fullName').text(fullName);
+            modal.find('.modal-body #role').text('Edaacil '+role);
+            modal.find('.modal-body #email').text(email);
+            modal.find('.modal-body #phone_no').text(phone_no);
+            modal.find('.modal-body #address').text(address);
+            modal.find('.modal-body #city').text(city);
+            modal.find('.modal-body #state').text(state);
+            modal.find('.modal-body #country').text(country);
+        });
+    </script>
+@endpush

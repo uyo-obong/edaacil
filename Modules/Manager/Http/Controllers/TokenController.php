@@ -3,7 +3,9 @@
 namespace Edaacil\Modules\Manager\Http\Controllers;
 
 use Edaacil\Modules\BaseController;
+use Edaacil\Modules\Manager\Http\Models\Certificate;
 use Edaacil\Modules\Manager\Http\Repositories\TokenRepository;
+use Edaacil\Modules\Manager\Http\Requests\GenerateTokenRequest;
 
 class TokenController extends BaseController
 {
@@ -35,6 +37,35 @@ class TokenController extends BaseController
      */
     public function list()
     {
-        return view($this->_config['view']);
+
+        $tokens = $this->tokenRepository->model()::with('certificate')->get()->sortByDesc('created_at');
+        return view($this->_config['view'], ['tokens' => $tokens]);
+    }
+
+    /**
+     * Return the tokens that has been generated
+     * @param GenerateTokenRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @throws \Exception
+     */
+    public function createToken(GenerateTokenRequest $request)
+    {
+        $token = $this->tokenRepository->createToken($request->all());
+        if ($token)
+            session()->flash('success', 'Token(s) has been generated successfully.');
+        return redirect(route('manager.token.list'));
+    }
+
+    /**
+     * Delete pin from database
+     * @param $tokenId
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function deleteToken($tokenId)
+    {
+        $token = $this->tokenRepository->deleteToken($tokenId);
+        if ($token)
+            session()->flash('success', 'Token has been deleted successfully.');
+        return redirect()->back();
     }
 }

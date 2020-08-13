@@ -13,12 +13,21 @@ class CreateManagersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
+        Schema::create('managers', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('phone_no');
+            $table->enum('role',['Manager','Agent']);
+            $table->enum('status',['Active','Disabled'])->default('Active');
+            $table->string('address');
+            $table->string('city');
+            $table->string('state');
+            $table->string('country');
             $table->string('password');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('profile_image')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
