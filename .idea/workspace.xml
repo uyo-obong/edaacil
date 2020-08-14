@@ -38,15 +38,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1df1c366-2088-4a17-a7ed-f1788b21a978" name="Default Changelist" comment="Merge branch 'master' of https://github.com/uyo-obong/edaacil&#10;&#10;# Conflicts:&#10;#&#9;.idea/edaacil.iml&#10;#&#9;.idea/php.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.swp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Manager/Http/Repositories/AccountRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Manager/Http/Repositories/AccountRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Manager/Http/Requests/UpdateMangerInformation.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Manager/Http/Requests/UpdateMangerInformation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Manager/Resources/Views/account/edit_profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Manager/Resources/Views/account/edit_profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Helpers/ImageUploader.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Helpers/ImageUploader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Agent/Http/Repositories/CertificateRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Agent/Http/Repositories/CertificateRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
