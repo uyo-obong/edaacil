@@ -76,12 +76,12 @@
                                                     <div class="card">
                                                         <a href="javascript:void(0);" class="file">
                                                             <div class="image">
-                                                                <img src="/storage/{{$manager->profile_image}}">
+                                                                <img src="/storage/{{ $manager->profile_image }}">
                                                             </div>
                                                             <div class="file-name">
                                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                                 <input type="hidden" value="{{ $manager->id }}" name="managerId">
-                                                                <input type="file" class="file" name="profile_image" value="">
+                                                                <input type="file" class="file" name="profile_image" value="{{ $manager->profile_image }}">
                                                             </div>
                                                         </a>
                                                     </div>

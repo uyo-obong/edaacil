@@ -32,6 +32,7 @@ class UpdateMangerInformation extends FormRequest
             'city'=>'required',
             'state'=>'required',
             'country'=>'required',
+            'profile_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 //            'profile_image'=> 'image|nullable|mimes:jpeg,png,jpg,gif|max:1999',
         ];
     }
