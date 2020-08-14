@@ -17,17 +17,16 @@ class SendWelcomeEmailToNewAgent extends Mailable
     public $_config;
 
     public $password;
+
     /**
      * Create a new message instance.
-     *
-     * @return void
+     * @param Manager $manager
+     * @param $password
      */
     public function __construct(Manager $manager, $password)
     {
         $this->password=$password;
         $this->manager=$manager;
-
-        $this->_config = request('_config');
     }
 
     /**
