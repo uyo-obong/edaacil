@@ -39,14 +39,13 @@
   <component name="ChangeListManager">
     <list default="true" id="1df1c366-2088-4a17-a7ed-f1788b21a978" name="Default Changelist" comment="Merge branch 'master' of https://github.com/uyo-obong/edaacil&#10;&#10;# Conflicts:&#10;#&#9;.idea/edaacil.iml&#10;#&#9;.idea/php.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Agent/Http/Repositories/CertificateRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Agent/Http/Repositories/CertificateRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -200,6 +199,7 @@
       <option name="presentableId" value="Default" />
       <updated>1597323274013</updated>
       <workItem from="1597323299051" duration="645000" />
+      <workItem from="1597529220041" duration="77000" />
     </task>
     <servers />
   </component>
