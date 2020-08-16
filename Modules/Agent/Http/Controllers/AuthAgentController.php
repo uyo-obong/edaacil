@@ -3,12 +3,9 @@
 namespace Edaacil\Modules\Agent\Http\Controllers;
 
 use Edaacil\Modules\Agent\Http\Repositories\AuthAgentRepository;
-use Edaacil\Modules\Agent\Http\Requests\AgentLoginRequest;
-use Edaacil\Modules\Agent\Http\Requests\ForgotPassword;
+use Edaacil\Modules\Agent\Http\Requests\LoginRequest;
 use Edaacil\Modules\BaseController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\ValidationException;
 
 class AuthAgentController extends BaseController
 {
@@ -47,7 +44,7 @@ class AuthAgentController extends BaseController
      * @param AgentLoginRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function agentLogin(AgentLoginRequest $request)
+    public function agentLogin(LoginRequest $request)
     {
         return $this->authAgentRepository->agentLogin($request);
     }

@@ -69,7 +69,8 @@
                                     @foreach($certificates as $certificate)
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
-                                            <td>{{ $certificate->token['token'] }}</td>
+                                            <td>{{ isset($certificate->token['token']) ? $certificate->token['token']
+                                             : '' }}</td>
                                             <td>{{ $certificate->name_of_policy_holder }}</td>
                                             <td>{{ $certificate->manager->fullName() }}</td>
                                             <td>{{ $certificate->created_at->format('d, M Y') }}</td>
