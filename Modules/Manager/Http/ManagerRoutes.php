@@ -54,3 +54,4 @@ Route::group(['namespace' => 'Edaacil\Modules\Manager\Http\Controllers'], functi
 
 
 });
+

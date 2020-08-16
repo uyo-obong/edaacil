@@ -2,29 +2,39 @@
 
 namespace Edaacil\Http\Helpers;
 
-use Illuminate\Http\File;
+use Edaacil\Modules\Manager\Http\Models\Manager;
+
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use Intervention\Image\Image;
+use Intervention\Image\Facades\Image;
 
-function imageUploader($file)
-{
-    $image = $file->file('profile_image');# column in the database
+function imageBuilder($image){
 
-    $filename = Str::random(3) . time(). '-' .$image->getClientOriginalExtension();
-    Storage::disk('public')->put($filename, File::get($image), 'public');
+    # Get Auth user
+    $profile = Manager::where("id",auth()->user()->id)->first();
 
+    #Get column in the database
+    $oldProfileImage = $profile->profile_image;
 
-    $file = public_path('profile_image/'.$filename);
+    $fileName = Str::random(5). time().'.'.$image->getClientOriginalExtension();# change photo name
+    Storage::disk('public')->put($fileName, File::get($image),'public');# storage directory
 
-    # Resize the image, width = 100, height = 100
+    $file = public_path('userImages/'.$fileName);
+
     if (file_exists($file)){
         $image = Image::make($file);
-        $image->resize(100,100,function($constraint){
-            $constraint->aspectRatio();
+        $image->resize(100,100, Static function ($constraints){
+            $constraints->aspectRatio();
         });
-
         $image->save();
     }
-    return $filename;
+
+    # Delete old profile photo file
+    if ($profile->save() && file_exists(public_path('userImages/' . $oldProfileImage))) {
+        File::delete(public_path('userImages/' . $oldProfileImage));
+    }
+
+    return $fileName;
+
 }

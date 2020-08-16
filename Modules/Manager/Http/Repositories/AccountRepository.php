@@ -7,6 +7,7 @@ use Edaacil\Modules\BaseRepository;
 use Edaacil\Modules\Manager\Http\Models\Manager;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use function Edaacil\Http\Helpers\imageBuilder;
 
 
 class AccountRepository extends BaseRepository
@@ -74,10 +75,8 @@ class AccountRepository extends BaseRepository
     {
         $data = (object)$request;
 
-        $storage = $request['profile_image']->store('profile-images','public');
-
-
         $manager = $this->model()::where('id', $data->managerId)->first();
+
         return $manager->update([
             'first_name' => $data->first_name,
             'last_name' => $data->last_name,
@@ -87,7 +86,7 @@ class AccountRepository extends BaseRepository
             'city' => $data->city,
             'state' => $data->state,
             'country' => $data->country,
-            'profile_image'=>$storage,
+            'profile_image'=> imageBuilder($data->profile_image)
         ]);
 
     }
