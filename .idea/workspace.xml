@@ -38,7 +38,165 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1df1c366-2088-4a17-a7ed-f1788b21a978" name="Default Changelist" comment="Merge branch 'master' of https://github.com/uyo-obong/edaacil&#10;&#10;# Conflicts:&#10;#&#9;.idea/edaacil.iml&#10;#&#9;.idea/php.xml">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/config/debugbar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Console/ClearCommand.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Controllers/AssetController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Controllers/BaseController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Controllers/CacheController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Controllers/OpenHandlerController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Controllers/TelescopeController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/CacheCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/EventCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/FilesCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/GateCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/LaravelCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/LivewireCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/LogsCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/ModelsCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/MultiAuthCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/PhpInfoCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/QueryCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/RequestCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/RouteCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/SessionCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/ViewCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataFormatter/QueryFormatter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataFormatter/SimpleFormatter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Facade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/JavascriptRenderer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/LaravelDebugbar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/LumenServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Middleware/DebugbarEnabled.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Middleware/InjectDebugbar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Resources/cache/widget.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Resources/laravel-debugbar-dark-mode-media-end.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Resources/laravel-debugbar-dark-mode-media-start.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Resources/laravel-debugbar-dark-mode.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Resources/laravel-debugbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Resources/sqlqueries/widget.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Resources/vendor/font-awesome/generator_config.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Resources/vendor/font-awesome/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/ServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Storage/FilesystemStorage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Support/Clockwork/ClockworkCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Support/Clockwork/Converter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/SymfonyHttpDriver.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Twig/Extension/Debug.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Twig/Extension/Dump.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Twig/Extension/Stopwatch.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Twig/Node/StopwatchNode.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Twig/TokenParser/StopwatchTokenParser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/helpers.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/migrations/2014_12_01_120000_create_phpdebugbar_storage_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/CacheCacheCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/DoctrineCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/MonologCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/Propel2Collector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/PropelCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/SlimCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/SwiftMailer/SwiftLogCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/SwiftMailer/SwiftMailCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/Twig/TimeableTwigExtensionProfiler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/Twig/TraceableTwigEnvironment.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/Twig/TraceableTwigTemplate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/Twig/TwigCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/TwigProfileCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/AggregatedCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/AssetProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/ConfigCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/DataCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/DataCollectorInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/ExceptionsCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/LocalizationCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/MemoryCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/MessagesAggregateInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/MessagesCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/PDO/PDOCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/PDO/TraceablePDO.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/PDO/TraceablePDOStatement.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/PDO/TracedStatement.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/PhpInfoCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/Renderable.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/RequestDataCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/TimeDataCollector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataFormatter/DataFormatter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataFormatter/DataFormatterInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataFormatter/DebugBarVarDumper.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataFormatter/VarDumper/DebugBarHtmlDumper.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataFormatter/VarDumper/SeekingData.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DebugBar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DebugBarException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/HttpDriverInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/OpenHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/PhpHttpDriver.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/RequestIdGenerator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/RequestIdGeneratorInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/debugbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/debugbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/openhandler.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/openhandler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/font-awesome/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/font-awesome/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/highlightjs/highlight.pack.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/highlightjs/styles/github.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/jquery/dist/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/widgets.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/widgets.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/widgets/mails/widget.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/widgets/mails/widget.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/widgets/sqlqueries/widget.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/widgets/sqlqueries/widget.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/widgets/templates/widget.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/widgets/templates/widget.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/StandardDebugBar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Storage/FileStorage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Storage/MemcachedStorage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Storage/PdoStorage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Storage/RedisStorage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Storage/StorageInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Storage/pdo_storage_schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/InvalidTag.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/InvalidTag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/BufferingLogger.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/Debug.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/DebugClassLoader.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/ErrorHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/Exception/ClassNotFoundException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/Exception/FatalErrorException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/Exception/FatalThrowableError.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/Exception/FlattenException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/Exception/OutOfMemoryException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/Exception/SilencedErrorContext.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/Exception/UndefinedFunctionException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/Exception/UndefinedMethodException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/ExceptionHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/FatalErrorHandler/ClassNotFoundFatalErrorHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/FatalErrorHandler/FatalErrorHandlerInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/FatalErrorHandler/UndefinedFunctionFatalErrorHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/FatalErrorHandler/UndefinedMethodFatalErrorHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/debug/composer.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,17 +245,14 @@
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
       <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
-      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
       <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
-      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
       <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
-      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/routing" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
@@ -156,9 +311,19 @@
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/league/commonmark" />
       <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
     </include_path>
   </component>
   <component name="ProjectId" id="1g2qvqe6rsVtV720uzpT5Gfp1sX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
