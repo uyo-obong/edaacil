@@ -70,7 +70,7 @@ class CertificateRepository extends BaseRepository
             'plate_number'          => $data->plate_number,
             'chassis_number'        => $data->chassis_number,
             'make_of_vehicle'       => $data->make_of_vehicle,
-            'name_of_policy_holder' => $data->property_exists($data, 'name_of_policy_holder') ? $data->name_of_policy_holder : null, #name_of_policy_holder,
+            'name_of_policy_holder' => $data->name_of_policy_holder, #name_of_policy_holder,
             'registration_date'     => $this->registrationDate(),
             'expiring_date'         => $data->expiring_date,
             'type_of_cover'         => $data->type_of_cover,
