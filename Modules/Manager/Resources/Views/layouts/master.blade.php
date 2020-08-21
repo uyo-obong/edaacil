@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="{{ URL::to('assets/css/style.min.css') }}">
 
     <link rel="stylesheet" href="{{ URL::to('assets/plugins/fullcalendar/fullcalendar.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::to('assets/plugins/dropify/css/dropify.min.css') }}">
+    @stack('css')
 </head>
 
 <body class="theme-blush">

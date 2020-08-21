@@ -9,7 +9,8 @@
         <ul class="list">
             <li>
                 <div class="user-info">
-                    <a class="image" href="{{ route('manager.account.profile') }}"><img src="/storage/{{ auth()->user()->profile_image }}" alt="User"></a>
+                    <a class="image" href="{{ route('manager.account.profile') }}"><img src="{{  auth()->user()
+                    ->profile_image != '' ? '/storage/'.auth()->user()->profile_image : URL::to ('default_avatar.png')}}" alt="User"></a>
                     <div class="detail">
                         <h4>{{ Auth::user()->fullName() }}</h4>
                         <small>{{ Auth::user()->role }} Edaacil</small>

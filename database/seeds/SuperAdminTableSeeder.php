@@ -24,7 +24,7 @@ class SuperAdminTableSeeder extends Seeder
             'phone_no'=>'070********',
             'role'=>'Manager',
             'status'=>'Active',
-            'profile_image' => 'profile-images/avatar.png',
+            'profile_image' => '',
             'address'=>'100 units',
             'city'=>'Uyo',
             'state'=>'Akwa Ibom',

@@ -156,3 +156,7 @@
         </div>
     </section>
 @stop
+@push('scripts')
+    <script src="{{ URL::to('assets/plugins/dropify/js/dropify.min.js') }}"></script>
+    <script src="{{ URL::to('assets/js/pages/forms/dropify.js') }}"></script>
+@endpush
