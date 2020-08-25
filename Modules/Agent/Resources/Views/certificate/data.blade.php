@@ -37,6 +37,7 @@
                             (b) Use while drawing a trailer except the towing (other than for reward) of any one disabled mechanically propelled vehicle.<br>
                             (c) Use for the conveyance of passengers for hire or reward.
                         </li>
+                        <h3><b id="amount">Amount: ₦{{ $certificate->amount }}</b></h3>
                     </ol>
 {{--                    <p><b>I/WE HEREBY CERTIFY</b> that the Policy to which this certificate related is issued in accordance with the above provisions of the Motor Vehicles. (Third Party Insurance) Ordinance</p>--}}
 

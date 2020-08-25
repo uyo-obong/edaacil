@@ -41,6 +41,7 @@
                             (b) Use while drawing a trailer except the towing (other than for reward) of any one disabled mechanically propelled vehicle.<br>
                             (c) Use for the conveyance of passengers for hire or reward.
                         </li>
+                        <h3><b id="amount">Amount: ₦</b></h3>
                     </ol>
 
                     <div style="float: right; padding-top: 50px; padding-bottom: 60px"><img src="{{ URL::to('signature.png') }}" alt="signature" width="100" height="50"><br><b>__________________</b><br>Authority of the society </div>

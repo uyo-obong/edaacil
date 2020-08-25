@@ -76,7 +76,8 @@
                                                     <div class="card">
                                                         <a href="javascript:void(0);" class="file">
                                                             <div class="image">
-                                                                <img src="/storage/{{ $manager->profile_image }}">
+                                                                <img src="{{  auth()->user()
+                    ->profile_image != '' ? '/storage/'.auth()->user()->profile_image : URL::to ('default_avatar.png')}}">
                                                             </div>
                                                             <div class="file-name">
                                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">

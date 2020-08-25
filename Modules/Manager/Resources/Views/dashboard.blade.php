@@ -114,7 +114,7 @@
 
             var modal = $(this);
             modal.find('.modal-content #holderName').append(holderName);
-            modal.find('.modal-content #amount').text(amount);
+            modal.find('.modal-content #amount').append(amount);
             modal.find('.modal-content #policyName').append(policyName);
             modal.find('.modal-content #certificateId').text(certificateId);
             modal.find('.modal-content #token').text(token);

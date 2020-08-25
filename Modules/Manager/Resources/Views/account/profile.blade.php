@@ -26,7 +26,8 @@
                     <div class="col-lg-4 col-md-12">
                         <div class="card mcard_3">
                             <div class="body">
-                                <a href="#"><img src="/storage/{{ auth()->user()->profile_image }}" class="rounded-circle shadow " alt="profile-image"></a>
+                                <a href="#"><img src="{{  auth()->user()
+                    ->profile_image != '' ? '/storage/'.auth()->user()->profile_image : URL::to ('default_avatar.png')}}" class="rounded-circle shadow " alt="profile-image"></a>
                                 <h4 class="m-t-10">{{ auth()->user()->fullName() }}</h4>
                                 <div class="row">
                                     <div class="col-12">
