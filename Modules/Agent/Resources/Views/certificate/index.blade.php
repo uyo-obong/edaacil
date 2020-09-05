@@ -9,6 +9,13 @@
                 margin: 3cm;
             }
         }
+        .unselectable {
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 @endpush
 @section('content')
@@ -97,7 +104,9 @@
                                 </div>
                                 <br>
                                 <div class="form-group">
+                                    @if($urlPath !== $certificate->token_id)
                                     <button class="float-right btn btn-raised btn-primary waves-effect" type="submit">SUBMIT</button>
+                                    @endif
                                 </div>
                                 <div class="clearfix"></div>
                             </form>

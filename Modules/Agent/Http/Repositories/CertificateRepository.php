@@ -6,6 +6,9 @@ use Carbon\Carbon;
 use Edaacil\Modules\BaseRepository;
 use Edaacil\Modules\Manager\Http\Models\Certificate;
 use Edaacil\Modules\Manager\Http\Models\Token;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 
 class CertificateRepository extends BaseRepository
 {
@@ -25,19 +28,44 @@ class CertificateRepository extends BaseRepository
     public function certificate()
     {
 
-        $data = request()->all();
+        $data = request()->token;
 
-        if ($data === []) {
+        if ($data === "") {
             session()->flash('danger', "you don't have required details to view this page");
             return redirect(route('agent.dashboard.view'));
         }
 
-        $token = Token::where('token', $data['token'])->where('status', 'Unused')->first();
-
-        if ($token === null || $this->checkUsedToken() === true) {
-            session()->flash('danger', 'Sorry, seem you are trying to access wrong/used token!');
-            return redirect(route('agent.dashboard.view'));
+        // Get token when the certificate has been created, this token is store in a session
+        $certificateToken = "";
+        if (Session::has('verify_certificate'))
+        {
+            $get_certificate_token = Session::get('verify_certificate');
+            $explode = explode('/', $get_certificate_token);
+            $certificateToken = $explode[1];
         }
+
+        // Query Token table
+        $token = Token::where('token', $data)->first();
+
+        // Validate if the token has been used and determine if there is a token in a session
+        if ($token == null || $token->status == "Used") {
+            if ($data == $certificateToken) {
+
+                $certificate = $this->model()::where('manager_id', auth()->user()->id)->with('manager')->latest()->first();
+                $urlPath = $this->urlPath()->id;
+                return view('agent::certificate.index', ['certificate' => $certificate, 'urlPath' => $urlPath]);
+
+            } else {
+
+                session()->flash('danger', 'Sorry, seem you are trying to access wrong/used token!');
+                return redirect(route('agent.dashboard.view'));
+
+            }
+        }
+
+        // Flush token stored in a session
+        Session::forget('verify_certificate');
+
         $certificate = $this->model()::where('manager_id', auth()->user()->id)->with('manager')->latest()->first();
         $urlPath = $this->urlPath()->id;
         return view('agent::certificate.index', ['certificate' => $certificate, 'urlPath' => $urlPath]);
@@ -51,35 +79,50 @@ class CertificateRepository extends BaseRepository
      */
     public function certificateIssue(array $data)
     {
-        $data = (object)$data;
+        DB::beginTransaction();
 
-        $url = url()->previous();
-        $explode = explode('=', $url);
-        $token = Token::where('token', $explode[1])->first();
+        try {
+            $data = (object)$data;
 
-        $certificate = $this->model()::create([
-            'id'                    => $this->generateUuid(),
-            'manager_id'            => auth()->user()->id,
-            'token_id'              => $token->id,
-            'amount'                => $data->amount ?: 'NILL',
-            'phone_number'          => $data->phone_number,
-            'certificate_number'    => $this->certificateNumber(),
-            'policy_number'         => $this->policyNumber($data),
-            'policy_name'           => $data->policy_number == 'PM' ? 'PRIVATE USE' : 'COMMERCIAL USE',
-            'index_mark'            => $this->indexMarkNumber(),
-            'plate_number'          => $data->plate_number,
-            'chassis_number'        => $data->chassis_number,
-            'make_of_vehicle'       => $data->make_of_vehicle,
-            'name_of_policy_holder' => $data->name_of_policy_holder, #name_of_policy_holder,
-            'registration_date'     => $this->registrationDate(),
-            'expiring_date'         => $data->expiring_date,
-            'type_of_cover'         => $data->type_of_cover,
-        ]);
+            $url = url()->previous();
+            $explode = explode('=', $url);
+            $token = Token::where('token', $explode[1])->first();
 
-        if ($certificate)
+            $certificate = $this->model()::create([
+                'id'                    => $this->generateUuid(),
+                'manager_id'            => auth()->user()->id,
+                'token_id'              => $token->id,
+                'amount'                => $data->amount ?: 'NILL',
+                'phone_number'          => $data->phone_number,
+                'certificate_number'    => $this->certificateNumber(),
+                'policy_number'         => $this->policyNumber($data),
+                'policy_name'           => $data->policy_number == 'PM' ? 'PRIVATE USE' : 'COMMERCIAL USE',
+                'index_mark'            => $this->indexMarkNumber(),
+                'plate_number'          => $data->plate_number,
+                'chassis_number'        => $data->chassis_number,
+                'make_of_vehicle'       => $data->make_of_vehicle,
+                'name_of_policy_holder' => $data->name_of_policy_holder, #name_of_policy_holder,
+                'registration_date'     => $this->registrationDate(),
+                'expiring_date'         => $data->expiring_date,
+                'type_of_cover'         => $data->type_of_cover,
+            ]);
+
+            $token->update([ 'status' => 'Used' ]);
+
             $this->getClientNumber($data);
+
+            Session::put('verify_certificate', Str::random(36).'/'.$token->token);
+
+            DB::commit();
+
             session()->flash('success', 'Certificate is ready to issue out');
-        return redirect()->back();
+            return redirect()->back();
+
+        } catch (\Throwable $e) {
+            DB::rollback();
+            session()->flash('error', 'Oops! something went wrong');
+            return redirect()->back();
+        }
     }
 
     /**
@@ -101,6 +144,7 @@ class CertificateRepository extends BaseRepository
         $token = [];
 
         $verifyCertificates = Certificate::with('token')->get();
+        dd($verifyCertificates);
         foreach ($verifyCertificates as $verified) {
             $token = Token::where('id', $verified->token['id'])->update([
                 'status' => 'Used'

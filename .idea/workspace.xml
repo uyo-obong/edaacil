@@ -39,12 +39,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1df1c366-2088-4a17-a7ed-f1788b21a978" name="Default Changelist" comment="Merge branch 'master' of https://github.com/uyo-obong/edaacil&#10;&#10;# Conflicts:&#10;#&#9;.idea/edaacil.iml&#10;#&#9;.idea/php.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Agent/Http/Repositories/CertificateRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Agent/Http/Repositories/CertificateRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Agent/Resources/Views/certificate/data.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Agent/Resources/Views/certificate/data.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Manager/Http/Models/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Manager/Http/Models/Manager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Manager/Http/Repositories/AccountRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Manager/Http/Repositories/AccountRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Manager/Resources/Views/account/edit_profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Manager/Resources/Views/account/edit_profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Agent/Resources/Views/certificate/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Agent/Resources/Views/certificate/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Manager/Resources/Views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Manager/Resources/Views/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Manager/Resources/Views/reprint-data/certificate-modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Manager/Resources/Views/reprint-data/certificate-modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Manager/Resources/Views/token/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Manager/Resources/Views/token/list.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +188,8 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -249,23 +249,47 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="176" y="105" key="MultipleFileMergeDialog/0.0.1280.800@0.0.1280.800" timestamp="1597326574467" />
-    <state x="264" y="22" width="947" height="732" key="SettingsEditor" timestamp="1598238643060">
+    <state x="264" y="22" width="947" height="732" key="SettingsEditor" timestamp="1599317350004">
       <screen x="0" y="22" width="1366" height="746" />
     </state>
     <state x="69" y="0" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1597331749477" />
-    <state x="264" y="22" width="947" height="732" key="SettingsEditor/0.22.1366.746@0.22.1366.746" timestamp="1598238643060" />
+    <state x="264" y="22" width="947" height="732" key="SettingsEditor/0.22.1366.746@0.22.1366.746" timestamp="1599317350004" />
     <state x="74" y="28" width="947" height="732" key="SettingsEditor/0.28.1366.740@0.28.1366.740" timestamp="1597756822101" />
-    <state width="498" height="445" key="SwitcherDM" timestamp="1598386507628">
+    <state width="498" height="445" key="SwitcherDM" timestamp="1599326706559">
       <screen x="0" y="22" width="1366" height="746" />
     </state>
-    <state width="498" height="445" key="SwitcherDM/0.22.1366.746@0.22.1366.746" timestamp="1598386507628" />
+    <state width="498" height="445" key="SwitcherDM/0.22.1366.746@0.22.1366.746" timestamp="1599326706559" />
     <state x="343" y="175" key="run.anything.popup" timestamp="1598385125417">
       <screen x="0" y="22" width="1366" height="746" />
     </state>
     <state x="343" y="175" key="run.anything.popup/0.22.1366.746@0.22.1366.746" timestamp="1598385125417" />
-    <state x="346" y="88" width="672" height="678" key="search.everywhere.popup" timestamp="1598386440412">
+    <state x="346" y="88" width="672" height="678" key="search.everywhere.popup" timestamp="1599326912998">
       <screen x="0" y="22" width="1366" height="746" />
     </state>
-    <state x="346" y="88" width="672" height="678" key="search.everywhere.popup/0.22.1366.746@0.22.1366.746" timestamp="1598386440412" />
+    <state x="346" y="88" width="672" height="678" key="search.everywhere.popup/0.22.1366.746@0.22.1366.746" timestamp="1599326912998" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/Modules/Agent/Http/Repositories/CertificateRepository.php</url>
+          <line>141</line>
+          <properties>
+            <option name="className" value="\Edaacil\Modules\Agent\Http\Repositories\CertificateRepository" />
+            <option name="methodName" value="checkUsedToken" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/Modules/BaseRepository.php</url>
+          <line>45</line>
+          <properties>
+            <option name="className" value="\Edaacil\Modules\BaseRepository" />
+            <option name="methodName" value="getClientNumber" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

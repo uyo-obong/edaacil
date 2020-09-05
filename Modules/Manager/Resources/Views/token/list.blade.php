@@ -57,12 +57,18 @@
                                                     <td>{{ $loop->index + 1 }}</td>
                                                     <td>{{ $token->token }}</td>
                                                     <td><a class="{{ $token->status == 'Unused' ? 'badge-success' : 'badge-danger' }}" href="#">{{ $token->status }}</a></td>
-                                                    <td>{{ $token->load('certificate')->name_of_policy_holder ?: '___' }}</td>
+                                                    <td>{{ $token->load('certificate')->certificate ?
+                                                    $token->load('certificate')->certificate->name_of_policy_holder :
+                                                    '___' }}</td>
                                                     <td>{{ $token->created_at->diffForHumans() }}</td>
                                                     <form action="{{ route('manager.token.delete', $token->id) }}" method="POST">
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
-                                                        <td><button class="btn btn-danger">Delete</button></td>
+                                                        <td>
+                                                            <button {{ $token->load('certificate')->certificate ?
+                                                            'disabled' : '' }} class="btn
+                                                            btn-danger">Delete</button>
+                                                        </td>
                                                     </form>
                                                 </tr>
                                             @endforeach

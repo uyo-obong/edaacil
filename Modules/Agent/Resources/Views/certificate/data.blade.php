@@ -5,7 +5,7 @@
         </div>
         <div class="body">
             @if($certificate != null && $urlPath == $certificate->token_id)
-                <div id="printCertificate">
+                <div id="printCertificate" class="unselectable">
                     <div style="padding-top: 150px"></div>
 
                     <div style="float: right">Policy No.: {{ $certificate->policy_number }} </div><div id="certificateNumber">Certificate No.: {{ $certificate->certificate_number }}</div>

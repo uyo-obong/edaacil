@@ -72,7 +72,7 @@
                                             <td>{{ isset($certificate->token['token']) ? $certificate->token['token']
                                              : '' }}</td>
                                             <td>{{ $certificate->name_of_policy_holder }}</td>
-                                            <td>{{ $certificate->manager->fullName() }}</td>
+                                            <td>{{ isset($certificate->manager) ? $certificate->manager->fullName() : ''  }}</td>
                                             <td>{{ $certificate->created_at->format('d, M Y') }}</td>
                                             <td>@includeIf('manager::reprint-data.buttons.view')</td>
                                         </tr>
