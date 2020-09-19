@@ -47,7 +47,7 @@ abstract class BaseRepository
     {
         $phone_number = $data->phone_number;
 
-        $message = "Your certificate is ready. thank you for using our service. EDAACIL";
+        $message = "WELCOME TO EDAA INSURANCE THANKS FOR PATRONAGE. DRIVE SAFELY.";
 
         return $this->initiateSmsGuzzle($phone_number, $message);
 

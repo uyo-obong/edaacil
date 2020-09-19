@@ -103,10 +103,11 @@
                                     </div>
                                 </div>
                                 <br>
+{{--                                @dd($certificate)--}}
                                 <div class="form-group">
-                                    @if($urlPath !== $certificate->token_id)
+{{--                                    @if($urlPath !== $certificate->token_id)--}}
                                     <button class="float-right btn btn-raised btn-primary waves-effect" type="submit">SUBMIT</button>
-                                    @endif
+{{--                                    @endif--}}
                                 </div>
                                 <div class="clearfix"></div>
                             </form>
