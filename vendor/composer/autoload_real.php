@@ -28,7 +28,7 @@ class ComposerAutoloaderInit8cf45fcdd99f6513b4d35b66cc732c71
 
         $useStaticLoader = PHP_VERSION_ID >= 50600 && !defined('HHVM_VERSION') && (!function_exists('zend_loader_file_encoded') || !zend_loader_file_encoded());
         if ($useStaticLoader) {
-            require_once __DIR__ . '/autoload_static.php';
+            require __DIR__ . '/autoload_static.php';
 
             call_user_func(\Composer\Autoload\ComposerStaticInit8cf45fcdd99f6513b4d35b66cc732c71::getInitializer($loader));
         } else {

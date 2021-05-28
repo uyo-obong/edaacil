@@ -4,8 +4,10 @@
 namespace Edaacil\Modules;
 
 
+use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Config;
+use Psr\Http\Message\ResponseInterface;
 use Ramsey\Uuid\Uuid;
 
 abstract class BaseRepository
@@ -20,7 +22,7 @@ abstract class BaseRepository
     /**
      * Generates UuId
      * @return mixed
-     * @throws \Exception
+     * @throws Exception
      */
     public function generateUuid()
     {
@@ -41,9 +43,9 @@ abstract class BaseRepository
     /**
      * return client phone number and the message
      * @param $data
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
-    public function getClientNumber($data)
+    public function getClientNumber($data): ResponseInterface
     {
         $phone_number = $data->phone_number;
 
@@ -58,9 +60,9 @@ abstract class BaseRepository
      * Implement guzzle api
      * @param $phone_number
      * @param $message
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
-    public function initiateSmsGuzzle($phone_number, $message)
+    public function initiateSmsGuzzle($phone_number, $message): ResponseInterface
     {
         $client = new Client();
 

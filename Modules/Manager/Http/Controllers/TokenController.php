@@ -38,7 +38,7 @@ class TokenController extends BaseController
     public function list()
     {
 
-        $tokens = $this->tokenRepository->model()::with('certificate')->get()->sortByDesc('created_at');
+        $tokens = $this->tokenRepository->model()::with('certificate')->latest()->paginate(300);
         return view($this->_config['view'], ['tokens' => $tokens]);
     }
 

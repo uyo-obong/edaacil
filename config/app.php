@@ -51,7 +51,7 @@ return [
     | your application so that it is used when running Artisan tasks.
     |
     */
-    'url' => 'https://edaacil.herokuapp.com/',
+    'url' => 'https://edaacil.com/',
 //    'url' => env('APP_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL', null),
