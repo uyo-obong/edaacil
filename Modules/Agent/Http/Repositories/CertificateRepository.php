@@ -109,7 +109,7 @@ class CertificateRepository extends BaseRepository
 
             $token->update([ 'status' => 'Used' ]);
 
-//            $this->getClientNumber($data);
+            $this->getClientNumber($data);
 
             Session::put('verify_certificate', Str::random(36).'/'.$token->token);
 

@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+    'env' => env('APP_ENV', 'local'),
 
     /*
     |--------------------------------------------------------------------------
@@ -135,9 +135,8 @@ return [
      */
 
     'sms_username' =>  'odokamae@gmail.com',
-    'sms_password' => 'Abasiekemedoho2020',
+    'sms_password' => 'aniekeme',
     'sms_sender' => 'Edaacil',
-    'sms_balance' => 'true',
 
 
     /*

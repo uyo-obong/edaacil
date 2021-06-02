@@ -1,32 +1,28 @@
 <?php
 
-use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Http;
 
 /**
  * Get current sms balance
  * @return string
  */
-function checkSmsBalance()
+function checkSmsBalance(): string
 {
-    $client = new Client();
 
     try {
 
-        $request = $client->post('http://api.smartsmssolutions.com/smsapi.php?', [
-            'verify' => false,
-            'form_params' => [
-                'username'  => Config::get('app.sms_username'),
-                'password'  => Config::get('app.sms_password'),
-                'balance'   => Config::get('app.sms_balance')
-            ],
+        $response = Http::post('https://api.bulksmslive.com/v2/app/getbalance', [
+            'email'  => Config::get('app.sms_username'),
+            'password'  => Config::get('app.sms_password'),
         ]);
 
+        $data = (object)$response->json();
 
-        return $request->getBody()->getContents();
+        return $data->amount;
 
     } catch (exception $e) {
-       session()->flash('danger', 'Your sms balance is low');
+        session()->flash('danger', 'Your sms balance is low');
     }
 
 

@@ -7,6 +7,7 @@ namespace Edaacil\Modules;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Http;
 use Psr\Http\Message\ResponseInterface;
 use Ramsey\Uuid\Uuid;
 
@@ -43,9 +44,9 @@ abstract class BaseRepository
     /**
      * return client phone number and the message
      * @param $data
-     * @return ResponseInterface
+     * @return bool
      */
-    public function getClientNumber($data): ResponseInterface
+    public function getClientNumber($data): bool
     {
         $phone_number = $data->phone_number;
 
@@ -60,22 +61,21 @@ abstract class BaseRepository
      * Implement guzzle api
      * @param $phone_number
      * @param $message
-     * @return ResponseInterface
+     * @return bool
      */
-    public function initiateSmsGuzzle($phone_number, $message): ResponseInterface
+    public function initiateSmsGuzzle($phone_number, $message): bool
     {
-        $client = new Client();
 
-        return $client->post('http://api.smartsmssolutions.com/smsapi.php?', [
-            'verify' => false,
-            'form_params' => [
-                'username'  => Config::get('app.sms_username'),
-                'password'  => Config::get('app.sms_password'),
-                'message'   => $message,
-                'sender'    => Config::get('app.sms_sender'),
-                'recipient' => $phone_number,
-            ],
+        $response = Http::post('https://api.bulksmslive.com/v2/app/sms', [
+
+            'email'         => Config::get('app.sms_username'),
+            'password'      => Config::get('app.sms_password'),
+            'message'       => $message,
+            'sender_name'   => Config::get('app.sms_sender'),
+            'recipients'    => $phone_number,
         ]);
+
+        return true;
     }
 
 }
